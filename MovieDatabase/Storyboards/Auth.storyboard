@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gjD-pR-Kme">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Hdm-zg-w7e">
+            <objects>
+                <viewController id="gjD-pR-Kme" customClass="LoginViewController" customModule="MovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ov0-sc-IZn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="r3W-Pr-ybA">
+                                <rect key="frame" x="20" y="214" width="374" height="98"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adınız" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omk-mW-DxT">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifreniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MTH-JV-P6K">
+                                        <rect key="frame" x="0.0" y="64" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egC-xJ-CgW">
+                                <rect key="frame" x="20" y="662" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="x5S-ll-iwK"/>
+                                </constraints>
+                                <state key="normal" title="Giriş Yap">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="gjD-pR-Kme" eventType="touchUpInside" id="g1j-r9-EkX"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="-75" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-9f-VQq">
+                                <rect key="frame" x="20" y="342" width="374" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henüz Üye Olmadınız Mı?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87n-f6-hbb">
+                                        <rect key="frame" x="0.0" y="0.0" width="195.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChB-ce-j22">
+                                        <rect key="frame" x="120.5" y="0.0" width="253.5" height="30"/>
+                                        <state key="normal" title="Üye Ol."/>
+                                        <connections>
+                                            <action selector="registerButtonTapped:" destination="gjD-pR-Kme" eventType="touchUpInside" id="0cj-U7-WeG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YRF-hl-ixe" firstAttribute="trailing" secondItem="VVo-9f-VQq" secondAttribute="trailing" constant="20" id="0dz-w1-TYS"/>
+                            <constraint firstItem="YRF-hl-ixe" firstAttribute="trailing" secondItem="egC-xJ-CgW" secondAttribute="trailing" constant="20" id="4tu-h4-jkQ"/>
+                            <constraint firstItem="VVo-9f-VQq" firstAttribute="leading" secondItem="YRF-hl-ixe" secondAttribute="leading" constant="20" id="Srd-qt-HDz"/>
+                            <constraint firstItem="r3W-Pr-ybA" firstAttribute="leading" secondItem="YRF-hl-ixe" secondAttribute="leading" constant="20" id="bty-fY-9q8"/>
+                            <constraint firstItem="r3W-Pr-ybA" firstAttribute="top" secondItem="YRF-hl-ixe" secondAttribute="top" constant="170" id="dqP-CB-4tI"/>
+                            <constraint firstItem="VVo-9f-VQq" firstAttribute="top" secondItem="r3W-Pr-ybA" secondAttribute="bottom" constant="30" id="eqP-j4-EPF"/>
+                            <constraint firstItem="YRF-hl-ixe" firstAttribute="trailing" secondItem="r3W-Pr-ybA" secondAttribute="trailing" constant="20" id="jMI-9n-oiz"/>
+                            <constraint firstItem="YRF-hl-ixe" firstAttribute="bottom" secondItem="egC-xJ-CgW" secondAttribute="bottom" constant="150" id="qdw-8w-151"/>
+                            <constraint firstItem="egC-xJ-CgW" firstAttribute="leading" secondItem="YRF-hl-ixe" secondAttribute="leading" constant="20" id="rbz-lK-qVf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YRF-hl-ixe"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="egC-xJ-CgW" id="0NO-UE-LXC"/>
+                        <outlet property="passwordTextLabel" destination="MTH-JV-P6K" id="eX7-hy-Y9q"/>
+                        <outlet property="registerButton" destination="ChB-ce-j22" id="1ed-BC-JYD"/>
+                        <outlet property="userNameTextLabel" destination="omk-mW-DxT" id="bTT-8l-OBX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z4B-R6-JHN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="138"/>
+        </scene>
+    </scenes>
+</document>

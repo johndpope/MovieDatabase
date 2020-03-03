@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LatestMovieCell" rowHeight="200" id="KGk-i7-Jjw" customClass="LatestMovieCell" customModule="MovieDatabase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="3L1-DW-Km7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradiant" translatesAutoresizingMaskIntoConstraints="NO" id="bh2-La-eeV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="ov6-kd-gsA">
+                        <rect key="frame" x="15" y="45" width="100" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="130" id="LbE-SL-Pcg"/>
+                            <constraint firstAttribute="width" constant="100" id="RYn-5n-WV4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back To The Future" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yko-Sn-oiN">
+                        <rect key="frame" x="130" y="155" width="190" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="5G7-hz-SNt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bh2-La-eeV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="21H-IG-tHI"/>
+                    <constraint firstItem="bh2-La-eeV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2tw-lJ-atn"/>
+                    <constraint firstAttribute="bottom" secondItem="yko-Sn-oiN" secondAttribute="bottom" constant="15" id="5Qu-IR-F2G"/>
+                    <constraint firstAttribute="bottom" secondItem="bh2-La-eeV" secondAttribute="bottom" id="5qQ-j5-QLE"/>
+                    <constraint firstItem="ov6-kd-gsA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="6Kd-aX-bGI"/>
+                    <constraint firstItem="3L1-DW-Km7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Efa-B3-mQr"/>
+                    <constraint firstItem="3L1-DW-Km7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vy5-Wx-nV3"/>
+                    <constraint firstAttribute="trailing" secondItem="3L1-DW-Km7" secondAttribute="trailing" id="aaZ-wg-rsd"/>
+                    <constraint firstAttribute="trailing" secondItem="yko-Sn-oiN" secondAttribute="trailing" id="ech-bp-tSG"/>
+                    <constraint firstItem="yko-Sn-oiN" firstAttribute="leading" secondItem="ov6-kd-gsA" secondAttribute="trailing" constant="15" id="fXa-m2-qKv"/>
+                    <constraint firstAttribute="bottom" secondItem="ov6-kd-gsA" secondAttribute="bottom" constant="15" id="nUf-Z6-c8J"/>
+                    <constraint firstAttribute="bottom" secondItem="3L1-DW-Km7" secondAttribute="bottom" id="qk3-Tf-fDH"/>
+                    <constraint firstAttribute="trailing" secondItem="bh2-La-eeV" secondAttribute="trailing" id="tlw-Gw-RJG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="latestMovieImage" destination="3L1-DW-Km7" id="o7X-h9-eqs"/>
+                <outlet property="latestPosterImage" destination="ov6-kd-gsA" id="0gZ-AY-F7j"/>
+                <outlet property="latestTitleLabel" destination="yko-Sn-oiN" id="7uG-BJ-tdr"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="default" width="620" height="350"/>
+        <image name="gradiant" width="375" height="300"/>
+        <image name="launch" width="1000" height="781"/>
+    </resources>
+</document>

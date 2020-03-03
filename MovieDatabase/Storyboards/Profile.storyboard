@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u0g-46-cYb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="c5c-Lt-7V8">
+            <objects>
+                <viewController id="BRV-jW-Hca" customClass="ProfileViewController" customModule="MovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="10g-kK-6qU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A47-Mt-36R">
+                                <rect key="frame" x="0.0" y="296" width="414" height="517"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28Z-29-ZCW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpsons" translatesAutoresizingMaskIntoConstraints="NO" id="28T-OR-inY">
+                                        <rect key="frame" x="142" y="15" width="130" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="F5V-4E-Q2O"/>
+                                            <constraint firstAttribute="height" constant="130" id="Ygt-Rj-4ZN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mahmut" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbc-BK-3eR">
+                                        <rect key="frame" x="8" y="155" width="398" height="37"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sbc-BK-3eR" secondAttribute="bottom" constant="8" id="0HM-UW-SGI"/>
+                                    <constraint firstItem="sbc-BK-3eR" firstAttribute="leading" secondItem="28Z-29-ZCW" secondAttribute="leading" constant="8" id="2Fs-kB-YZF"/>
+                                    <constraint firstAttribute="height" constant="200" id="4pN-S5-6vr"/>
+                                    <constraint firstItem="28T-OR-inY" firstAttribute="centerX" secondItem="28Z-29-ZCW" secondAttribute="centerX" id="AQq-Zc-LIB"/>
+                                    <constraint firstItem="sbc-BK-3eR" firstAttribute="top" secondItem="28T-OR-inY" secondAttribute="bottom" constant="10" id="EPJ-Ep-q0d"/>
+                                    <constraint firstItem="28T-OR-inY" firstAttribute="top" secondItem="28Z-29-ZCW" secondAttribute="top" constant="15" id="K6Y-Tr-vmE"/>
+                                    <constraint firstAttribute="trailing" secondItem="sbc-BK-3eR" secondAttribute="trailing" constant="8" id="mQm-E0-oYP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="28Z-29-ZCW" firstAttribute="leading" secondItem="1UE-Ai-OZj" secondAttribute="leading" id="8Cv-IG-dIy"/>
+                            <constraint firstItem="28Z-29-ZCW" firstAttribute="trailing" secondItem="1UE-Ai-OZj" secondAttribute="trailing" id="DTX-Lu-1wR"/>
+                            <constraint firstItem="28Z-29-ZCW" firstAttribute="top" secondItem="1UE-Ai-OZj" secondAttribute="top" id="Fft-Jp-p3O"/>
+                            <constraint firstItem="A47-Mt-36R" firstAttribute="top" secondItem="28Z-29-ZCW" secondAttribute="bottom" constant="8" symbolic="YES" id="bab-Jx-yxy"/>
+                            <constraint firstItem="A47-Mt-36R" firstAttribute="leading" secondItem="1UE-Ai-OZj" secondAttribute="leading" id="cgd-0e-lkk"/>
+                            <constraint firstItem="A47-Mt-36R" firstAttribute="trailing" secondItem="1UE-Ai-OZj" secondAttribute="trailing" id="gL2-QM-emN"/>
+                            <constraint firstItem="A47-Mt-36R" firstAttribute="bottom" secondItem="1UE-Ai-OZj" secondAttribute="bottom" id="iDg-Cg-a61"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1UE-Ai-OZj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t5b-i4-1w6"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="28T-OR-inY" id="iJt-Y9-HZw"/>
+                        <outlet property="profileNameLabel" destination="sbc-BK-3eR" id="bUr-4y-K1J"/>
+                        <outlet property="profileTableView" destination="A47-Mt-36R" id="CZU-JH-jSp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvC-ds-Md5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221.7391304347827" y="196.875"/>
+        </scene>
+        <!--Profil-->
+        <scene sceneID="wiH-8M-xKG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u0g-46-cYb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profil" image="profile" id="1mv-vp-dkl"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DqP-KG-ggJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BRV-jW-Hca" kind="relationship" relationship="rootViewController" id="Ud3-DE-tvi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DzB-2T-C7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311.59420289855075" y="196.875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile" width="25" height="25"/>
+        <image name="simpsons" width="1200" height="627"/>
+    </resources>
+</document>

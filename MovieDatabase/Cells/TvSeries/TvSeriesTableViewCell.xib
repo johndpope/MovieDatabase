@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="206" id="KGk-i7-Jjw" customClass="TvSeriesTableViewCell" customModule="MovieDatabase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="250"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="76O-cV-MaB">
+                        <rect key="frame" x="0.0" y="43.5" width="390" height="206.5"/>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="JJE-HH-FiH">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6A-uF-Rfb">
+                        <rect key="frame" x="292" y="8" width="90" height="35.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="WE5-2D-YJf"/>
+                        </constraints>
+                        <state key="normal" title="Hepsini Gör"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tv Dizileri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqJ-fh-dMT">
+                        <rect key="frame" x="10" y="8" width="150" height="27.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="ndt-SS-xFD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kqJ-fh-dMT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="F8w-0X-dK2"/>
+                    <constraint firstItem="76O-cV-MaB" firstAttribute="top" secondItem="k6A-uF-Rfb" secondAttribute="bottom" id="GFb-Oi-NhL"/>
+                    <constraint firstAttribute="bottom" secondItem="76O-cV-MaB" secondAttribute="bottom" id="Hpr-47-Zmi"/>
+                    <constraint firstItem="76O-cV-MaB" firstAttribute="top" secondItem="kqJ-fh-dMT" secondAttribute="bottom" constant="8" symbolic="YES" id="Hw8-SL-Skd"/>
+                    <constraint firstItem="kqJ-fh-dMT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ron-LO-UkT"/>
+                    <constraint firstAttribute="trailing" secondItem="k6A-uF-Rfb" secondAttribute="trailing" constant="8" id="WR0-Vu-Y1E"/>
+                    <constraint firstItem="k6A-uF-Rfb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="g7R-xQ-rDG"/>
+                    <constraint firstItem="76O-cV-MaB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nNN-VS-pCa"/>
+                    <constraint firstAttribute="trailing" secondItem="76O-cV-MaB" secondAttribute="trailing" id="zRs-6I-fev"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="tvSeriesCollectionView" destination="76O-cV-MaB" id="Xz1-kS-64Q"/>
+            </connections>
+            <point key="canvasLocation" x="189.85507246376812" y="82.366071428571431"/>
+        </tableViewCell>
+    </objects>
+</document>

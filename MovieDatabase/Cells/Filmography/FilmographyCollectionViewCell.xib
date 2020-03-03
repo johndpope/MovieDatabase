@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FilmographyCollectionViewCell" customModule="MovieDatabase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abM-kL-KdM">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpsons" translatesAutoresizingMaskIntoConstraints="NO" id="ihR-ft-Po5">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="t48-WF-O1N"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simpsons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbi-Br-fyM">
+                                <rect key="frame" x="5" y="200" width="145" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fbi-Br-fyM" secondAttribute="bottom" id="E0Y-k7-ead"/>
+                            <constraint firstItem="ihR-ft-Po5" firstAttribute="top" secondItem="abM-kL-KdM" secondAttribute="top" id="Evh-cD-BJa"/>
+                            <constraint firstItem="fbi-Br-fyM" firstAttribute="leading" secondItem="abM-kL-KdM" secondAttribute="leading" constant="5" id="RYp-DZ-tds"/>
+                            <constraint firstAttribute="trailing" secondItem="fbi-Br-fyM" secondAttribute="trailing" id="aho-4y-7Ra"/>
+                            <constraint firstItem="fbi-Br-fyM" firstAttribute="top" secondItem="ihR-ft-Po5" secondAttribute="bottom" id="k0Z-JV-yKC"/>
+                            <constraint firstItem="ihR-ft-Po5" firstAttribute="leading" secondItem="abM-kL-KdM" secondAttribute="leading" id="o5M-YJ-sS6"/>
+                            <constraint firstAttribute="trailing" secondItem="ihR-ft-Po5" secondAttribute="trailing" id="vzi-tK-ABU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="abM-kL-KdM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Mo-yE-8JE"/>
+                <constraint firstItem="abM-kL-KdM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="O3o-xd-JOZ"/>
+                <constraint firstAttribute="bottom" secondItem="abM-kL-KdM" secondAttribute="bottom" id="VR7-fT-tvM"/>
+                <constraint firstAttribute="trailing" secondItem="abM-kL-KdM" secondAttribute="trailing" id="ldk-Od-h8n"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="filmographyContainerView" destination="abM-kL-KdM" id="vAD-Ll-yeD"/>
+                <outlet property="imageView" destination="ihR-ft-Po5" id="BUQ-OO-R0A"/>
+                <outlet property="nameLabel" destination="fbi-Br-fyM" id="oMs-Bo-JvT"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="simpsons" width="1200" height="627"/>
+    </resources>
+</document>

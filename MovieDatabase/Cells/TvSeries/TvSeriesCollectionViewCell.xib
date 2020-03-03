@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TvSeriesCollectionViewCell" customModule="MovieDatabase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="220" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpsons" translatesAutoresizingMaskIntoConstraints="NO" id="I5b-0c-s8f">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="wNd-JN-F82"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simpsons Tv Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fry-g1-EUn">
+                        <rect key="frame" x="5" y="155" width="215" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="1RF-WA-GSq"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="htE-mZ-L3J"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Fry-g1-EUn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="E39-Ez-k2A"/>
+                <constraint firstItem="I5b-0c-s8f" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="E5N-Wt-KFp"/>
+                <constraint firstAttribute="trailing" secondItem="I5b-0c-s8f" secondAttribute="trailing" id="G8Y-Ce-tRm"/>
+                <constraint firstItem="I5b-0c-s8f" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Gmn-YU-0Lt"/>
+                <constraint firstAttribute="bottom" secondItem="Fry-g1-EUn" secondAttribute="bottom" constant="5" id="MDo-Gf-q1M"/>
+                <constraint firstAttribute="bottom" secondItem="Fry-g1-EUn" secondAttribute="bottom" constant="5" id="bhv-yg-J1M"/>
+                <constraint firstItem="Fry-g1-EUn" firstAttribute="top" secondItem="I5b-0c-s8f" secondAttribute="bottom" constant="5" id="g24-io-mFj"/>
+                <constraint firstAttribute="trailing" secondItem="Fry-g1-EUn" secondAttribute="trailing" id="nRQ-4p-gLr"/>
+                <constraint firstAttribute="trailing" secondItem="Fry-g1-EUn" secondAttribute="trailing" id="oS9-OZ-0qW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="224" height="181"/>
+            <connections>
+                <outlet property="tvSeriesImageView" destination="I5b-0c-s8f" id="enZ-hg-LAG"/>
+                <outlet property="tvSeriesNameLabel" destination="Fry-g1-EUn" id="Dpj-ou-M3B"/>
+            </connections>
+            <point key="canvasLocation" x="261.59420289855075" y="106.80803571428571"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="simpsons" width="1200" height="627"/>
+    </resources>
+</document>

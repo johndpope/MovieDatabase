@@ -20,6 +20,14 @@ class FilmographyCollectionViewCell: UICollectionViewCell, ReusableView, NibLoad
         setLayer()
     }
     
+    //MARK: - Fill Filmography Movie Cell
+    func fillFilmography(filmographyResponse: CastFilmographyResponse) {
+        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(filmographyResponse.posterPath ?? "")")
+        imageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
+        nameLabel.text = filmographyResponse.title
+        
+    }
+    
     func setLayer() {
         filmographyContainerView.layer.cornerRadius = 5
     }

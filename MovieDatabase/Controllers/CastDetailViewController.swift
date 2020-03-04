@@ -48,6 +48,8 @@ class CastDetailViewController: UIViewController {
 
     }
     
+    //MARK: - Request Functions
+    
     func getCast() {
         ActRequest.init(id: identifier).request(success: {(object) in
             self.castData = object
@@ -59,11 +61,14 @@ class CastDetailViewController: UIViewController {
     func getFilmography() {
         FilmographyRequest.init(personId: identifier).request(success: {(object) in
             self.filmographyData = object
-            print(self.filmographyData.cast.count)
+            self.castFilmographyTableView.reloadData()
+            print("********************************\(self.filmographyData.cast.count)***************************")
         }) {(error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
+    
+    //MARK: - Delegates & Layers Functions
     
     func setLayer() {
         castBioTextView.layer.cornerRadius = 5
@@ -80,11 +85,13 @@ class CastDetailViewController: UIViewController {
 
 extension CastDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        //return 10
+        return filmographyData != nil ? 1 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FilmographyTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.filmographyData = filmographyData
         return cell
     }
     

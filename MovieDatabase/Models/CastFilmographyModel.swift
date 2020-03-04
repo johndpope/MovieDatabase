@@ -9,11 +9,12 @@
 import Foundation
 
 struct CastFilmographyModel: Codable {
+    var id: Int!
     var cast: [CastFilmographyResponse]!
 }
 
 struct CastFilmographyResponse: Codable {
-    var id: Int!
+    
     var creditId: String!
     var title: String!
     var voteAverage: Double!
@@ -22,7 +23,7 @@ struct CastFilmographyResponse: Codable {
     var backdropPath: String!
     
     enum CodingKeys: String, CodingKey {
-        case id
+        
         case title
         case creditId = "credit_id"
         case voteAverage = "vote_average"

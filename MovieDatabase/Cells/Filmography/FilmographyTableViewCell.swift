@@ -10,6 +10,12 @@ import UIKit
 
 class FilmographyTableViewCell: UITableViewCell, ReusableView, NibLoadableView  {
     
+    var filmographyData: CastFilmographyModel! {
+        didSet {
+            filmographyCollectionView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var filmographyCollectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -27,11 +33,16 @@ class FilmographyTableViewCell: UITableViewCell, ReusableView, NibLoadableView  
     
 extension FilmographyTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if filmographyData.cast.count > 10 {
+            return 10
+        } else {
+            return filmographyData.cast.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: FilmographyCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.fillFilmography(filmographyResponse: filmographyData.cast[indexPath.row])
         return cell
     }
     

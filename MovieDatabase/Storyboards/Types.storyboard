@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aS7-mA-WiD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Types View Controller-->
+        <scene sceneID="enE-kx-fnE">
+            <objects>
+                <viewController storyboardIdentifier="TypesViewController" id="c5R-57-aG3" customClass="TypesViewController" customModule="MovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gRj-rs-yQh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bi8-12-Cvw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HNj-ko-4JL">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bi8-12-Cvw" firstAttribute="trailing" secondItem="Mcc-es-wEE" secondAttribute="trailing" id="IvS-AU-xbg"/>
+                            <constraint firstItem="bi8-12-Cvw" firstAttribute="top" secondItem="gRj-rs-yQh" secondAttribute="top" id="Iwo-TJ-HlN"/>
+                            <constraint firstAttribute="bottom" secondItem="bi8-12-Cvw" secondAttribute="bottom" id="bsw-tl-Hkf"/>
+                            <constraint firstItem="bi8-12-Cvw" firstAttribute="leading" secondItem="Mcc-es-wEE" secondAttribute="leading" id="mge-5e-gZK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mcc-es-wEE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="C3d-Pn-sjI"/>
+                    <connections>
+                        <outlet property="typesCollectionView" destination="bi8-12-Cvw" id="99W-vT-M8g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMO-a7-vYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020.289855072464" y="150.66964285714286"/>
+        </scene>
+        <!--Türler-->
+        <scene sceneID="BfA-hD-RSF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aS7-mA-WiD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Türler" image="list" id="ec9-Z1-Q4W"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xVk-jd-GQL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="c5R-57-aG3" kind="relationship" relationship="rootViewController" id="ptJ-tG-Vvw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXD-Rp-qd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110.144927536232" y="150.66964285714286"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list" width="25" height="25"/>
+    </resources>
+</document>

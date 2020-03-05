@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     func nowMovieRequest() {
         NowMovieRequest.init(page: page).request(success: { (object) in
             if self.nowData != nil{
-                self.nowData?.results.append(contentsOf: self.nowData!.results)
+                self.nowData?.results.append(contentsOf: object.results)
             }else{
                 self.nowData = object
             }
@@ -131,6 +131,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case .now:
             let cell: NowTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.delegate = self
+            cell.page = self.page
+            cell.totalPage = self.totalPage
             cell.nowData = self.nowData
             return cell
         case .series:
@@ -156,12 +158,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
     
-//        func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//            if indexPath.row == ((nowData?.results.count)! - 1) && page < totalPage {
-//                self.page += 1
-//                self.nowMovieRequest()
-//            }
-//        }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -178,12 +174,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension ViewController: NowTableViewCellDelegate{
+extension ViewController: NowTableViewCellDelegate {
+
     func didSelected(id: Int) {
         let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
         nextViewController.identifier = id
         self.show(nextViewController, sender: nil)
+    }
+    
+    func didPaginate() {
+        self.page += 1
+        nowMovieRequest()
     }
     
 }

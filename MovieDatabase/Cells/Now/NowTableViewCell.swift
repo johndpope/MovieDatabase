@@ -8,13 +8,16 @@
 
 import UIKit
 
-//MARK: - Delegate
+//MARK: - Delegates
 protocol NowTableViewCellDelegate {
+    func didPaginate()
     func didSelected(id: Int)
 }
 
 class NowTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
+    var page: Int!
+    var totalPage:Int!
     var delegate: NowTableViewCellDelegate!
     var nowData: MovieModel!{
         didSet{
@@ -55,10 +58,17 @@ extension NowTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate
         self.delegate.didSelected(id: nowData.results[indexPath.row].id)
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == nowData.results.count - 1 && page < totalPage {
+            self.delegate.didPaginate()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height
         let width = collectionView.frame.width
         return CGSize(width: width / 2.5, height: height)
     }
+
     
 }

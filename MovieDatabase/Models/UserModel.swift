@@ -1,5 +1,5 @@
 //
-//  UserDetailModel.swift
+//  UserModel.swift
 //  MovieDatabase
 //
 //  Created by ilkay sever on 26.02.2020.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct UserDetailModel: Codable {
-    
+struct UserModel: Codable {
     var avatar: Avatar
     var id: Int
     var username: String

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Discover View Controller-->
+        <scene sceneID="nDk-3T-NUy">
+            <objects>
+                <viewController storyboardIdentifier="DiscoverViewController" id="qz2-m4-gUX" customClass="DiscoverViewController" customModule="MovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZLM-fv-egj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vMD-h1-KRn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zqf-ES-Y6A" firstAttribute="trailing" secondItem="vMD-h1-KRn" secondAttribute="trailing" id="3z3-cD-H8p"/>
+                            <constraint firstItem="Zqf-ES-Y6A" firstAttribute="bottom" secondItem="vMD-h1-KRn" secondAttribute="bottom" constant="-34" id="7C4-gj-teH"/>
+                            <constraint firstItem="vMD-h1-KRn" firstAttribute="leading" secondItem="Zqf-ES-Y6A" secondAttribute="leading" id="BnD-Nn-K3p"/>
+                            <constraint firstItem="vMD-h1-KRn" firstAttribute="top" secondItem="Zqf-ES-Y6A" secondAttribute="top" id="nbt-ZS-ONx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zqf-ES-Y6A"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hlf-1l-k67"/>
+                    <connections>
+                        <outlet property="discoverTableView" destination="vMD-h1-KRn" id="Gke-jm-v2K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02d-aX-zfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.9710144927537" y="135.9375"/>
+        </scene>
+    </scenes>
+</document>

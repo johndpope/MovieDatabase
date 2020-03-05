@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42s-Wc-Ny9">
-                        <rect key="frame" x="8" y="8" width="244" height="142"/>
+                        <rect key="frame" x="8" y="8" width="252" height="142"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back to The Future" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4b-0D-0Ku">
-                                <rect key="frame" x="8" y="117" width="236" height="25"/>
+                                <rect key="frame" x="8" y="117" width="244" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="0Om-Mw-YyW"/>
                                 </constraints>
@@ -29,17 +29,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="salon" translatesAutoresizingMaskIntoConstraints="NO" id="dFj-pT-9DD">
-                                <rect key="frame" x="0.0" y="0.0" width="244" height="110"/>
+                                <rect key="frame" x="0.0" y="0.0" width="252" height="110"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BW-L1-fPA">
-                                <rect key="frame" x="211" y="8" width="25" height="25"/>
+                                <rect key="frame" x="227" y="0.0" width="25" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="5gh-sj-60h"/>
-                                    <constraint firstAttribute="height" constant="25" id="5yN-s4-5od"/>
+                                    <constraint firstAttribute="height" constant="35" id="5yN-s4-5od"/>
                                     <constraint firstAttribute="width" constant="25" id="FLM-En-qha"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="NTw-PV-o3y"/>
                                 </constraints>
-                                <state key="normal" image="delete"/>
+                                <state key="normal" backgroundImage="delete"/>
                                 <connections>
                                     <action selector="deleteButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="DRY-zf-hgO"/>
                                 </connections>
@@ -47,14 +45,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3BW-L1-fPA" secondAttribute="trailing" constant="8" id="637-I4-VwV"/>
+                            <constraint firstAttribute="trailing" secondItem="3BW-L1-fPA" secondAttribute="trailing" id="637-I4-VwV"/>
                             <constraint firstItem="dFj-pT-9DD" firstAttribute="leading" secondItem="42s-Wc-Ny9" secondAttribute="leading" id="JDa-vh-Zrl"/>
                             <constraint firstAttribute="trailing" secondItem="E4b-0D-0Ku" secondAttribute="trailing" id="PKy-qE-Yg8"/>
                             <constraint firstItem="E4b-0D-0Ku" firstAttribute="top" secondItem="dFj-pT-9DD" secondAttribute="bottom" constant="7" id="dIY-8e-pA6"/>
                             <constraint firstItem="dFj-pT-9DD" firstAttribute="top" secondItem="42s-Wc-Ny9" secondAttribute="top" id="jNA-aY-OBT"/>
                             <constraint firstAttribute="bottom" secondItem="E4b-0D-0Ku" secondAttribute="bottom" id="jrQ-yW-XzC"/>
                             <constraint firstAttribute="trailing" secondItem="dFj-pT-9DD" secondAttribute="trailing" id="kp6-iT-9c1"/>
-                            <constraint firstItem="3BW-L1-fPA" firstAttribute="top" secondItem="42s-Wc-Ny9" secondAttribute="top" constant="8" id="n65-N5-ER6"/>
+                            <constraint firstItem="3BW-L1-fPA" firstAttribute="top" secondItem="42s-Wc-Ny9" secondAttribute="top" id="n65-N5-ER6"/>
                             <constraint firstItem="E4b-0D-0Ku" firstAttribute="leading" secondItem="42s-Wc-Ny9" secondAttribute="leading" constant="8" id="yHo-uq-qyM"/>
                         </constraints>
                     </view>
@@ -63,7 +61,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="42s-Wc-Ny9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Prg-5z-JZN"/>
-                <constraint firstAttribute="trailing" secondItem="42s-Wc-Ny9" secondAttribute="trailing" constant="8" id="TWE-5n-Ihl"/>
+                <constraint firstAttribute="trailing" secondItem="42s-Wc-Ny9" secondAttribute="trailing" id="TWE-5n-Ihl"/>
                 <constraint firstAttribute="bottom" secondItem="42s-Wc-Ny9" secondAttribute="bottom" id="iiQ-V9-UQM"/>
                 <constraint firstItem="42s-Wc-Ny9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="r9t-29-A3W"/>
             </constraints>
@@ -78,7 +76,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="delete" width="20" height="20"/>
+        <image name="delete" width="13" height="23"/>
         <image name="salon" width="948" height="500"/>
     </resources>
 </document>

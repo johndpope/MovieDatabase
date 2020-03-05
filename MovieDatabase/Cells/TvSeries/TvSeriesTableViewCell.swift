@@ -10,7 +10,7 @@ import UIKit
 
 class TvSeriesTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
-    var tvSeriesData: TvSeriesModel!{
+    var tvSeriesData: SeriesModel!{
         didSet{
             tvSeriesCollectionView.reloadData()
         }

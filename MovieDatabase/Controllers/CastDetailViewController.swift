@@ -12,7 +12,7 @@ import Kingfisher
 class CastDetailViewController: UIViewController {
      
     var identifier: Int!
-    var filmographyData: CastFilmographyModel!
+    var filmographyData: FilmographyModel!
     var castData: ActModel!{
         didSet {
             let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(castData.profilePath ?? "")")
@@ -84,8 +84,8 @@ class CastDetailViewController: UIViewController {
 }
 
 extension CastDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return 10
         return filmographyData != nil ? 1 : 0
     }
     

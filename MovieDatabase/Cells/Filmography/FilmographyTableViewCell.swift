@@ -10,7 +10,7 @@ import UIKit
 
 class FilmographyTableViewCell: UITableViewCell, ReusableView, NibLoadableView  {
     
-    var filmographyData: CastFilmographyModel! {
+    var filmographyData: FilmographyModel! {
         didSet {
             filmographyCollectionView.reloadData()
         }

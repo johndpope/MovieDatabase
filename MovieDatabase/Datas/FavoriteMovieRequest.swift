@@ -15,7 +15,7 @@ struct FavoriteMovieRequest : RequestResultObjectDelegate {
         case watchlist = "watchlist"
     }
     
-    typealias ResultObject = FavoriteMovieModel
+    typealias ResultObject = ListModel
     
     var id: Int!
     var path: String

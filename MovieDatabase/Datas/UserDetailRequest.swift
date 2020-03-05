@@ -10,7 +10,7 @@ import Alamofire
     
 struct UserDetailRequest: RequestResultObjectDelegate {
     
-    typealias ResultObject = UserDetailModel
+    typealias ResultObject = UserModel
     
     var path: String
     var method: HTTPMethod = .get

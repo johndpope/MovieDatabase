@@ -15,15 +15,16 @@ class ViewController: UIViewController {
     
     var page: Int = 1
     var totalPage: Int!
-    var latestData: LatestMovie?
-    var nowData: NowMovieModel?
+    var upComingData: MovieModel?
+    var latestData: LatestModel?
+    var nowData: MovieModel?
     var addFavorite: AddListModel?
-    var tvSeriesData: TvSeriesModel?
+    var tvSeriesData: SeriesModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        latestMovieRequest()
+        upComingMovieRequest()
         nowMovieRequest()
         tvSeriesRequest()
     }
@@ -37,14 +38,16 @@ class ViewController: UIViewController {
     
     //MARK: - Request Web Functions
     
-    func latestMovieRequest() {
-        LatestMovieRequest.init().request(success: { (object) in
-            self.latestData = object
+    func upComingMovieRequest() {
+        UpComingRequest.init(page: page).request(success: { (object) in
+            self.upComingData = object
             self.movieTableView.reloadData()
+            print("*************************\(String(describing: self.upComingData?.results.count))*************************")
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
+    
     
     func nowMovieRequest() {
         NowMovieRequest.init(page: page).request(success: { (object) in
@@ -74,9 +77,10 @@ class ViewController: UIViewController {
     func setDelegates(){
         movieTableView.delegate = self
         movieTableView.dataSource = self
-        movieTableView.register(LatestMovieCell.self)
+        movieTableView.register(UpComingTableViewCell.self)
         movieTableView.register(NowTableViewCell.self)
         movieTableView.register(TvSeriesTableViewCell.self)
+        
     }
     
 }
@@ -84,7 +88,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     enum Sections: Int, CaseIterable {
-        case latest
+        case upComing
         case now
         case series
     }
@@ -98,8 +102,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch Sections(rawValue: section)! {
-        case .latest:
-            return 1
+        case .upComing:
+            if upComingData != nil {
+                return 1
+            }
+            return 0
         case .now:
             if nowData != nil {
                 return 1
@@ -117,13 +124,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch Sections(rawValue: indexPath.section)! {
-        case .latest:
-            let cell: LatestMovieCell = tableView.dequeueReusableCell(for: indexPath)
-            let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(latestData?.backdropPath ?? "")")
-            cell.latestMovieImage.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
-            let posterImgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(latestData?.posterPath ?? "")")
-            cell.latestPosterImage.kf.setImage(with: posterImgUrl, placeholder: UIImage(named: "salon"))
-            cell.latestTitleLabel.text = latestData?.title
+        case .upComing:
+            let cell: UpComingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.upComingData = self.upComingData
             return cell
         case .now:
             let cell: NowTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -153,17 +156,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
     
-    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        if indexPath.row == (nowData.results.count - 2) && page < totalPage {
-    //            self.page += 1
-    //            self.nowMovieRequest()
-    //        }
-    //    }
+//        func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//            if indexPath.row == ((nowData?.results.count)! - 1) && page < totalPage {
+//                self.page += 1
+//                self.nowMovieRequest()
+//            }
+//        }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch Sections(rawValue: indexPath.section)! {
-        case .latest:
+        case .upComing:
             return 300
         case .now:
             return 330

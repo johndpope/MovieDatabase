@@ -29,10 +29,10 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc4-p6-2oH">
-                        <rect key="frame" x="118" y="10" width="22" height="20"/>
+                        <rect key="frame" x="125" y="0.0" width="25" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="22" id="bjm-kP-5gf"/>
-                            <constraint firstAttribute="height" constant="20" id="z82-RF-nS1"/>
+                            <constraint firstAttribute="width" constant="25" id="bjm-kP-5gf"/>
+                            <constraint firstAttribute="height" constant="35" id="z82-RF-nS1"/>
                         </constraints>
                         <state key="normal" backgroundImage="like_empty"/>
                         <connections>
@@ -78,12 +78,12 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="or3-jv-RU2">
-                        <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
+                        <rect key="frame" x="0.0" y="0.0" width="25" height="35"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="Luw-ab-pgC"/>
-                            <constraint firstAttribute="height" constant="30" id="iPW-uY-odA"/>
+                            <constraint firstAttribute="height" constant="35" id="iPW-uY-odA"/>
                         </constraints>
-                        <state key="normal" backgroundImage="add"/>
+                        <state key="normal" backgroundImage="add_empty"/>
                         <connections>
                             <action selector="nowAddButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="01v-Qr-BsW"/>
                         </connections>
@@ -92,13 +92,13 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="zc4-p6-2oH" secondAttribute="trailing" constant="10" id="1Jm-FX-74I"/>
+                <constraint firstAttribute="trailing" secondItem="zc4-p6-2oH" secondAttribute="trailing" id="1Jm-FX-74I"/>
                 <constraint firstItem="or3-jv-RU2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2eN-7X-zIK"/>
                 <constraint firstAttribute="trailing" secondItem="flr-ih-Myb" secondAttribute="trailing" constant="5" id="ErI-uz-yyk"/>
                 <constraint firstItem="or3-jv-RU2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="F9d-gc-Rfl"/>
                 <constraint firstItem="flr-ih-Myb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="QL3-kp-uqK"/>
                 <constraint firstAttribute="trailing" secondItem="GGA-f7-kEn" secondAttribute="trailing" id="QWa-2w-hLy"/>
-                <constraint firstItem="zc4-p6-2oH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Quz-5f-1z8"/>
+                <constraint firstItem="zc4-p6-2oH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Quz-5f-1z8"/>
                 <constraint firstItem="flr-ih-Myb" firstAttribute="top" secondItem="GGA-f7-kEn" secondAttribute="bottom" constant="5" id="YOE-Yq-vlM"/>
                 <constraint firstItem="GGA-f7-kEn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pQ0-o8-3XP"/>
                 <constraint firstItem="GGA-f7-kEn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="phy-SG-Glu"/>
@@ -118,9 +118,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="add" width="20" height="25"/>
+        <image name="add_empty" width="13" height="23"/>
         <image name="default" width="620" height="350"/>
-        <image name="like_empty" width="92" height="80"/>
+        <image name="like_empty" width="13" height="23"/>
         <image name="star_selected" width="512" height="512"/>
     </resources>
 </document>

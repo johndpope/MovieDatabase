@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct LatestMovie: Codable {    
+struct LatestModel: Codable {    
     var id: Int!
     var backdropPath: String!
     var posterPath: String!

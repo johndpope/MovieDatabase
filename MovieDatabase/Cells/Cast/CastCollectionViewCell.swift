@@ -10,7 +10,7 @@ import UIKit
 
 class CastCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
     
-    var castProfileData: CastResponse!{
+    var castProfileData: CastElements!{
         didSet {
             let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(castProfileData?.profilePath ?? "")")
             profileImgView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))

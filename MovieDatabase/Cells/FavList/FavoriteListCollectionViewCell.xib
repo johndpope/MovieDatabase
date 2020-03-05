@@ -33,12 +33,12 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIc-Dx-9nl">
-                                <rect key="frame" x="211" y="8" width="25" height="25"/>
+                                <rect key="frame" x="219" y="0.0" width="25" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="IRr-M1-8E6"/>
+                                    <constraint firstAttribute="height" constant="35" id="IRr-M1-8E6"/>
                                     <constraint firstAttribute="width" constant="25" id="sQB-cV-7yn"/>
                                 </constraints>
-                                <state key="normal" image="delete"/>
+                                <state key="normal" backgroundImage="delete"/>
                                 <connections>
                                     <action selector="deleteButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="MMD-y4-8Aw"/>
                                 </connections>
@@ -50,9 +50,9 @@
                             <constraint firstItem="I4w-xy-2MY" firstAttribute="top" secondItem="iti-y3-vX2" secondAttribute="bottom" constant="7" id="JLe-Lj-aZk"/>
                             <constraint firstAttribute="trailing" secondItem="I4w-xy-2MY" secondAttribute="trailing" constant="8" id="JWq-lM-UMS"/>
                             <constraint firstItem="iti-y3-vX2" firstAttribute="top" secondItem="4kb-qc-3k3" secondAttribute="top" id="Snq-J9-PU7"/>
-                            <constraint firstAttribute="trailing" secondItem="pIc-Dx-9nl" secondAttribute="trailing" constant="8" id="cex-hq-jC0"/>
+                            <constraint firstAttribute="trailing" secondItem="pIc-Dx-9nl" secondAttribute="trailing" id="cex-hq-jC0"/>
                             <constraint firstItem="I4w-xy-2MY" firstAttribute="leading" secondItem="4kb-qc-3k3" secondAttribute="leading" constant="10" id="eS0-WL-hUz"/>
-                            <constraint firstItem="pIc-Dx-9nl" firstAttribute="top" secondItem="4kb-qc-3k3" secondAttribute="top" constant="8" id="mxZ-Iy-zPQ"/>
+                            <constraint firstItem="pIc-Dx-9nl" firstAttribute="top" secondItem="4kb-qc-3k3" secondAttribute="top" id="mxZ-Iy-zPQ"/>
                             <constraint firstAttribute="trailing" secondItem="iti-y3-vX2" secondAttribute="trailing" id="qf0-Ze-oWl"/>
                             <constraint firstAttribute="bottom" secondItem="I4w-xy-2MY" secondAttribute="bottom" id="tbW-WK-If9"/>
                         </constraints>
@@ -79,6 +79,6 @@
     </objects>
     <resources>
         <image name="default" width="620" height="350"/>
-        <image name="delete" width="20" height="20"/>
+        <image name="delete" width="13" height="23"/>
     </resources>
 </document>

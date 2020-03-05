@@ -16,7 +16,7 @@ protocol NowTableViewCellDelegate {
 class NowTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     var delegate: NowTableViewCellDelegate!
-    var nowData: NowMovieModel!{
+    var nowData: MovieModel!{
         didSet{
             nowCollecttionView.reloadData()
         }

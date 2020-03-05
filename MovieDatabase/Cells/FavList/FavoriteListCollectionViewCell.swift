@@ -10,7 +10,7 @@ import UIKit
 
 class FavoriteListCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
     
-    var favData: FavoriteMovieModel?
+    var favData: ListModel?
     
     @IBOutlet weak var favoriteMovieImage: UIImageView!
     @IBOutlet weak var favoriteMovieNameLabel: UILabel!
@@ -24,7 +24,7 @@ class FavoriteListCollectionViewCell: UICollectionViewCell, ReusableView, NibLoa
     }
     
     //MARK: - Fill Favorite List
-    func fillFavoriteList(favoriteListResponse: FavoriteMovieResponse) {
+    func fillFavoriteList(favoriteListResponse: ListElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(favoriteListResponse.backdropPath ?? "")")
         favoriteMovieImage.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
         favoriteMovieNameLabel.text = favoriteListResponse.title

@@ -9,7 +9,6 @@
 import Foundation
 
 struct AddListModel: Codable {
-    
     var status_message: String!
     
 }

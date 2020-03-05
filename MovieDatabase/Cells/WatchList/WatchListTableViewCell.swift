@@ -10,7 +10,7 @@ import UIKit
 
 class WatchListTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
-    var watchList: [FavoriteMovieResponse] = []
+    var watchList: [ListElements] = []
 
     @IBOutlet weak var watchListCollectionView: UICollectionView!
     
@@ -25,7 +25,7 @@ class WatchListTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         watchListCollectionView.register(WatchListCollectionViewCell.self)
     }
     
-    func addWatchList(watchList: FavoriteMovieModel) {
+    func addWatchList(watchList: ListModel) {
         self.watchList = watchList.results
         self.watchListCollectionView.reloadData()
     }

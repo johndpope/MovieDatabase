@@ -10,7 +10,7 @@ import Alamofire
 
 struct FilmographyRequest : RequestResultObjectDelegate {
     
-    typealias ResultObject = CastFilmographyModel
+    typealias ResultObject = FilmographyModel
     
     var path: String
     var method: HTTPMethod = .get

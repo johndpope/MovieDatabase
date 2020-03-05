@@ -24,4 +24,13 @@ class NowPlayingCell: UITableViewCell, ReusableView, NibLoadableView {
         imgView.layer.cornerRadius = 5
     }
     
+    //MARK: - Fill Discover List
+    func fillDiscoverList(discoverResponse: MovieElements) {
+        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(discoverResponse.posterPath ?? "")")
+        imgView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
+        nowTittleLabel.text = discoverResponse.title
+        nowDescLabel.text = discoverResponse.description
+        releaseLabel.text = discoverResponse.releaseDate
+    }
+    
 }

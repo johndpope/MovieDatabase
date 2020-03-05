@@ -10,7 +10,7 @@ import UIKit
 
 class FavoriteListTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
-    var favMovie: [FavoriteMovieResponse] = []
+    var favMovie: [ListElements] = []
     
     @IBOutlet weak var favoriteCollectionView: UICollectionView!
     
@@ -25,7 +25,7 @@ class FavoriteListTableViewCell: UITableViewCell, ReusableView, NibLoadableView 
         favoriteCollectionView.register(FavoriteListCollectionViewCell.self)
     }
     
-    func getFavMovie(favMovie: FavoriteMovieModel) {
+    func getFavMovie(favMovie: ListModel) {
         self.favMovie = favMovie.results
         self.favoriteCollectionView.reloadData()
     }

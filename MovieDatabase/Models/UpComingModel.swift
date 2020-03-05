@@ -11,7 +11,7 @@ import Foundation
 struct UpComingModel: Codable {
     var page: Int!
     var totalPage: Int!
-    var results: [UpComingResponse]!
+    var results: [UpComingelements]!
     
     
     enum CodingKesy: String, CodingKey {
@@ -21,7 +21,7 @@ struct UpComingModel: Codable {
     }
 }
 
-struct UpComingResponse: Codable{
+struct UpComingelements: Codable{
     var id: Int!
     var title: String!
     var posterPath: String!

@@ -9,10 +9,10 @@
 import Foundation
 
 struct CastModel: Codable {
-    var cast:[CastResponse]!
+    var cast:[CastElements]!
 }
 
-struct CastResponse: Codable {
+struct CastElements: Codable {
     var castId: Int!
     var name: String!
     var gender: Int!

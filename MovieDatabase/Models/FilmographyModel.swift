@@ -1,5 +1,5 @@
 //
-//  CastFilmographyModel.swift
+//  FilmographyModel.swift
 //  MovieDatabase
 //
 //  Created by ilkay sever on 3.03.2020.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct CastFilmographyModel: Codable {
+struct FilmographyModel: Codable {
     var id: Int!
-    var cast: [CastFilmographyResponse]!
+    var cast: [FilmographyElements]!
 }
 
-struct CastFilmographyResponse: Codable {
+struct FilmographyElements: Codable {
     
     var creditId: String!
     var title: String!

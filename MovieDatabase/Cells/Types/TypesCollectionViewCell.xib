@@ -10,14 +10,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TypesCollectionViewCell" customModule="MovieDatabase" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="187" height="183"/>
+            <rect key="frame" x="0.0" y="0.0" width="187" height="160"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="187" height="183"/>
+                <rect key="frame" x="0.0" y="0.0" width="187" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlz-mM-iq3">
-                        <rect key="frame" x="0.0" y="0.0" width="187" height="183"/>
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="160"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-xi-9gj">
                                 <rect key="frame" x="112" y="5" width="70" height="110"/>
@@ -94,13 +94,13 @@
                                     <constraint firstItem="qTE-tG-qVq" firstAttribute="leading" secondItem="W9B-yS-9wn" secondAttribute="leading" id="pIv-lp-IFz"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aksiyon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPy-b1-6Q9">
-                                <rect key="frame" x="5" y="120" width="177" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aksiyon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPy-b1-6Q9">
+                                <rect key="frame" x="5" y="125" width="177" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="nGT-Hn-qyf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -114,7 +114,7 @@
                             <constraint firstItem="aPy-b1-6Q9" firstAttribute="leading" secondItem="Zlz-mM-iq3" secondAttribute="leading" constant="5" id="foG-pM-ifU"/>
                             <constraint firstItem="99z-Af-syR" firstAttribute="top" secondItem="Zlz-mM-iq3" secondAttribute="top" constant="5" id="hX7-Ys-8fM"/>
                             <constraint firstItem="x4y-xi-9gj" firstAttribute="top" secondItem="Zlz-mM-iq3" secondAttribute="top" constant="5" id="iFL-Rb-6aN"/>
-                            <constraint firstItem="aPy-b1-6Q9" firstAttribute="top" secondItem="x4y-xi-9gj" secondAttribute="bottom" constant="5" id="sPl-Tf-qzA"/>
+                            <constraint firstItem="aPy-b1-6Q9" firstAttribute="top" secondItem="x4y-xi-9gj" secondAttribute="bottom" constant="10" id="sPl-Tf-qzA"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aPy-b1-6Q9" secondAttribute="bottom" constant="5" id="y2y-cI-hgp"/>
                         </constraints>
                     </view>
@@ -127,7 +127,7 @@
                 <constraint firstAttribute="trailing" secondItem="Zlz-mM-iq3" secondAttribute="trailing" id="cqW-GU-fTl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="177" height="137"/>
+            <size key="customSize" width="177" height="114"/>
             <connections>
                 <outlet property="firstView" destination="W9B-yS-9wn" id="MGr-r1-xfo"/>
                 <outlet property="genreNameLabel" destination="aPy-b1-6Q9" id="Fsp-mL-O8C"/>
@@ -135,7 +135,7 @@
                 <outlet property="thirdView" destination="x4y-xi-9gj" id="ECU-Op-ijA"/>
                 <outlet property="typesContainerView" destination="Zlz-mM-iq3" id="zsM-eU-qY5"/>
             </connections>
-            <point key="canvasLocation" x="229.71014492753625" y="126.22767857142857"/>
+            <point key="canvasLocation" x="229.71014492753625" y="118.52678571428571"/>
         </collectionViewCell>
     </objects>
     <resources>

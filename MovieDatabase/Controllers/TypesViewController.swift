@@ -10,9 +10,7 @@ import UIKit
 
 class TypesViewController: UIViewController {
     
-    var identifier: Int!
     var genreData: GenreModel?
-    
     
     @IBOutlet weak var typesCollectionView: UICollectionView!
     
@@ -20,7 +18,7 @@ class TypesViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         genreRequest()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,10 +29,9 @@ class TypesViewController: UIViewController {
     }
     
     func genreRequest() {
-        GenreRequest.init(id: identifier).request(success: {(object) in
+        GenreRequest.init().request(success: {(object) in
             self.genreData = object
             self.typesCollectionView.reloadData()
-            print("**************************\(self.genreData?.genres.count ?? 0)*********************")
         }) {(error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
@@ -46,24 +43,31 @@ class TypesViewController: UIViewController {
         typesCollectionView.register(TypesCollectionViewCell.self)
     }
     
-
 }
 
 extension TypesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return genreData?.genres.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: TypesCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.genreData = self.genreData
+        cell.fillGenre(genreResponse: (genreData?.genres[indexPath.row])!)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let id = genreData?.genres[indexPath.row].id else { return }
+        let storyBoard = UIStoryboard(name: "Discover", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(identifier: "DiscoverViewController") as DiscoverViewController
+        nextViewController.genresId = String(id)
+        self.show(nextViewController, sender: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.width - 30) / 2
-        let height = width * 3 / 4 + 20
+        let height = width * 3 / 3.7 + 20
         return CGSize(width: width, height: height )
     }
     

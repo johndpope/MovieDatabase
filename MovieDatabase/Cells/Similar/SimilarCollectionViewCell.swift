@@ -20,7 +20,7 @@ class SimilarCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadable
     }
     
     //MARK: - Fill Cell
-    func fillSimilarMovie(similarResponse: SimilarResponse) {
+    func fillSimilarMovie(similarResponse: Similarelements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(similarResponse.posterPath ?? "")")
         similarImgView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
         similarTitleLabel.text = similarResponse.title

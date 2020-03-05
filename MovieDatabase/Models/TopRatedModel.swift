@@ -10,10 +10,10 @@ import Foundation
 
 struct TopRatedModel: Codable {
     var page: Int!
-    var results: [TopRatedResponse]!
+    var results: [TopRatedelements]!
 }
 
-struct TopRatedResponse: Codable {
+struct TopRatedelements: Codable {
     var id: Int!
     var title: String!
     var backdropPath: String!

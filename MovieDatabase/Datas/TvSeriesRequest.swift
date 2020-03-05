@@ -9,7 +9,7 @@
 import Alamofire
 
 struct TvSeriesRequest : RequestResultObjectDelegate {
-    typealias ResultObject = TvSeriesModel
+    typealias ResultObject = SeriesModel
 
     var path: String
     var method: HTTPMethod = .get

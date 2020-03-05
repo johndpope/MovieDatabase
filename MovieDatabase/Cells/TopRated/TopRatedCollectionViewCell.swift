@@ -13,7 +13,7 @@ class TopRatedCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadabl
     @IBOutlet weak var topImgView: UIImageView!
     @IBOutlet weak var topRatedTitleLabel: UILabel!
     
-    var topRatedMovieData: TopRatedResponse!{
+    var topRatedMovieData: TopRatedelements!{
         didSet{
             let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(topRatedMovieData.backdropPath ?? "")")
             topImgView.kf.setImage(with: imgUrl)

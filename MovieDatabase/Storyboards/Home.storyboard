@@ -11,21 +11,20 @@
         <scene sceneID="5lk-B9-QuN">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="z8r-bC-SYN" customClass="ViewController" customModule="MovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KWg-oF-cIT">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="KWg-oF-cIT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIo-w3-43z">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIo-w3-43z">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pIo-w3-43z" firstAttribute="leading" secondItem="96b-ia-382" secondAttribute="leading" id="3Bq-aY-ACO"/>
                             <constraint firstItem="pIo-w3-43z" firstAttribute="top" secondItem="KWg-oF-cIT" secondAttribute="top" id="9oK-xe-yEf"/>
                             <constraint firstItem="pIo-w3-43z" firstAttribute="trailing" secondItem="96b-ia-382" secondAttribute="trailing" id="Kb6-Qq-DmN"/>
-                            <constraint firstAttribute="bottom" secondItem="pIo-w3-43z" secondAttribute="bottom" constant="83" id="Teb-aG-WqA"/>
+                            <constraint firstItem="96b-ia-382" firstAttribute="bottom" secondItem="pIo-w3-43z" secondAttribute="bottom" id="Teb-aG-WqA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="96b-ia-382"/>
                     </view>

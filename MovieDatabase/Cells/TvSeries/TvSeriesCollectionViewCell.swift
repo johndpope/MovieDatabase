@@ -20,7 +20,7 @@ class TvSeriesCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadabl
     }
     
     //MARK: - Fill Tv Series Cell
-    func fillTvSeries(tvSeriesResponse: TvSeriesResponse) {
+    func fillTvSeries(tvSeriesResponse: SeriesElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(tvSeriesResponse.backdropPath ?? "")")
         tvSeriesImageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
         tvSeriesNameLabel.text = tvSeriesResponse.name

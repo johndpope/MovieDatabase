@@ -11,7 +11,7 @@ import Kingfisher
 
 class NowCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
     
-    var movie: NowMovieResponse!
+    var movie: MovieElements!
     
     @IBOutlet weak var nowContainerView: UIView!
     @IBOutlet weak var nowPosterImage: UIImageView!
@@ -28,7 +28,7 @@ class NowCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView
     }
     
     //MARK: - Fill Now Movie Cell
-    func fillNowMovie(movieResponse: NowMovieResponse) {
+    func fillNowMovie(movieResponse: MovieElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(movieResponse.posterPath ?? "")")
         nowPosterImage.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
         nowTitleLabel.text = movieResponse.title

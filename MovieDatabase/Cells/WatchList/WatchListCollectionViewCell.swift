@@ -10,7 +10,7 @@ import UIKit
 
 class WatchListCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
     
-    var watchListData: FavoriteMovieModel?
+    var watchListData: ListModel?
     
     @IBOutlet weak var watchListImageView: UIImageView!
     @IBOutlet weak var watchListNameLabel: UILabel!
@@ -24,7 +24,7 @@ class WatchListCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadab
     }
     
     //MARK: - Fill Watch List
-    func fillWatchList(watchListResponse: FavoriteMovieResponse) {
+    func fillWatchList(watchListResponse: ListElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(watchListResponse.backdropPath ?? "")")
         watchListImageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
         watchListNameLabel.text = watchListResponse.title

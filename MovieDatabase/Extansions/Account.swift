@@ -12,7 +12,7 @@ import MSAUserDefaults
 class Account: Codable{
     var token: TokenModel!
     var session: SessionModel!
-    var user: UserDetailModel!
+    var user: UserModel!
     
     static let current = Account()
     

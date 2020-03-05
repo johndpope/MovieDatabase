@@ -10,11 +10,11 @@ import Foundation
 
 struct SimilarModel: Codable {
     var page: Int!
-    var results: [SimilarResponse]!
+    var results: [Similarelements]!
     
 }
 
-struct SimilarResponse: Codable {
+struct Similarelements: Codable {
     var id: Int!
     var title: String!
     var posterPath: String!

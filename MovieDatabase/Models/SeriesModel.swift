@@ -1,5 +1,5 @@
 //
-//  TvSeriesModel.swift
+//  SeriesModel.swift
 //  MovieDatabase
 //
 //  Created by ilkay sever on 28.02.2020.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct TvSeriesModel: Codable {
+struct SeriesModel: Codable {
     var page: Int!
     var total_pages: Int!
     var total_results: Int!
-    var results: [TvSeriesResponse]!
+    var results: [SeriesElements]!
 }
 
-struct TvSeriesResponse: Codable {
+struct SeriesElements: Codable {
     var id: Int!
     var name: String!
     var voteAverage: Double!

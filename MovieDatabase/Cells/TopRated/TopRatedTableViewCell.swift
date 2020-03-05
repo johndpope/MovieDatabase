@@ -33,9 +33,6 @@ class TopRatedTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         }
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     private func setDelegates(){
         topRatedCollectionView.delegate = self
@@ -49,7 +46,6 @@ class TopRatedTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
             let index = IndexPath.init(item: counter, section: 0)
             self.topRatedCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
             counter += 1
-            //pageControl.currentPage += 1
         }
         else {
             counter = 0

@@ -9,7 +9,7 @@
 import Alamofire
 
 struct NowMovieRequest : RequestResultObjectDelegate {
-    typealias ResultObject = NowMovieModel
+    typealias ResultObject = MovieModel
 
     var path: String
     var method: HTTPMethod = .get

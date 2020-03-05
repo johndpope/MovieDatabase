@@ -10,8 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    var favData: FavoriteMovieModel?
-    var watchData: FavoriteMovieModel?
+    var favData: ListModel?
+    var watchData: ListModel?
     
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var profileImageView: UIImageView!

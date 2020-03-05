@@ -1,5 +1,5 @@
 //
-//  FavoriteMovieModel.swift
+//  ListModel.swift
 //  MovieDatabase
 //
 //  Created by ilkay sever on 26.02.2020.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct FavoriteMovieModel: Codable {
+struct ListModel: Codable {
     var page: Int!
     var totalPage: Int!
     var totalResults: Int!
-    var results: [FavoriteMovieResponse]!
+    var results: [ListElements]!
     
     enum CodingKeys: String, CodingKey {
         case page
@@ -22,7 +22,7 @@ struct FavoriteMovieModel: Codable {
     }
 }
 
-struct FavoriteMovieResponse: Codable {
+struct ListElements: Codable {
     var id: Int!
     var title: String!
     var video: Bool

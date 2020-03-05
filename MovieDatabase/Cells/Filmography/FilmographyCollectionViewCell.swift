@@ -21,7 +21,7 @@ class FilmographyCollectionViewCell: UICollectionViewCell, ReusableView, NibLoad
     }
     
     //MARK: - Fill Filmography Movie Cell
-    func fillFilmography(filmographyResponse: CastFilmographyResponse) {
+    func fillFilmography(filmographyResponse: FilmographyElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(filmographyResponse.posterPath ?? "")")
         imageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
         nameLabel.text = filmographyResponse.title

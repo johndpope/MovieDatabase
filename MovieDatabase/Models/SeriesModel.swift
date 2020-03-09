@@ -17,19 +17,19 @@ struct SeriesModel: Codable {
 
 struct SeriesElements: Codable {
     var id: Int!
-    var name: String!
+    var title: String!
     var voteAverage: Double!
-    var firstAirDate: String!
+    var releaseDate: String!
     var backdropPath: String?
     var posterPath: String!
     var description: String!
     
     enum CodingKeys: String, CodingKey {
         case id
-        case name
+        case title = "name"
         case backdropPath = "backdrop_path"
         case posterPath = "poster_path"
-        case firstAirDate = "first_air_date"
+        case releaseDate = "first_air_date"
         case description = "overview"
         case voteAverage = "vote_average"
     }

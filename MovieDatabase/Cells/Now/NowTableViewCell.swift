@@ -10,14 +10,12 @@ import UIKit
 
 //MARK: - Delegates
 protocol NowTableViewCellDelegate {
-    func didPaginate()
-    func didSelected(id: Int)
+    func didSeeAllNowSelected()
+    func didNowMovieSelected(id: Int)
 }
 
 class NowTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
-    var page: Int!
-    var totalPage:Int!
     var delegate: NowTableViewCellDelegate!
     var nowData: MovieModel!{
         didSet{
@@ -39,6 +37,10 @@ class NowTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         nowCollecttionView.register(NowCollectionViewCell.self)
     }
     
+    @IBAction func seeAllButtonTapped(_ sender: Any) {
+        self.delegate.didSeeAllNowSelected()
+    }
+    
 }
 
 extension NowTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
@@ -55,13 +57,7 @@ extension NowTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate.didSelected(id: nowData.results[indexPath.row].id)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == nowData.results.count - 1 && page < totalPage {
-            self.delegate.didPaginate()
-        }
+        self.delegate.didNowMovieSelected(id: nowData.results[indexPath.row].id)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -69,6 +65,5 @@ extension NowTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate
         let width = collectionView.frame.width
         return CGSize(width: width / 2.5, height: height)
     }
-
     
 }

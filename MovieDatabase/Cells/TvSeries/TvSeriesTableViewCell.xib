@@ -32,6 +32,9 @@
                             <constraint firstAttribute="width" constant="90" id="WE5-2D-YJf"/>
                         </constraints>
                         <state key="normal" title="Hepsini Gör"/>
+                        <connections>
+                            <action selector="seeAllSeriesButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="zOZ-em-Glr"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tv Dizileri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqJ-fh-dMT">
                         <rect key="frame" x="10" y="8" width="150" height="27.5"/>

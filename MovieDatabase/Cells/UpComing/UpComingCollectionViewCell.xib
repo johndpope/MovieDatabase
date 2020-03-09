@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qR2-qc-frX">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="203"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="MWK-h5-djn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="MWK-h5-djn" customClass="YTP">
                                 <rect key="frame" x="0.0" y="0.0" width="360" height="203"/>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
@@ -94,7 +94,7 @@
                 <outlet property="playButton" destination="cpo-OG-dQC" id="QnE-D5-jFA"/>
                 <outlet property="posterImageView" destination="bnV-Ad-Bc3" id="u6P-nA-1q2"/>
             </connections>
-            <point key="canvasLocation" x="139" y="141"/>
+            <point key="canvasLocation" x="137.68115942028987" y="140.95982142857142"/>
         </collectionViewCell>
     </objects>
     <resources>

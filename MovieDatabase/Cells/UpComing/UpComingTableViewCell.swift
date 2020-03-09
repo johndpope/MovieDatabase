@@ -8,16 +8,22 @@
 
 import UIKit
 
+//MARK: - Delegates
+protocol UpComingTableViewCellDelegate {
+    func didUpComingSelected(id: Int)
+}
+
 class UpComingTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     var counter = 0
     var timer = Timer()
+    var delegate: UpComingTableViewCellDelegate!
     var upComingData: MovieModel!{
         didSet {
             upComingCollectionView.reloadData()
         }
     }
-
+    
     @IBOutlet weak var upComingCollectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -62,14 +68,24 @@ extension UpComingTableViewCell: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:  UpComingCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.fillUpComingMovie(upComingResponse: upComingData.results[indexPath.row])
+        cell.upComingResponse = upComingData.results[indexPath.row]
+        cell.delegate = self
         return cell
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height
         let width = collectionView.frame.width
         return CGSize(width: width, height: height)
     }
+    
+}
+
+//MARK: - Collection View Cell Delegate
+extension UpComingTableViewCell: UpComingCollectionViewCellDelegate {
+    func didPlayButtonTapped(id: Int) {
+        self.delegate.didUpComingSelected(id: id)
+    }
+    
     
 }

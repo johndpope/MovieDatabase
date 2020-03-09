@@ -28,6 +28,12 @@ class TypesViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    
     func genreRequest() {
         GenreRequest.init().request(success: {(object) in
             self.genreData = object
@@ -62,6 +68,7 @@ extension TypesViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let storyBoard = UIStoryboard(name: "Discover", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DiscoverViewController") as DiscoverViewController
         nextViewController.genresId = String(id)
+        nextViewController.type = .genres
         self.show(nextViewController, sender: nil)
     }
     

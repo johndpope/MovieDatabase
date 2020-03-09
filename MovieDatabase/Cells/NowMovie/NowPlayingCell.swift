@@ -33,4 +33,12 @@ class NowPlayingCell: UITableViewCell, ReusableView, NibLoadableView {
         releaseLabel.text = discoverResponse.releaseDate
     }
     
+    func fillSeriesList(seriesResponse: SeriesElements) {
+        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(seriesResponse.posterPath ?? "")")
+        imgView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
+        nowTittleLabel.text = seriesResponse.title
+        nowDescLabel.text = seriesResponse.description
+        releaseLabel.text = seriesResponse.releaseDate
+    }
+    
 }

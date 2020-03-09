@@ -9,6 +9,8 @@ target 'MovieDatabase' do
   pod 'Alamofire'
   pod 'Kingfisher', '~> 5.0'
   pod "MSAUserDefaults"
+  pod "YoutubePlayer-in-WKWebView", "~> 0.2.0"
+  pod "youtube-ios-player-helper", "~> 0.1.4"
 
   target 'MovieDatabaseTests' do
     inherit! :search_paths

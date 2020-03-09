@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Kingfisher
+import AVKit
+import YoutubePlayer_in_WKWebView
 
 class ViewController: UIViewController {
     
@@ -16,10 +17,10 @@ class ViewController: UIViewController {
     var page: Int = 1
     var totalPage: Int!
     var upComingData: MovieModel?
-    var latestData: LatestModel?
     var nowData: MovieModel?
     var addFavorite: AddListModel?
     var tvSeriesData: SeriesModel?
+    var trailerData: VideoModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Hide NavitaionBar in this viewController.
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     
@@ -42,12 +47,10 @@ class ViewController: UIViewController {
         UpComingRequest.init(page: page).request(success: { (object) in
             self.upComingData = object
             self.movieTableView.reloadData()
-            print("*************************\(String(describing: self.upComingData?.results.count))*************************")
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
-    
     
     func nowMovieRequest() {
         NowMovieRequest.init(page: page).request(success: { (object) in
@@ -56,7 +59,6 @@ class ViewController: UIViewController {
             }else{
                 self.nowData = object
             }
-            self.totalPage = object.total_pages
             self.movieTableView.reloadData()
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
-
+    
     //MARK: - Delegates Methods
     
     func setDelegates(){
@@ -89,8 +91,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     enum Sections: Int, CaseIterable {
         case upComing
-        case now
-        case series
+        case nowMovie
+        case tvSeries
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -107,18 +109,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 return 1
             }
             return 0
-        case .now:
+        case .nowMovie:
             if nowData != nil {
                 return 1
             }
             return 0
-        case .series:
+        case .tvSeries:
             if tvSeriesData != nil {
                 return 1
             }
             return 0
         }
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,35 +129,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case .upComing:
             let cell: UpComingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.upComingData = self.upComingData
+            cell.delegate = self
             return cell
-        case .now:
+        case .nowMovie:
             let cell: NowTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.delegate = self
-            cell.page = self.page
-            cell.totalPage = self.totalPage
             cell.nowData = self.nowData
             return cell
-        case .series:
+        case .tvSeries:
             let cell: TvSeriesTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.delegate = self
             cell.tvSeriesData = self.tvSeriesData
             return cell
         }
         
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        switch Sections(rawValue: indexPath.section)! {
-        case .series:
-            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
-            let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
-            let movie = tvSeriesData?.results[indexPath.row]
-            nextViewController.identifier = movie?.id
-            self.show(nextViewController, sender: nil)
-        default:
-            break
-        }
-
     }
     
     
@@ -164,9 +151,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         switch Sections(rawValue: indexPath.section)! {
         case .upComing:
             return 300
-        case .now:
+        case .nowMovie:
             return 330
-        case .series:
+        case .tvSeries:
             return 250
         }
         
@@ -174,18 +161,50 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension ViewController: NowTableViewCellDelegate {
-
-    func didSelected(id: Int) {
+extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegate, TvSeriesTableViewCellDelegate {
+    
+    func didUpComingSelected(id: Int) {
+        VideoRequest(movieId: id).request(success: { (object) in
+            if let first = object.results.first, let key = first.key, let site = first.site {
+                switch first.site {
+                case .youtube:
+                    let url = URL(string: site.baseURL+key)!
+                    let player = AVPlayer(url: url)
+                    let controller = AVPlayerViewController()
+                    controller.player = player
+                    self.present(controller, animated: true) {
+                        player.play()
+                    }
+                default:
+                    break
+                }
+                
+            }
+        }) { (error) in
+            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+        }
+        
+    }
+    
+    func didNowMovieSelected(id: Int) {
         let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
         nextViewController.identifier = id
         self.show(nextViewController, sender: nil)
     }
     
-    func didPaginate() {
-        self.page += 1
-        nowMovieRequest()
+    func didSeeAllNowSelected() {
+        let storyBoard = UIStoryboard(name: "Discover", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(identifier: "DiscoverViewController") as DiscoverViewController
+        nextViewController.type = .nowMovies
+        self.show(nextViewController, sender: nil)
+    }
+    
+    func didSeeAllSeriesSelected() {
+        let storyBoard = UIStoryboard(name: "Discover", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(identifier: "DiscoverViewController") as DiscoverViewController
+        nextViewController.type = .tvSeries
+        self.show(nextViewController, sender: nil)
     }
     
 }

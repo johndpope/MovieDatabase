@@ -8,8 +8,14 @@
 
 import UIKit
 
+//MARK: -Delegates
+protocol TvSeriesTableViewCellDelegate {
+    func didSeeAllSeriesSelected()
+}
+
 class TvSeriesTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
+    var delegate: TvSeriesTableViewCellDelegate!
     var tvSeriesData: SeriesModel!{
         didSet{
             tvSeriesCollectionView.reloadData()
@@ -30,13 +36,16 @@ class TvSeriesTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         tvSeriesCollectionView.register(TvSeriesCollectionViewCell.self)
     }
     
+    @IBAction func seeAllSeriesButtonTapped(_ sender: Any) {
+        self.delegate.didSeeAllSeriesSelected()
+    }
+    
 }
 
 extension TvSeriesTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return 10
         return tvSeriesData.results.count 
     }
     
@@ -45,6 +54,10 @@ extension TvSeriesTableViewCell: UICollectionViewDataSource, UICollectionViewDel
         cell.fillTvSeries(tvSeriesResponse: tvSeriesData.results[indexPath.row])
         return cell
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.delegate.didNowMovieSelected(id: nowData.results[indexPath.row].id)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height

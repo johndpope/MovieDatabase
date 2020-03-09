@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol UpComingCollectionViewCellDelegate {
+    func didPlayButtonTapped(id: Int)
+}
+
 class UpComingCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView {
     
+    var upComingResponse: MovieElements!
+    var delegate: UpComingCollectionViewCellDelegate!
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -17,11 +23,11 @@ class UpComingCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadabl
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
+    
     
     //MARK: - Fill UpComing Movie Cell
     func fillUpComingMovie(upComingResponse: MovieElements) {
@@ -30,11 +36,10 @@ class UpComingCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadabl
         imageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
         posterImageView.kf.setImage(with: posterUrl, placeholder: UIImage(named: "default"))
         nameLabel.text = upComingResponse.title
-        
     }
     
     @IBAction func playButtonTabbed(_ sender: Any) {
-        
+        delegate.didPlayButtonTapped(id: upComingResponse.id)
     }
     
 }

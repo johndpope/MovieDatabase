@@ -18,21 +18,19 @@ class TypesViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         genreRequest()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Hide NavitaionBar in this viewController.
+        // Hide NavigationBar in this viewController.
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        // Show NavigationBar other viewController.
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
     
     func genreRequest() {
         GenreRequest.init().request(success: {(object) in

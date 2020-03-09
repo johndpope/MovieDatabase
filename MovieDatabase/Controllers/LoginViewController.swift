@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setButton()
-        
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {

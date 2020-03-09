@@ -23,14 +23,12 @@ class ProfileViewController: UIViewController {
         setDelegates()
         FavoriteNotification()
         WatchListNotification()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getFavoriteRequest()
         getWatchListRequest()
-
         // Hide NavitaionBar in this viewController.
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }

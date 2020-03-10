@@ -11,6 +11,7 @@ import UIKit
 //MARK: -Delegates
 protocol TvSeriesTableViewCellDelegate {
     func didSeeAllSeriesSelected()
+    func didSeriesSelected(id: Int)
 }
 
 class TvSeriesTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
@@ -55,9 +56,9 @@ extension TvSeriesTableViewCell: UICollectionViewDataSource, UICollectionViewDel
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.delegate.didNowMovieSelected(id: nowData.results[indexPath.row].id)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate.didSeriesSelected(id: tvSeriesData.results[indexPath.row].id)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height

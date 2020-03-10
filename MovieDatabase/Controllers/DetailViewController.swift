@@ -10,13 +10,21 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var MovieDetailTableView: UITableView!
+    
+    enum ScreenType {
+        case movie
+        case series
+    }
+    
     var identifier: Int!
+    var type: ScreenType!
     var castData: CastModel?
     var detailData: DetailModel?
     var similarData: SimilarModel?
     var topRatedData: TopRatedModel?
     
-    @IBOutlet weak var MovieDetailTableView: UITableView!
+    var group = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +33,10 @@ class DetailViewController: UIViewController {
         getSimilar()
         getCast()
         getTopRated()
+        
+        group.notify(queue: .main) {
+            self.MovieDetailTableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,40 +45,46 @@ class DetailViewController: UIViewController {
         setNavigation()
     }
     
+    
+    
     //MARK: - Web Functions
     func getDetail() {
+        group.enter()
         DetailMovieRequest.init(id: identifier).request(success: { (object) in
             self.detailData = object
-            self.MovieDetailTableView.reloadData()
+            self.group.leave()
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
     
     func getCast() {
+        group.enter()
         CastRequest.init(id: identifier).request(success: {(object) in
             self.castData = object
-            self.MovieDetailTableView.reloadData()
+            self.group.leave()
         }) {(error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
     
     func getSimilar() {
+        group.enter()
         SimilarMovieRequest.init(id: identifier).request(success: {(object) in
             self.similarData = object
-            self.MovieDetailTableView.reloadData()
+            self.group.leave()
         }) {(error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
     
     func getTopRated() {
+        group.enter()
         TopRatedRequest.init().request(success: {(object) in
             self.topRatedData = object
-            self.MovieDetailTableView.reloadData()
+            self.group.leave()
         }) {(error) in
-            
+             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
     
@@ -83,7 +101,7 @@ class DetailViewController: UIViewController {
     private func setDelegates(){
         MovieDetailTableView.delegate = self
         MovieDetailTableView.dataSource = self
-        MovieDetailTableView.register(DetailCell.self)
+        MovieDetailTableView.register(MoviesDetailTableViewCell.self)
         MovieDetailTableView.register(SimilarTableViewCell.self)
         MovieDetailTableView.register(TopRatedTableViewCell.self)
         MovieDetailTableView.register(CastTableViewCell.self)
@@ -128,8 +146,8 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch Sections(rawValue: indexPath.section)!{
         case .movie:
-            let cell: DetailCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.fillDetailMovie(detailResponse: detailData!)
+            let cell: MoviesDetailTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.fillDetailMovie(moviesResponse: detailData!)
             return cell
         case .cast:
             let cell: CastTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -155,9 +173,9 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         case .movie:
             return UITableView.automaticDimension
         case .cast:
-            return 190
+            return 200
         case .similar:
-            return width / 1.7
+            return width / 1.6
         case .topRated:
             return height / 3
         }

@@ -16,19 +16,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="Uhd-pP-iU4">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="Uhd-pP-iU4">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Uhd-pP-iU4" secondAttribute="height" multiplier="6:8" id="FuU-qj-YMh"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joker (2019)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBt-2h-BS7">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joker (2019)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBt-2h-BS7">
                         <rect key="frame" x="0.0" y="219.5" width="150" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="nBt-2h-BS7" secondAttribute="height" multiplier="73:10" id="X4D-rz-3mk"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

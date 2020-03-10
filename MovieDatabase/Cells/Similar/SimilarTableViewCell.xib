@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="02L-3f-fZW">
-                        <rect key="frame" x="0.0" y="30" width="350" height="250"/>
+                        <rect key="frame" x="0.0" y="40" width="350" height="240"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="10" id="sHk-SN-lyG">
                             <size key="itemSize" width="50" height="50"/>
@@ -26,31 +26,32 @@
                             <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seçtiğine Benzer Filmler" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsD-72-tXZ">
-                        <rect key="frame" x="10" y="0.0" width="340" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seçtiğine Benzer Filmler" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsD-72-tXZ">
+                        <rect key="frame" x="10" y="5" width="340" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="mCx-f1-YjH"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="dsD-72-tXZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Wv-zh-KTd"/>
+                    <constraint firstItem="dsD-72-tXZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4Wv-zh-KTd"/>
                     <constraint firstAttribute="bottom" secondItem="02L-3f-fZW" secondAttribute="bottom" id="5h4-UV-JBl"/>
                     <constraint firstAttribute="trailing" secondItem="dsD-72-tXZ" secondAttribute="trailing" id="Gh9-Ed-Xdy"/>
                     <constraint firstItem="dsD-72-tXZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="JFw-d0-8ni"/>
                     <constraint firstAttribute="trailing" secondItem="02L-3f-fZW" secondAttribute="trailing" id="MHT-7B-uKQ"/>
-                    <constraint firstItem="02L-3f-fZW" firstAttribute="top" secondItem="dsD-72-tXZ" secondAttribute="bottom" id="QYq-ua-D1Q"/>
+                    <constraint firstItem="02L-3f-fZW" firstAttribute="top" secondItem="dsD-72-tXZ" secondAttribute="bottom" constant="5" id="QYq-ua-D1Q"/>
                     <constraint firstItem="02L-3f-fZW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SET-lA-NLo"/>
                     <constraint firstAttribute="trailing" secondItem="02L-3f-fZW" secondAttribute="trailing" id="cku-aL-bpr"/>
                     <constraint firstAttribute="bottom" secondItem="02L-3f-fZW" secondAttribute="bottom" id="dY7-9o-kYZ"/>
                     <constraint firstItem="02L-3f-fZW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dab-18-KWg"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="similarCollectionView" destination="02L-3f-fZW" id="lan-6j-GZg"/>

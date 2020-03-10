@@ -23,6 +23,13 @@ class RequestManager {
         }
     }
     
+    //MARK: - Image Urls
+    static var imageBaseUrl500: String {
+        get {
+            return "https://image.tmdb.org/t/p/w500"
+        }
+    }
+    
     private static func createRequest(_ request: RequestDelegate) -> DataRequest {
         print("\n\nRequest Path: \(apiUrl)\(request.path)")
         print("Request Method: \(request.method.rawValue)")

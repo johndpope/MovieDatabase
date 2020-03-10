@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OwN-y9-ioc">
-                        <rect key="frame" x="0.0" y="30" width="320" height="146"/>
+                        <rect key="frame" x="0.0" y="40" width="320" height="136"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="zAs-dH-h2B">
                             <size key="itemSize" width="50" height="50"/>
@@ -26,14 +26,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Beğenilen Filmler" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKC-MV-Ayy">
-                        <rect key="frame" x="10" y="0.0" width="310" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Beğenilen Filmler" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKC-MV-Ayy">
+                        <rect key="frame" x="10" y="5" width="310" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="YiS-0W-AaK"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mb7-yq-Whk">
@@ -56,8 +56,8 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="NKC-MV-Ayy" secondAttribute="trailing" id="5sd-Rn-yqQ"/>
-                    <constraint firstItem="OwN-y9-ioc" firstAttribute="top" secondItem="NKC-MV-Ayy" secondAttribute="bottom" id="6Tt-BC-DDK"/>
-                    <constraint firstItem="NKC-MV-Ayy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7Jy-nz-ndb"/>
+                    <constraint firstItem="OwN-y9-ioc" firstAttribute="top" secondItem="NKC-MV-Ayy" secondAttribute="bottom" constant="5" id="6Tt-BC-DDK"/>
+                    <constraint firstItem="NKC-MV-Ayy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="7Jy-nz-ndb"/>
                     <constraint firstAttribute="bottom" secondItem="mb7-yq-Whk" secondAttribute="bottom" id="Evr-DV-P28"/>
                     <constraint firstItem="mb7-yq-Whk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HRk-xm-hhU"/>
                     <constraint firstItem="NKC-MV-Ayy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Rey-86-TUP"/>
@@ -67,7 +67,7 @@
                     <constraint firstAttribute="trailing" secondItem="OwN-y9-ioc" secondAttribute="trailing" id="z3N-Y9-FKA"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="pageControl" destination="4xM-nf-oar" id="2rj-Wo-WbV"/>

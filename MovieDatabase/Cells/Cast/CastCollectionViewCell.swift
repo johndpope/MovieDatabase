@@ -18,20 +18,17 @@ class CastCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableVie
         }
     }
     
-    @IBOutlet weak var profileImgView: UIImageView!
+    @IBOutlet weak var profileImgView: CircleImageView!
     @IBOutlet weak var profileTitleLabel: UILabel!
-    
     
     override func awakeFromNib(){
         super.awakeFromNib()
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        profileImgView.layer.borderWidth = 0.2
-        profileImgView.layer.masksToBounds = false
-        profileImgView.layer.borderColor = UIColor.black.cgColor
-        profileImgView.layer.cornerRadius = profileImgView.frame.height/2
-        profileImgView.clipsToBounds = true
+        
     }
+    
 }

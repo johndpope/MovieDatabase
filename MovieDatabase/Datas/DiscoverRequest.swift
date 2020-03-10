@@ -16,9 +16,10 @@ struct DiscoverRequest : RequestResultObjectDelegate {
     var parameters: Parameters?
     var enconding: ParameterEncoding? = URLEncoding.default
     
-    init(genresId: String) {
+    init(genresId: String, page: Int) {
         
         parameters = [:]
+        parameters?["page"] = page
         parameters?["with_genres"] = genresId
         path = "/discover/movie"
         parameters?["api_key"] = "c8663b3a5e6e1d41ab253805b21e4d6e"

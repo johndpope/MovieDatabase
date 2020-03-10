@@ -16,7 +16,7 @@ class DiscoverViewController: UIViewController {
         case tvSeries
     }
     
-    var page: Int!
+    var page: Int! = 1
     var totalPage: Int!
     var genresId: String!
     var genresData: MovieModel!
@@ -43,8 +43,14 @@ class DiscoverViewController: UIViewController {
     }
     
     func discoverRequest() {
-        DiscoverRequest.init(genresId: genresId).request(success: { (object) in
-            self.genresData = object
+        DiscoverRequest.init(genresId: genresId, page: page).request(success: { (object) in
+            if self.genresData != nil {
+                self.genresData.results.append(contentsOf: object.results)
+            } else {
+                self.genresData = object
+            }
+            self.page = object.page
+            self.totalPage = object.total_pages
             self.discoverTableView.reloadData()
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
@@ -68,7 +74,6 @@ class DiscoverViewController: UIViewController {
     
     func tvSeriesRequest() {
         TvSeriesRequest.init(page: page).request(success: { (object) in
-            self.seriesData = object
             if self.seriesData != nil {
                 self.seriesData.results.append(contentsOf: object.results)
             } else {

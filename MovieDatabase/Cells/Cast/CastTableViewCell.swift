@@ -46,13 +46,13 @@ extension CastTableViewCell: UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CastCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.castProfileData = castData.cast[indexPath.row]
-        cell.layoutSubviews()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let data = castData.cast[indexPath.row]
-        return CGSize(width: UIScreen.main.bounds.width / 3, height: (UIScreen.main.bounds.width / 3) + data.name.height(width: UIScreen.main.bounds.width / 3) + 10)
+        let screenWidth = UIScreen.main.bounds.width
+        return CGSize(width: screenWidth / 3, height: (screenWidth / 3) + data.name.height(width: screenWidth / 3) + 15)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

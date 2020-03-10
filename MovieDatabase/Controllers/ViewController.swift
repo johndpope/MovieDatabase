@@ -128,8 +128,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         switch Sections(rawValue: indexPath.section)! {
         case .upComing:
             let cell: UpComingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.upComingData = self.upComingData
             cell.delegate = self
+            cell.upComingData = self.upComingData
             return cell
         case .nowMovie:
             let cell: NowTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -161,7 +161,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegate, TvSeriesTableViewCellDelegate {
-    
+
     func didUpComingSelected(id: Int) {
         VideoRequest(movieId: id).request(success: { (object) in
             if let first = object.results.first, let key = first.key, let site = first.site {
@@ -189,6 +189,12 @@ extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegat
         let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
         nextViewController.identifier = id
+        self.show(nextViewController, sender: nil)
+    }
+    
+    func didSeriesSelected(id: Int) {
+        let storyBoard = UIStoryboard(name: "SeriesDetail", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(identifier: "SeriesDetailViewController") as SeriesDetailViewController
         self.show(nextViewController, sender: nil)
     }
     

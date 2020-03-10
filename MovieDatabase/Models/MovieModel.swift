@@ -9,7 +9,7 @@
 import Foundation
 
 struct MovieModel: Codable {
-    var page: Int!
+    var page: Int?
     var total_results: Int!
     var total_pages: Int?
     var results: [MovieElements]!

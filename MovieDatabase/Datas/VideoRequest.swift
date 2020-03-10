@@ -20,7 +20,6 @@ struct VideoRequest : RequestResultObjectDelegate {
     init(movieId: Int) {
         
         parameters = [:]
-        parameters?["movie_id"] = movieId
         path = "/movie/\(movieId)/videos"
         parameters?["api_key"] = "c8663b3a5e6e1d41ab253805b21e4d6e"
     }

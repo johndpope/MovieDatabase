@@ -29,7 +29,7 @@ struct UpComingelements: Codable{
     var description: String!
     var voteAverage: Double!
     
- private enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case title
         case posterPath = "poster_path"

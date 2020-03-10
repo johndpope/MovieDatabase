@@ -1,5 +1,5 @@
 //
-//  DetailModel.swift
+//  MoviesDetailModel.swift
 //  MovieDatabase
 //
 //  Created by ilkay sever on 13.02.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DetailModel: Codable {
+struct MoviesDetailModel: Codable {
     var id: Int!
     var title: String!
     var releaseDate: String!

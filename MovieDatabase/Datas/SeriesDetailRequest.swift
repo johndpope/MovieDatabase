@@ -1,17 +1,17 @@
 //
-//  ActRequest.swift
+//  SeriesDetailRequest.swift
 //  MovieDatabase
 //
-//  Created by ilkay sever on 27.02.2020.
+//  Created by ilkay sever on 10.03.2020.
 //  Copyright © 2020 Alihan Aktay. All rights reserved.
 //
 
 import Alamofire
 
-struct ActRequest : RequestResultObjectDelegate {
+struct SeriesDetailRequest : RequestResultObjectDelegate {
     
-    typealias ResultObject = ActModel
-    
+    typealias ResultObject = SeriesDetailModel
+
     var id: Int!
     var path: String
     var method: HTTPMethod = .get
@@ -21,9 +21,9 @@ struct ActRequest : RequestResultObjectDelegate {
     init(id: Int) {
         
         parameters = [:]
-        path = "/person/\(id)"
+        path = "/tv/\(id)"
         parameters?["api_key"] = "c8663b3a5e6e1d41ab253805b21e4d6e"
-        //parameters?["language"] = "tr"
+        parameters?["language"] = "tr"
     }
     
 }

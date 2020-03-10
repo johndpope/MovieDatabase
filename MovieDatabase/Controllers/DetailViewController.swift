@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     var identifier: Int!
     var type: ScreenType!
     var castData: CastModel?
-    var detailData: DetailModel?
+    var detailData: MoviesDetailModel?
     var similarData: SimilarModel?
     var topRatedData: TopRatedModel?
     

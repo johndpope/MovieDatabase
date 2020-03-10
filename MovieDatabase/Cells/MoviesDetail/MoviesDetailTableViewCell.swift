@@ -21,7 +21,7 @@ class MoviesDetailTableViewCell: UITableViewCell, ReusableView, NibLoadableView 
         
     }
     
-    func fillDetailMovie(moviesResponse: DetailModel) {
+    func fillDetailMovie(moviesResponse: MoviesDetailModel) {
         let url = RequestManager.imageBaseUrl500 + moviesResponse.backdropPath
         movieImageView.setImageUrl(imageUrl: url)
         titleLabel.text = moviesResponse.title
@@ -29,6 +29,5 @@ class MoviesDetailTableViewCell: UITableViewCell, ReusableView, NibLoadableView 
         voteLabel.text = "\(moviesResponse.voteAverage ?? 0)"
         releaseDateLabel.text = moviesResponse.releaseDate
     }
-    
     
 }

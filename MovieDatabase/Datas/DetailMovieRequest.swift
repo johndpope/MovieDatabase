@@ -10,7 +10,7 @@ import Alamofire
 
 struct DetailMovieRequest : RequestResultObjectDelegate {
     
-    typealias ResultObject = DetailModel
+    typealias ResultObject = MoviesDetailModel
 
     var id: Int!
     var path: String

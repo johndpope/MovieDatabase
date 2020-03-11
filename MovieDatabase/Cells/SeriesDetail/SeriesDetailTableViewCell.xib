@@ -95,6 +95,13 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="seriesDescriptionLabel" destination="SZ9-Oi-IP1" id="Tcs-5U-y6Z"/>
+                <outlet property="seriesImgView" destination="WIP-gU-nwF" id="ZHS-YL-cxN"/>
+                <outlet property="seriesReleaseDate" destination="uBu-LM-Wca" id="bwr-eq-JVo"/>
+                <outlet property="seriesTitleLabel" destination="HAv-Pw-I2r" id="c4l-dY-5XM"/>
+                <outlet property="seriesVoteLabel" destination="iKO-nq-V8j" id="4GN-My-UCK"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="115.51339285714285"/>
         </tableViewCell>
     </objects>

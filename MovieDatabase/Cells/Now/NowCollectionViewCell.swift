@@ -35,7 +35,6 @@ class NowCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView
         nowVoteAverage.text = "\(movieResponse.voteAverage ?? 0)"
         nowReleaseDate.text = movieResponse.releaseDate
         movie = movieResponse
-        
     }
     
     //MARK - Add Items to Favorite List.

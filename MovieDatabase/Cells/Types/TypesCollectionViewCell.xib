@@ -129,9 +129,12 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="177" height="114"/>
             <connections>
+                <outlet property="firstImgView" destination="qTE-tG-qVq" id="M6m-eQ-pQC"/>
                 <outlet property="firstView" destination="W9B-yS-9wn" id="MGr-r1-xfo"/>
                 <outlet property="genreNameLabel" destination="aPy-b1-6Q9" id="Fsp-mL-O8C"/>
+                <outlet property="secondImgView" destination="swH-Cj-zk1" id="qwe-ck-OE0"/>
                 <outlet property="secondView" destination="99z-Af-syR" id="IcM-hz-0sb"/>
+                <outlet property="thirdImgView" destination="TVZ-XB-wH1" id="Wfg-Ed-Bda"/>
                 <outlet property="thirdView" destination="x4y-xi-9gj" id="ECU-Op-ijA"/>
                 <outlet property="typesContainerView" destination="Zlz-mM-iq3" id="zsM-eU-qY5"/>
             </connections>

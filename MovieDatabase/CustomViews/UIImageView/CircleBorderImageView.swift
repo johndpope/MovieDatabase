@@ -10,8 +10,6 @@ import UIKit
 
 class CircleBorderImageView: CircleImageView {
     
-    
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         

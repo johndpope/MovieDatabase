@@ -42,9 +42,7 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        setNavigation()
     }
-    
     
     
     //MARK: - Web Functions
@@ -86,15 +84,6 @@ class DetailViewController: UIViewController {
         }) {(error) in
              print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
-    }
-    
-    //MARK: - Set Navigationbar Here
-    private func setNavigation(){
-        //Navigasyon Barını Transparan Yapma.
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
     }
     
     //MARK: - Set Delegates Here

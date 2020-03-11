@@ -195,6 +195,7 @@ extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegat
     func didSeriesSelected(id: Int) {
         let storyBoard = UIStoryboard(name: "SeriesDetail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "SeriesDetailViewController") as SeriesDetailViewController
+        nextViewController.identifier = id
         self.show(nextViewController, sender: nil)
     }
     

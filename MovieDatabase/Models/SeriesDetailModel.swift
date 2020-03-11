@@ -24,7 +24,7 @@ struct SeriesDetailModel: Codable {
         case id
         case title = "original_name"
         case description = "overview"
-        case voteAverage = "vote_count"
+        case voteAverage = "vote_average"
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
         case relaeseDate = "first_air_date"

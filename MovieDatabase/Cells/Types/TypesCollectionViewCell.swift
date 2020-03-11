@@ -18,6 +18,11 @@ class TypesCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableVi
     @IBOutlet weak var thirdView: UIView!
     @IBOutlet weak var genreNameLabel: UILabel!
     
+    
+    @IBOutlet weak var firstImgView: UIImageView!
+    @IBOutlet weak var secondImgView: UIImageView!
+    @IBOutlet weak var thirdImgView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setLayers()
@@ -33,6 +38,9 @@ class TypesCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableVi
     //MARK: - Fill Genre Cell
     func fillGenre(genreResponse: GenreElement) {
         genreNameLabel.text = genreResponse.name
+        firstImgView.image = UIImage(named: "\(genreResponse.id)" + "-1")
+        secondImgView.image = UIImage(named: "\(genreResponse.id)" + "-2")
+        thirdImgView.image = UIImage(named: "\(genreResponse.id)" + "-3")
         
 //        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(movieResponse.posterPath ?? "")")
 //        nowPosterImage.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))

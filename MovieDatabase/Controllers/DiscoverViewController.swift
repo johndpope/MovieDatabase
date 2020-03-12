@@ -16,6 +16,7 @@ class DiscoverViewController: UIViewController {
         case tvSeries
     }
     
+    var genreName: String!
     var page: Int! = 1
     var totalPage: Int!
     var genresId: String!
@@ -40,6 +41,7 @@ class DiscoverViewController: UIViewController {
             self.title = "Tv Dizileri"
             tvSeriesRequest()
         }
+        self.title = genreName
     }
     
     func discoverRequest() {

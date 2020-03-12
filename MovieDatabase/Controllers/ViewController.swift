@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import AVKit
-import YoutubePlayer_in_WKWebView
 
 class ViewController: UIViewController {
     
@@ -82,9 +80,8 @@ class ViewController: UIViewController {
         movieTableView.register(UpComingTableViewCell.self)
         movieTableView.register(NowTableViewCell.self)
         movieTableView.register(TvSeriesTableViewCell.self)
-        
     }
-    
+        
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -128,6 +125,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         switch Sections(rawValue: indexPath.section)! {
         case .upComing:
             let cell: UpComingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            //cell.viewController = self
             cell.delegate = self
             cell.upComingData = self.upComingData
             return cell
@@ -161,19 +159,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegate, TvSeriesTableViewCellDelegate {
-
+    
     func didUpComingSelected(id: Int) {
+        
+        let storyBoard = UIStoryboard(name: "Video", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(identifier: "VideoViewController") as VideoViewController
         VideoRequest(movieId: id).request(success: { (object) in
-            if let first = object.results.first, let key = first.key, let site = first.site {
+            if let first = object.results.first, let key = first.key, let _ = first.site {
                 switch first.site {
                 case .youtube:
-                    let url = URL(string: site.baseURL+key)!
-                    let player = AVPlayer(url: url)
-                    let controller = AVPlayerViewController()
-                    controller.player = player
-                    self.present(controller, animated: true) {
-                        player.play()
-                    }
+                    nextViewController.urlString = key
+                     self.show(nextViewController, sender: nil)
                 default:
                     break
                 }
@@ -182,6 +178,7 @@ extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegat
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
+        
         
     }
     

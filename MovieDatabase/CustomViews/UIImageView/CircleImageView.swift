@@ -12,7 +12,7 @@ import UIKit
 class CircleImageView: UIImageView {
     
     //MARK: - Properties
-    @IBInspectable var borderWidth: CGFloat = 0.0 {
+    @IBInspectable var borderWidth: CGFloat = 0.2 {
         didSet {
             self.layer.borderWidth = borderWidth
         }

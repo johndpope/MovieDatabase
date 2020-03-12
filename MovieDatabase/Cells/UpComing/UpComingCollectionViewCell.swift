@@ -40,6 +40,10 @@ class UpComingCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadabl
     
     @IBAction func playButtonTabbed(_ sender: Any) {
         delegate.didPlayButtonTapped(id: upComingResponse.id)
+//        let storyBoard = UIStoryboard(name: "Video", bundle: nil)
+//        let nextViewController = storyBoard.instantiateViewController(identifier: "VideoViewController") as VideoViewController
+//        nextViewController.identifier = id
+//        self.show(nextViewController, sender: nil)
     }
     
 }

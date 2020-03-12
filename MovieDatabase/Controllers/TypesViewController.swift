@@ -65,6 +65,7 @@ extension TypesViewController: UICollectionViewDataSource, UICollectionViewDeleg
         guard let id = genreData?.genres[indexPath.row].id else { return }
         let storyBoard = UIStoryboard(name: "Discover", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DiscoverViewController") as DiscoverViewController
+        nextViewController.genreName = self.genreData?.genres[indexPath.row].name
         nextViewController.genresId = String(id)
         nextViewController.type = .genres
         self.show(nextViewController, sender: nil)

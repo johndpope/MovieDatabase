@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y3v-eW-scT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video View Controller-->
+        <scene sceneID="gNT-jb-9gJ">
+            <objects>
+                <viewController storyboardIdentifier="VideoViewController" id="y3v-eW-scT" customClass="VideoViewController" customModule="MovieDatabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="77C-eY-hT9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="XWf-Mi-EKB" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OxX-EF-5uD" firstAttribute="trailing" secondItem="XWf-Mi-EKB" secondAttribute="trailing" id="BJx-CL-Xua"/>
+                            <constraint firstItem="XWf-Mi-EKB" firstAttribute="top" secondItem="77C-eY-hT9" secondAttribute="top" id="CCK-XE-3s6"/>
+                            <constraint firstItem="XWf-Mi-EKB" firstAttribute="leading" secondItem="OxX-EF-5uD" secondAttribute="leading" id="OEZ-qr-lmc"/>
+                            <constraint firstAttribute="bottom" secondItem="XWf-Mi-EKB" secondAttribute="bottom" id="Yf8-uA-m1g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OxX-EF-5uD"/>
+                    </view>
+                    <connections>
+                        <outlet property="youtubePlayer" destination="XWf-Mi-EKB" id="L1I-v9-IzH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2M1-TL-key" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="400"/>
+        </scene>
+    </scenes>
+</document>

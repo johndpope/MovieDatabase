@@ -18,6 +18,7 @@ class UpComingTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     var counter = 0
     var timer = Timer()
     var delegate: UpComingTableViewCellDelegate!
+    var viewController: ViewController!
     var upComingData: MovieModel!{
         didSet {
             upComingCollectionView.reloadData()
@@ -70,6 +71,7 @@ extension UpComingTableViewCell: UICollectionViewDataSource, UICollectionViewDel
         cell.fillUpComingMovie(upComingResponse: upComingData.results[indexPath.row])
         cell.upComingResponse = upComingData.results[indexPath.row]
         cell.delegate = self
+        //cell.viewController = self
         return cell
     }
     

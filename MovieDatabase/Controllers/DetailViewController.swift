@@ -17,7 +17,6 @@ class DetailViewController: UIViewController {
         case series
     }
     
-    
     var identifier: Int!
     var type: ScreenType!
     var castData: CastModel?

@@ -185,7 +185,7 @@ extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegat
         let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
         nextViewController.identifier = id
-        nextViewController.name = name
+        nextViewController.movieName = name
         self.show(nextViewController, sender: nil)
     }
     

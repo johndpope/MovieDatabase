@@ -12,9 +12,9 @@ class SeriesDetailViewController: UIViewController {
     
     @IBOutlet weak var seriesDetailTableView: UITableView!
     
-    var seriesName: String!
     var page: Int!
     var identifier: Int!
+    var seriesName: String!
     var seriesData: SeriesDetailModel?
     
     override func viewDidLoad() {

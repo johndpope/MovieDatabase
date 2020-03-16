@@ -16,10 +16,10 @@ class DiscoverViewController: UIViewController {
         case tvSeries
     }
     
-    var genreName: String!
     var page: Int! = 1
     var totalPage: Int!
     var genresId: String!
+    var genreName: String!
     var genresData: MovieModel!
     var seriesData: SeriesModel!
     var type: ScreenType!

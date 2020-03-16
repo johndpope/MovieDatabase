@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
         case series
     }
     
-    var name: String!
+    var movieName: String!
     var identifier: Int!
     var type: ScreenType!
     var castData: CastModel?
@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         getSimilar()
         getCast()
         getTopRated()
-        navigationItem.title = name
+        navigationItem.title = movieName
         group.notify(queue: .main) {
             self.MovieDetailTableView.reloadData()
         }

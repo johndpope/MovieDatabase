@@ -11,7 +11,6 @@ import YouTubePlayer
 
 class VideoViewController: UIViewController {
     
-    
     @IBOutlet weak var youtubePlayer: YouTubePlayerView!
     
     var urlString: String!

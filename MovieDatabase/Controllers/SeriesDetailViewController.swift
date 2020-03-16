@@ -20,13 +20,7 @@ class SeriesDetailViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         tvSeriesRequest()
-//        setNavigationBar()
-        
     }
-    
-//    func setNavigationBar() {
-//        navigationController?.navigationBar.barTintColor = UIColor.init(red: 46.0/255.0, green: 46.0/255.0, blue: 46.0/255.0, alpha: 1.0)
-//    }
     
     func tvSeriesRequest() {
         SeriesDetailRequest.init(id: identifier).request(success: { (object) in

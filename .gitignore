@@ -1,6 +1,14 @@
 
-# Created by https://www.gitignore.io/api/xcode,swift,cocoapods,objective-c,swiftpackagemanager
-# Edit at https://www.gitignore.io/?templates=xcode,swift,cocoapods,objective-c,swiftpackagemanager
+# Created by https://www.gitignore.io/api/xcode,swift,carthage,cocoapods,objective-c,swiftpackagemanager
+# Edit at https://www.gitignore.io/?templates=xcode,swift,carthage,cocoapods,objective-c,swiftpackagemanager
+
+### Carthage ###
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -12,7 +20,6 @@ Pods/
 
 ### Objective-C ###
 # Xcode
-#
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
@@ -53,7 +60,6 @@ xcuserdata/
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
-Carthage/Build
 
 # fastlane
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
@@ -150,5 +156,4 @@ xcuserdata
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.gitignore.io/api/xcode,swift,cocoapods,objective-c,swiftpackagemanagery
-
+# End of https://www.gitignore.io/api/xcode,swift,carthage,cocoapods,objective-c,swiftpackagemanager

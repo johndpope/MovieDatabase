@@ -12,7 +12,6 @@ struct LoginRequest: RequestResultObjectDelegate {
     
     typealias ResultObject = TokenModel
 
-
     var path: String
     var method: HTTPMethod = .post
     var parameters: Parameters?

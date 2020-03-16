@@ -19,7 +19,6 @@ struct AddFavoriteRequest: RequestResultObjectDelegate {
     var enconding: ParameterEncoding? = URLEncoding.httpBody
     
     init(id: Int, sessionId: String, mediaId: Int, favorite: Bool) {
-        
         parameters = [:]
         parameters!["account_id"] = id
         parameters!["session_id"] = sessionId
@@ -31,5 +30,3 @@ struct AddFavoriteRequest: RequestResultObjectDelegate {
     }
     
 }
-    //path = "/account/9043706/favorite?api_key=c8663b3a5e6e1d41ab253805b21e4d6e&session_id=\(sessionId)"
-

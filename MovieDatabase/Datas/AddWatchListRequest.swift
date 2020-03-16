@@ -18,7 +18,6 @@ struct AddWatchListRequest: RequestResultObjectDelegate {
     var enconding: ParameterEncoding? = URLEncoding.httpBody
     
     init(id: Int, sessionId: String, mediaId: Int, watchlist: Bool) {
-        
         parameters = [:]
         parameters!["account_id"] = id
         parameters!["session_id"] = sessionId

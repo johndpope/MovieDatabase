@@ -17,7 +17,6 @@ struct DiscoverRequest : RequestResultObjectDelegate {
     var enconding: ParameterEncoding? = URLEncoding.default
     
     init(genresId: String, page: Int) {
-        
         parameters = [:]
         parameters?["page"] = page
         parameters?["with_genres"] = genresId

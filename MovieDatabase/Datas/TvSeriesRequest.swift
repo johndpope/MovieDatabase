@@ -17,7 +17,6 @@ struct TvSeriesRequest : RequestResultObjectDelegate {
     var enconding: ParameterEncoding? = URLEncoding.default
     
     init(page: Int!) {
-        
         parameters = [:]
         parameters?["page"] = page
         path = "/tv/on_the_air"

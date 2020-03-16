@@ -24,7 +24,6 @@ struct FavoriteMovieRequest : RequestResultObjectDelegate {
     var enconding: ParameterEncoding? = URLEncoding.default
     
     init(id: Int, sessionId: String, listType: ListType) {
-        
         parameters = [:]
         path = "/account/\(id)/\(listType.rawValue)/movies"
         parameters?["session_id"] = sessionId

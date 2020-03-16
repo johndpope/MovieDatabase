@@ -17,7 +17,6 @@ struct NowMovieRequest : RequestResultObjectDelegate {
     var enconding: ParameterEncoding? = URLEncoding.default
     
     init(page: Int!) {
-        
         parameters = [:]
         parameters?["page"] = page
         path = "/movie/now_playing"

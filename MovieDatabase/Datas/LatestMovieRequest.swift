@@ -17,7 +17,6 @@ struct LatestMovieRequest : RequestResultObjectDelegate {
     var enconding: ParameterEncoding? = URLEncoding.default
     
     init() {
-        
         parameters = [:]
         path = "/movie/latest"
         parameters?["api_key"] = "c8663b3a5e6e1d41ab253805b21e4d6e"

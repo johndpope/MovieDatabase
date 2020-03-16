@@ -32,7 +32,7 @@ class DiscoverViewController: UIViewController {
         
         switch type! {
         case .genres:
-            self.title = "Film Türleri"
+            self.title = genreName
             discoverRequest()
         case .nowMovies:
             self.title = "Vizyondakiler"
@@ -41,7 +41,7 @@ class DiscoverViewController: UIViewController {
             self.title = "Tv Dizileri"
             tvSeriesRequest()
         }
-        self.title = genreName
+        
     }
     
     func discoverRequest() {

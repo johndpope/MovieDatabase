@@ -42,13 +42,6 @@ class TypesCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableVi
         secondImgView.image = UIImage(named: "\(genreResponse.id)" + "-2")
         thirdImgView.image = UIImage(named: "\(genreResponse.id)" + "-3")
         
-//        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(movieResponse.posterPath ?? "")")
-//        nowPosterImage.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
-//        nowTitleLabel.text = movieResponse.title
-//        nowVoteAverage.text = "\(movieResponse.voteAverage ?? 0)"
-//        nowReleaseDate.text = movieResponse.releaseDate
-//        movie = movieResponse
-        
     }
 
 }

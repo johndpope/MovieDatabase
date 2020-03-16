@@ -17,19 +17,20 @@ class BaseNavigationController: UINavigationController {
     }
     
     func setNavigationBar() {
+        navigationBar.tintColor = AppColors.navigationButtonColor
         navigationBar.barTintColor =  AppColors.navigationBarColor
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
     }
     
     func leftBackButton() {
         let backImage = UIImage(named: "back")
         navigationBar.backIndicatorImage = backImage
         navigationBar.backIndicatorTransitionMaskImage = backImage
-        navigationBar.tintColor = AppColors.navigationButtonColor
         
-        let barButtonItemAppearance = UIBarButtonItem.appearance()
+        let backButtonAppearance = UIBarButtonItem.appearance()
         let barButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
-        barButtonItemAppearance.setTitleTextAttributes(barButtonAttributes, for: .normal)
-        barButtonItemAppearance.setTitleTextAttributes(barButtonAttributes, for: .highlighted)
+        backButtonAppearance.setTitleTextAttributes(barButtonAttributes, for: .normal)
+        backButtonAppearance.setTitleTextAttributes(barButtonAttributes, for: .highlighted)
 
     }
     

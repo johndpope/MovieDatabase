@@ -12,6 +12,7 @@ class SeriesDetailViewController: UIViewController {
     
     @IBOutlet weak var seriesDetailTableView: UITableView!
     
+    var seriesName: String!
     var page: Int!
     var identifier: Int!
     var seriesData: SeriesDetailModel?
@@ -20,6 +21,7 @@ class SeriesDetailViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         tvSeriesRequest()
+        navigationItem.title = seriesName
     }
     
     func tvSeriesRequest() {

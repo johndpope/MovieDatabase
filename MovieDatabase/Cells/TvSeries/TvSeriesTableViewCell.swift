@@ -11,7 +11,7 @@ import UIKit
 //MARK: -Delegates
 protocol TvSeriesTableViewCellDelegate {
     func didSeeAllSeriesSelected()
-    func didSeriesSelected(id: Int)
+    func didSeriesSelected(id: Int, name: String)
 }
 
 class TvSeriesTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
@@ -57,7 +57,7 @@ extension TvSeriesTableViewCell: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate.didSeriesSelected(id: tvSeriesData.results[indexPath.row].id)
+        self.delegate.didSeriesSelected(id: tvSeriesData.results[indexPath.row].id, name: tvSeriesData.results[indexPath.row].title)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

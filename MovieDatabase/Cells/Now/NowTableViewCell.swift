@@ -11,7 +11,7 @@ import UIKit
 //MARK: - Delegates
 protocol NowTableViewCellDelegate {
     func didSeeAllNowSelected()
-    func didNowMovieSelected(id: Int)
+    func didNowMovieSelected(id: Int, name: String)
 }
 
 class NowTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
@@ -57,7 +57,7 @@ extension NowTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate.didNowMovieSelected(id: nowData.results[indexPath.row].id)
+        self.delegate.didNowMovieSelected(id: nowData.results[indexPath.row].id, name: nowData.results[indexPath.row].title)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

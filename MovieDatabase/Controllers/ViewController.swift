@@ -125,7 +125,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         switch Sections(rawValue: indexPath.section)! {
         case .upComing:
             let cell: UpComingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            //cell.viewController = self
             cell.delegate = self
             cell.upComingData = self.upComingData
             return cell
@@ -182,17 +181,19 @@ extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegat
         
     }
     
-    func didNowMovieSelected(id: Int) {
+    func didNowMovieSelected(id: Int, name: String) {
         let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
         nextViewController.identifier = id
+        nextViewController.name = name
         self.show(nextViewController, sender: nil)
     }
     
-    func didSeriesSelected(id: Int) {
+    func didSeriesSelected(id: Int, name: String) {
         let storyBoard = UIStoryboard(name: "SeriesDetail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "SeriesDetailViewController") as SeriesDetailViewController
         nextViewController.identifier = id
+        nextViewController.seriesName = name
         self.show(nextViewController, sender: nil)
     }
     

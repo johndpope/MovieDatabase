@@ -9,7 +9,7 @@
 import Foundation
 
 struct CastModel: Codable {
-    var cast:[CastElements]!
+    var cast: [CastElements]!
 }
 
 struct CastElements: Codable {
@@ -21,9 +21,9 @@ struct CastElements: Codable {
     var profilePath: String!
     
     enum CodingKeys: String, CodingKey {
-        case castId = "cast_id"
         case name
         case gender
+        case castId = "cast_id"
         case personId = "id"
         case creditId = "credit_id"
         case profilePath = "profile_path"

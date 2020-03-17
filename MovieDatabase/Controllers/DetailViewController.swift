@@ -88,7 +88,7 @@ class DetailViewController: UIViewController {
     }
     
     //MARK: - Set Delegates Here
-    private func setDelegates(){
+    func setDelegates(){
         MovieDetailTableView.delegate = self
         MovieDetailTableView.dataSource = self
         MovieDetailTableView.register(MoviesDetailTableViewCell.self)

@@ -76,7 +76,6 @@ class LoginViewController: UIViewController {
         UserDetailRequest.init(sessionId: sessionId).request(success: { (object) in
             Account.current.user = object
             AppDelegate.shared.setNewMovies()
-            print("***********************\(object.username )********************")
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }

@@ -15,12 +15,14 @@ class SeriesDetailViewController: UIViewController {
     var page: Int!
     var identifier: Int!
     var seriesName: String!
+    var seriesCastData: SeriesCastModel?
     var seriesData: SeriesDetailModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
         tvSeriesRequest()
+        tvSeriesCastRequest()
         navigationItem.title = seriesName
     }
     
@@ -33,6 +35,17 @@ class SeriesDetailViewController: UIViewController {
         }
     }
     
+    func tvSeriesCastRequest() {
+        SeriesCastRequest.init(id: identifier).request(success: { (object) in
+            self.seriesCastData = object
+            self.seriesDetailTableView.reloadData()
+            print("*************************\(String(describing: self.seriesCastData?.cast.count))******************************")
+        }) { (error) in
+            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+        }
+    }
+    
+    //MARK: - Set Delegates Here
     func setDelegates() {
         seriesDetailTableView.delegate = self
         seriesDetailTableView.dataSource = self
@@ -44,6 +57,8 @@ class SeriesDetailViewController: UIViewController {
 extension SeriesDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if seriesData != nil {
+            return 1
+        } else if seriesCastData != nil {
             return 1
         } else {
             return 0

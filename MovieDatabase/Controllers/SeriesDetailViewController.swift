@@ -22,7 +22,7 @@ class SeriesDetailViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         tvSeriesRequest()
-        tvSeriesCastRequest()
+        //tvSeriesCastRequest()
         navigationItem.title = seriesName
     }
     
@@ -35,15 +35,15 @@ class SeriesDetailViewController: UIViewController {
         }
     }
     
-    func tvSeriesCastRequest() {
-        SeriesCastRequest.init(id: identifier).request(success: { (object) in
-            self.seriesCastData = object
-            self.seriesDetailTableView.reloadData()
-            print("*************************\(String(describing: self.seriesCastData?.cast.count))******************************")
-        }) { (error) in
-            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
-        }
-    }
+//    func tvSeriesCastRequest() {
+//        SeriesCastRequest.init(id: identifier).request(success: { (object) in
+//            self.seriesCastData = object
+//            self.seriesDetailTableView.reloadData()
+//            print("*************************\(String(describing: self.seriesCastData?.cast.count))******************************")
+//        }) { (error) in
+//            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+//        }
+//    }
     
     //MARK: - Set Delegates Here
     func setDelegates() {

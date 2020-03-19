@@ -92,9 +92,9 @@ class DetailViewController: UIViewController {
         MovieDetailTableView.delegate = self
         MovieDetailTableView.dataSource = self
         MovieDetailTableView.register(MoviesDetailTableViewCell.self)
+        MovieDetailTableView.register(CastTableViewCell.self)
         MovieDetailTableView.register(SimilarTableViewCell.self)
         MovieDetailTableView.register(TopRatedTableViewCell.self)
-        MovieDetailTableView.register(CastTableViewCell.self)
     }
 }
 

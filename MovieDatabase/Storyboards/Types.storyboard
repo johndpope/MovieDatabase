@@ -27,7 +27,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bi8-12-Cvw" firstAttribute="trailing" secondItem="Mcc-es-wEE" secondAttribute="trailing" id="IvS-AU-xbg"/>
                             <constraint firstItem="bi8-12-Cvw" firstAttribute="top" secondItem="gRj-rs-yQh" secondAttribute="top" id="Iwo-TJ-HlN"/>

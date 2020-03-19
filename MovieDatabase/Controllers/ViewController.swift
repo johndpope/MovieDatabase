@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var nowData: MovieModel?
     var addFavorite: AddListModel?
     var tvSeriesData: SeriesModel?
+    var topRatedData: TopRatedModel?
     var trailerData: VideoModel?
     
     override func viewDidLoad() {
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
         upComingMovieRequest()
         nowMovieRequest()
         tvSeriesRequest()
+        topRatedRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,6 +74,17 @@ class ViewController: UIViewController {
         }
     }
     
+    func topRatedRequest() {
+        //group.enter()
+        TopRatedRequest.init().request(success: {(object) in
+            self.topRatedData = object
+            self.movieTableView.reloadData()
+            //self.group.leave()
+        }) {(error) in
+             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+        }
+    }
+    
     //MARK: - Delegates Methods
     
     func setDelegates(){
@@ -80,6 +93,7 @@ class ViewController: UIViewController {
         movieTableView.register(UpComingTableViewCell.self)
         movieTableView.register(NowTableViewCell.self)
         movieTableView.register(TvSeriesTableViewCell.self)
+        movieTableView.register(TopRatedTableViewCell.self)
     }
         
 }
@@ -90,6 +104,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case upComing
         case nowMovie
         case tvSeries
+        case topRated
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -116,6 +131,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 return 1
             }
             return 0
+        case .topRated:
+            if topRatedData != nil {
+                return 1
+            }
+            return 0
         }
         
     }
@@ -138,6 +158,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.delegate = self
             cell.tvSeriesData = self.tvSeriesData
             return cell
+        case .topRated:
+            let cell: TopRatedTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.topRatedData = self.topRatedData
+            return cell
         }
         
     }
@@ -150,6 +174,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case .nowMovie:
             return 330
         case .tvSeries:
+            return 250
+        case .topRated:
             return 250
         }
         

@@ -83,7 +83,7 @@ class DetailViewController: UIViewController {
             self.topRatedData = object
             self.group.leave()
         }) {(error) in
-             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
     
@@ -95,6 +95,7 @@ class DetailViewController: UIViewController {
         MovieDetailTableView.register(CastTableViewCell.self)
         MovieDetailTableView.register(SimilarTableViewCell.self)
         MovieDetailTableView.register(TopRatedTableViewCell.self)
+        MovieDetailTableView.register(TrailerTableViewCell.self)
     }
 }
 
@@ -103,6 +104,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: - Sections
     enum Sections: Int, CaseIterable {
         case movie
+        case trailer
         case cast
         case similar
         case topRated
@@ -120,6 +122,8 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
                 return 1
             }
             return 0
+        case .trailer:
+            return 1
         case .cast:
             if castData != nil {
                 return 1
@@ -129,6 +133,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             return 1
         case .topRated:
             return 1
+            
         }
     }
     
@@ -138,6 +143,9 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         case .movie:
             let cell: MoviesDetailTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.fillDetailMovie(moviesResponse: detailData!)
+            return cell
+        case .trailer:
+            let cell: TrailerTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             return cell
         case .cast:
             let cell: CastTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -153,6 +161,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             let cell: TopRatedTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.topRatedData = topRatedData
             return cell
+            
         }
     }
     
@@ -162,12 +171,15 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         switch Sections(rawValue: indexPath.section)!{
         case .movie:
             return UITableView.automaticDimension
+        case .trailer:
+            return 300
         case .cast:
             return 200
         case .similar:
             return width / 1.6
         case .topRated:
             return height / 3
+            
         }
     }
 }

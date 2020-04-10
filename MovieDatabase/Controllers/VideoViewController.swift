@@ -17,7 +17,7 @@ class VideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(urlString!)
+        print("****************************\(urlString!)****************************")
         youTube(playerView: youtubePlayer)
         
     }
@@ -28,5 +28,3 @@ class VideoViewController: UIViewController {
     }
     
 }
-
-

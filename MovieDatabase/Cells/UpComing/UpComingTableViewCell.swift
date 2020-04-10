@@ -89,5 +89,4 @@ extension UpComingTableViewCell: UpComingCollectionViewCellDelegate {
         self.delegate.didUpComingSelected(id: id)
     }
     
-    
 }

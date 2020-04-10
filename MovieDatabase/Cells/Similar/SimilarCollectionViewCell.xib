@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,15 +17,12 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="Uhd-pP-iU4">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Uhd-pP-iU4" secondAttribute="height" multiplier="6:8" id="FuU-qj-YMh"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="210.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joker (2019)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBt-2h-BS7">
-                        <rect key="frame" x="0.0" y="219.5" width="150" height="20.5"/>
+                        <rect key="frame" x="5" y="215.5" width="145" height="19.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="nBt-2h-BS7" secondAttribute="height" multiplier="73:10" id="X4D-rz-3mk"/>
+                            <constraint firstAttribute="width" secondItem="nBt-2h-BS7" secondAttribute="height" multiplier="15:2" id="BZV-TE-qRL"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,15 +32,13 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="nBt-2h-BS7" secondAttribute="trailing" id="8N9-ST-U2N"/>
-                <constraint firstAttribute="trailing" secondItem="nBt-2h-BS7" secondAttribute="trailing" id="HgZ-vz-cb1"/>
-                <constraint firstItem="nBt-2h-BS7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NZN-dV-erO"/>
-                <constraint firstItem="nBt-2h-BS7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Rw4-9P-MfF"/>
-                <constraint firstAttribute="bottom" secondItem="nBt-2h-BS7" secondAttribute="bottom" id="XP6-S4-Pvx"/>
-                <constraint firstItem="Uhd-pP-iU4" firstAttribute="trailing" secondItem="nBt-2h-BS7" secondAttribute="trailing" id="e1p-VV-Buw"/>
-                <constraint firstItem="Uhd-pP-iU4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="weU-7f-KXo"/>
-                <constraint firstItem="Uhd-pP-iU4" firstAttribute="leading" secondItem="nBt-2h-BS7" secondAttribute="leading" id="yFd-GN-DFg"/>
-                <constraint firstAttribute="bottom" secondItem="nBt-2h-BS7" secondAttribute="bottom" id="yhn-UQ-UyM"/>
+                <constraint firstItem="nBt-2h-BS7" firstAttribute="top" secondItem="Uhd-pP-iU4" secondAttribute="bottom" constant="5" id="4io-X4-mEq"/>
+                <constraint firstAttribute="bottom" secondItem="nBt-2h-BS7" secondAttribute="bottom" constant="5" id="Cz8-VB-nl9"/>
+                <constraint firstAttribute="trailing" secondItem="nBt-2h-BS7" secondAttribute="trailing" id="RPp-2j-oaq"/>
+                <constraint firstItem="Uhd-pP-iU4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dle-03-NvQ"/>
+                <constraint firstItem="Uhd-pP-iU4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="l8k-6l-Ye3"/>
+                <constraint firstItem="nBt-2h-BS7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="poz-dF-HEp"/>
+                <constraint firstAttribute="trailing" secondItem="Uhd-pP-iU4" secondAttribute="trailing" id="zmz-OF-fKJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="146" height="361"/>
@@ -51,7 +46,7 @@
                 <outlet property="similarImgView" destination="Uhd-pP-iU4" id="AHN-GL-hfo"/>
                 <outlet property="similarTitleLabel" destination="nBt-2h-BS7" id="c0M-8A-zZo"/>
             </connections>
-            <point key="canvasLocation" x="-92.753623188405811" y="-61.272321428571423"/>
+            <point key="canvasLocation" x="-92.753623188405811" y="-61.607142857142854"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -13,9 +13,18 @@ class TrailerTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     @IBOutlet weak var trailerYouTubePlayer: YouTubePlayerView!
     
+//    var urlString: String!
+//    var trailerData: VideoModel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+//        print("***************************\(trailerData!)************************")
+//        youTube(playerView: trailerYouTubePlayer)
     }
+    
+//    func youTube(playerView: YouTubePlayerView) {
+//        trailerYouTubePlayer.loadVideoID(urlString)
+//        trailerYouTubePlayer.play()
+//    }
     
 }

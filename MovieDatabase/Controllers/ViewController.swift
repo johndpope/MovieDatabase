@@ -204,7 +204,6 @@ extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegat
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
         
-        
     }
     
     func didNowMovieSelected(id: Int, name: String) {

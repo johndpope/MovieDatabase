@@ -17,23 +17,22 @@ class DetailViewController: UIViewController {
         case series
     }
     
-    var movieName: String!
     var identifier: Int!
+    var movieName: String!
     var type: ScreenType!
-    var castData: CastModel?
     var detailData: MoviesDetailModel?
+    var trailerData: VideoModel?
+    var castData: CastModel?
     var similarData: SimilarModel?
-    var topRatedData: TopRatedModel?
-    
     var group = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
         getDetail()
-        getSimilar()
+        getTrailer()
         getCast()
-        getTopRated()
+        getSimilar()
         navigationItem.title = movieName
         group.notify(queue: .main) {
             self.MovieDetailTableView.reloadData()
@@ -45,13 +44,36 @@ class DetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    
     //MARK: - Web Functions
     func getDetail() {
         group.enter()
         DetailMovieRequest.init(id: identifier).request(success: { (object) in
             self.detailData = object
             self.group.leave()
+        }) { (error) in
+            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+        }
+    }
+    
+    func getTrailer() {
+        group.enter()
+        VideoRequest(movieId: identifier).request(success: { (object) in
+            self.trailerData = object
+            print("*******************************\(String(describing: self.trailerData?.results.count))************************")
+            self.group.leave()
+//            if let first = object.results.first, let key = first.key, let _ = first.site {
+//                switch first.site {
+//                case .youtube:
+//                    self.trailerData = object
+//                    self.group.leave()
+//
+//                    nextViewController.urlString = key
+//                    self.show(nextViewController, sender: nil)
+//                default:
+//                    break
+//                }
+//
+//            }
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
@@ -77,25 +99,14 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func getTopRated() {
-        group.enter()
-        TopRatedRequest.init().request(success: {(object) in
-            self.topRatedData = object
-            self.group.leave()
-        }) {(error) in
-            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
-        }
-    }
-    
     //MARK: - Set Delegates Here
     func setDelegates(){
         MovieDetailTableView.delegate = self
         MovieDetailTableView.dataSource = self
         MovieDetailTableView.register(MoviesDetailTableViewCell.self)
+        MovieDetailTableView.register(TrailerTableViewCell.self)
         MovieDetailTableView.register(CastTableViewCell.self)
         MovieDetailTableView.register(SimilarTableViewCell.self)
-        MovieDetailTableView.register(TopRatedTableViewCell.self)
-        MovieDetailTableView.register(TrailerTableViewCell.self)
     }
 }
 
@@ -107,7 +118,6 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         case trailer
         case cast
         case similar
-        case topRated
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -123,15 +133,16 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             }
             return 0
         case .trailer:
-            return 1
+            if trailerData != nil {
+                return 1
+            }
+            return 0
         case .cast:
             if castData != nil {
                 return 1
             }
             return 0
         case .similar:
-            return 1
-        case .topRated:
             return 1
             
         }
@@ -157,16 +168,13 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             cell.similarData = similarData
             cell.delegate = self
             return cell
-        case .topRated:
-            let cell: TopRatedTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.topRatedData = topRatedData
-            return cell
             
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = tableView.frame.height
+        _ = tableView.frame.height
         let width = tableView.frame.width
         switch Sections(rawValue: indexPath.section)!{
         case .movie:
@@ -176,9 +184,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         case .cast:
             return 200
         case .similar:
-            return width / 1.6
-        case .topRated:
-            return height / 3
+            return width / 1.3
             
         }
     }

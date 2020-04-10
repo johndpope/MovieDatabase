@@ -28,7 +28,6 @@ class UpComingCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadabl
         
     }
     
-    
     //MARK: - Fill UpComing Movie Cell
     func fillUpComingMovie(upComingResponse: MovieElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(upComingResponse.backdropPath ?? "")")
@@ -40,10 +39,6 @@ class UpComingCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadabl
     
     @IBAction func playButtonTabbed(_ sender: Any) {
         delegate.didPlayButtonTapped(id: upComingResponse.id)
-//        let storyBoard = UIStoryboard(name: "Video", bundle: nil)
-//        let nextViewController = storyBoard.instantiateViewController(identifier: "VideoViewController") as VideoViewController
-//        nextViewController.identifier = id
-//        self.show(nextViewController, sender: nil)
     }
     
 }

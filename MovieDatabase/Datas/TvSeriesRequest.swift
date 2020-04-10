@@ -21,7 +21,7 @@ struct TvSeriesRequest : RequestResultObjectDelegate {
         parameters?["page"] = page
         path = "/tv/on_the_air"
         parameters?["api_key"] = "c8663b3a5e6e1d41ab253805b21e4d6e"
-        parameters?["language"] = "tr"
+        //parameters?["language"] = "tr"
         
     }
     

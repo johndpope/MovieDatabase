@@ -22,8 +22,4 @@ class TopRatedCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadabl
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
 }

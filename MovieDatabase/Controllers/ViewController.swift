@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     var addFavorite: AddListModel?
     var tvSeriesData: SeriesModel?
     var topRatedData: TopRatedModel?
-    var trailerData: VideoModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,11 +74,11 @@ class ViewController: UIViewController {
     }
     
     func topRatedRequest() {
-        //group.enter()
         TopRatedRequest.init().request(success: {(object) in
             self.topRatedData = object
+            //TODO: - array silme bak.
+            
             self.movieTableView.reloadData()
-            //self.group.leave()
         }) {(error) in
              print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }

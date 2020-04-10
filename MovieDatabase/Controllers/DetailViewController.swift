@@ -21,7 +21,8 @@ class DetailViewController: UIViewController {
     var movieName: String!
     var type: ScreenType!
     var detailData: MoviesDetailModel?
-    var trailerData: VideoModel?
+    var trailerData: String?
+    //var urlString: String?
     var castData: CastModel?
     var similarData: SimilarModel?
     var group = DispatchGroup()
@@ -58,22 +59,16 @@ class DetailViewController: UIViewController {
     func getTrailer() {
         group.enter()
         VideoRequest(movieId: identifier).request(success: { (object) in
-            self.trailerData = object
-            print("*******************************\(String(describing: self.trailerData?.results.count))************************")
-            self.group.leave()
-//            if let first = object.results.first, let key = first.key, let _ = first.site {
-//                switch first.site {
-//                case .youtube:
-//                    self.trailerData = object
-//                    self.group.leave()
-//
-//                    nextViewController.urlString = key
-//                    self.show(nextViewController, sender: nil)
-//                default:
-//                    break
-//                }
-//
-//            }
+            if let first = object.results.first, let key = first.key, let _ = first.site {
+                switch first.site {
+                case .youtube:
+                    //self.urlString = key
+                    self.trailerData = key
+                default:
+                    break
+                }
+                self.group.leave()
+            }
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
@@ -157,6 +152,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case .trailer:
             let cell: TrailerTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.urlString = trailerData
             return cell
         case .cast:
             let cell: CastTableViewCell = tableView.dequeueReusableCell(for: indexPath)

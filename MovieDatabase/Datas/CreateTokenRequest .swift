@@ -21,7 +21,6 @@ struct CreateTokenRequest: RequestResultObjectDelegate {
         parameters = [:]
         path = "/authentication/token/new"
         parameters?["api_key"] = "c8663b3a5e6e1d41ab253805b21e4d6e"
-        parameters?["language"] = "tr"
     }
     
 }

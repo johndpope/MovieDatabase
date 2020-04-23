@@ -188,10 +188,11 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension DetailViewController: SimilarTableViewCellDelegate, CastTableViewCellDelegate {
     
-    func didCastSelected(id: Int) {
+    func didCastSelected(id: Int, castName: String) {
         let storyBoard = UIStoryboard(name: "CastDetail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "CastDetailViewController") as CastDetailViewController
         nextViewController.identifier = id
+        nextViewController.castName = castName
         self.show(nextViewController, sender: nil)
     }
     

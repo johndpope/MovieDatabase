@@ -7,52 +7,31 @@
 //
 
 import UIKit
-import Kingfisher
 
 class CastDetailViewController: UIViewController {
-     
+    
     var identifier: Int!
+    var castName: String!
+    var actData: ActElements!
     var filmographyData: FilmographyModel!
-    var castData: ActModel!{
-        didSet {
-            let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(castData.profilePath ?? "")")
-            castProfileImageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
-            castNameLabel.text = castData.name
-            castBirthDayLabel.text = castData.birthday
-            castBirthLocationLabel.text = castData.placeOfBirth
-            castBioTextView.text = castData.biography
-            switch castData.gender! {
-            case .male:
-                castGenderImageView.image = UIImage(named: "male")
-            case .female:
-                castGenderImageView.image = UIImage(named: "female")
-            }
-        }
-    }
-    
+
     @IBOutlet weak var castFilmographyTableView: UITableView!
-    @IBOutlet weak var castProfileImageView: UIImageView!
-    @IBOutlet weak var castNameLabel: UILabel!
-    @IBOutlet weak var castBirthDayLabel: UILabel!
-    @IBOutlet weak var castBirthLocationLabel: UILabel!
-    @IBOutlet weak var castGenderImageView: UIImageView!
-    @IBOutlet weak var castBioTextView: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCast()
-        setLayer()
+        getAct()
         setDelegates()
         getFilmography()
-
+        navigationItem.title = castName
+        
     }
     
     //MARK: - Request Functions
     
-    func getCast() {
+    func getAct() {
         ActRequest.init(id: identifier).request(success: {(object) in
-            self.castData = object
+            self.actData = object
+            self.castFilmographyTableView.reloadData()
         }) {(error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
@@ -69,15 +48,11 @@ class CastDetailViewController: UIViewController {
     }
     
     //MARK: - Delegates & Layers Functions
-    
-    func setLayer() {
-        castBioTextView.layer.cornerRadius = 5
-        castProfileImageView.layer.cornerRadius = 5
-    }
-    
+        
     func setDelegates() {
         castFilmographyTableView.delegate = self
         castFilmographyTableView.dataSource = self
+        castFilmographyTableView.register(CastBioTableViewCell.self)
         castFilmographyTableView.register(FilmographyTableViewCell.self)
     }
     
@@ -85,18 +60,56 @@ class CastDetailViewController: UIViewController {
 
 extension CastDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: - Sections
+    enum Sections: Int, CaseIterable {
+        case actBio
+        case actFilmography
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Sections.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filmographyData != nil ? 1 : 0
+        switch Sections(rawValue: section)! {
+        case .actBio:
+            if actData != nil {
+                return 1
+            }
+            return 0
+        case .actFilmography:
+            if filmographyData != nil {
+                return 1
+            }
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: FilmographyTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.filmographyData = filmographyData
-        return cell
+        
+        switch Sections(rawValue: indexPath.section)! {
+        case .actBio:
+            let cell: CastBioTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.fillActBio(actBioResponse: actData)
+            return cell
+        case .actFilmography:
+            let cell: FilmographyTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.filmographyData = filmographyData
+            return cell
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 270
+        let height = tableView.frame.height
+        let width = tableView.frame.width
+        switch Sections(rawValue: indexPath.section)! {
+        case .actBio:
+            return height / 1.5
+        case .actFilmography:
+            return width / 1.4
+        }
+
     }
     
 }

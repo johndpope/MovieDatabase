@@ -224,14 +224,14 @@ extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegat
     func didSeeAllNowSelected() {
         let storyBoard = UIStoryboard(name: "Discover", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DiscoverViewController") as DiscoverViewController
-        nextViewController.type = .nowMovies
+        nextViewController.screenType = .nowMovies
         self.show(nextViewController, sender: nil)
     }
     
     func didSeeAllSeriesSelected() {
         let storyBoard = UIStoryboard(name: "Discover", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DiscoverViewController") as DiscoverViewController
-        nextViewController.type = .tvSeries
+        nextViewController.screenType = .tvSeries
         self.show(nextViewController, sender: nil)
     }
     

@@ -67,7 +67,7 @@ extension TypesViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let nextViewController = storyBoard.instantiateViewController(identifier: "DiscoverViewController") as DiscoverViewController
         nextViewController.genreName = self.genreData?.genres[indexPath.row].name
         nextViewController.genresId = String(id)
-        nextViewController.type = .genres
+        nextViewController.screenType = .genres
         self.show(nextViewController, sender: nil)
     }
     

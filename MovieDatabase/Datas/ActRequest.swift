@@ -10,7 +10,7 @@ import Alamofire
 
 struct ActRequest : RequestResultObjectDelegate {
     
-    typealias ResultObject = ActModel
+    typealias ResultObject = ActElements
     
     var id: Int!
     var path: String

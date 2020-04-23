@@ -29,6 +29,7 @@ class FilmographyCollectionViewCell: UICollectionViewCell, ReusableView, NibLoad
     }
     
     func setLayer() {
+        //imageView.layer.cornerRadius = 5
         filmographyContainerView.layer.cornerRadius = 5
     }
 

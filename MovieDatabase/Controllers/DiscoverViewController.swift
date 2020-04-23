@@ -22,7 +22,7 @@ class DiscoverViewController: UIViewController {
     var genreName: String!
     var genresData: MovieModel!
     var seriesData: SeriesModel!
-    var type: ScreenType!
+    var screenType: ScreenType!
     
     @IBOutlet weak var discoverTableView: UITableView!
     
@@ -30,7 +30,7 @@ class DiscoverViewController: UIViewController {
         super.viewDidLoad()
         setDelegates()
         
-        switch type! {
+        switch screenType! {
         case .genres:
             self.title = genreName
             discoverRequest()
@@ -100,7 +100,7 @@ class DiscoverViewController: UIViewController {
 extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        switch type! {
+        switch screenType! {
         case .genres:
             if genresData != nil {
                 return genresData.results.count
@@ -120,7 +120,7 @@ extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: NowPlayingCell = tableView.dequeueReusableCell(for: indexPath)
         
-        switch type! {
+        switch screenType! {
         case .genres, .nowMovies:
             cell.fillDiscoverList(discoverResponse: genresData!.results![indexPath.row])
         case .tvSeries:
@@ -133,7 +133,7 @@ extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        switch type! {
+        switch screenType! {
         case .genres:
             if indexPath.row == genresData.results.count - 1 && page < totalPage {
                 self.page += 1
@@ -150,7 +150,33 @@ extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
                 tvSeriesRequest()
             }
         }
-
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch screenType! {
+        case .genres:
+            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+            let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
+            //nextViewController.identifier = DetailViewController
+            //nextViewController.movieName = name
+            self.show(nextViewController, sender: nil)
+        case .nowMovies:
+            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+            let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
+            //nextViewController.identifier =
+            //nextViewController.movieName = name
+            self.show(nextViewController, sender: nil)
+        case .tvSeries:
+            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+            let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
+            //nextViewController.identifier =
+            //nextViewController.movieName = name
+            self.show(nextViewController, sender: nil)
+        }
+        
+        
     }
     
 }

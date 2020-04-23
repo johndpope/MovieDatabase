@@ -49,7 +49,7 @@ extension FilmographyTableViewCell: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height
         let width = collectionView.frame.width
-        return CGSize(width: width / 2.5, height: height)
+        return CGSize(width: width / 2.8, height: height)
     }
     
 }

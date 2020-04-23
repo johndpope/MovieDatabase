@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: - Delegate
 protocol CastTableViewCellDelegate {
-    func didCastSelected(id: Int)
+    func didCastSelected(id: Int, castName: String)
 }
 
 class CastTableViewCell: UITableViewCell,ReusableView, NibLoadableView {
@@ -56,7 +56,7 @@ extension CastTableViewCell: UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate.didCastSelected(id: castData.cast[indexPath.row].personId)
+        self.delegate.didCastSelected(id: castData.cast[indexPath.row].personId, castName: castData.cast[indexPath.row].name)
     }
     
 }

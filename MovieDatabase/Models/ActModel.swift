@@ -9,18 +9,21 @@
 import Foundation
 
 struct ActModel: Codable {
-    
-    enum GenderType: Int, Codable {
-        case female = 1
-        case male = 2
-    }
-    
+    var act: [ActElements]!
+}
+
+struct ActElements: Codable {
     var birthday: String!
     var name: String!
     var gender: GenderType!
     var biography: String!
     var placeOfBirth: String!
     var profilePath: String!
+    
+    enum GenderType: Int, Codable {
+        case female = 1
+        case male = 2
+    }
     
     enum CodingKeys: String, CodingKey {
         case birthday

@@ -3,7 +3,7 @@
 //  MovieDatabase
 //
 //  Created by ilkay sever on 13.02.2020.
-//  Copyright © 2020 Alihan Aktay. All rights reserved.
+//  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 
 import UIKit
@@ -22,9 +22,9 @@ class DetailViewController: UIViewController {
     var type: ScreenType!
     var detailData: MoviesDetailModel?
     var trailerData: String?
-    //var urlString: String?
     var castData: CastModel?
     var similarData: SimilarModel?
+    //var urlString: String?
     var group = DispatchGroup()
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class DetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    //MARK: - Web Functions
+    //MARK: - Request Functions
     func getDetail() {
         group.enter()
         DetailMovieRequest.init(id: identifier).request(success: { (object) in
@@ -176,7 +176,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         case .movie:
             return UITableView.automaticDimension
         case .trailer:
-            return 300
+            return UITableView.automaticDimension
         case .cast:
             return 200
         case .similar:
@@ -196,7 +196,7 @@ extension DetailViewController: SimilarTableViewCellDelegate, CastTableViewCellD
         self.show(nextViewController, sender: nil)
     }
     
-    func didSimilarSelected(id: Int){
+    func didSimilarSelected(id: Int, similarName: String){
         let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
         nextViewController.identifier = id

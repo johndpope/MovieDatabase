@@ -3,7 +3,7 @@
 //  MovieDatabase
 //
 //  Created by ilkay sever on 20.02.2020.
-//  Copyright © 2020 Alihan Aktay. All rights reserved.
+//  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 
 import UIKit
@@ -23,11 +23,6 @@ class CastCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableVie
     
     override func awakeFromNib(){
         super.awakeFromNib()
-        
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
         
     }
     

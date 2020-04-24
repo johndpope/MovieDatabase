@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,16 +29,19 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFw-6w-9Bl" customClass="YouTubePlayerView" customModule="YouTubePlayer">
                         <rect key="frame" x="0.0" y="34" width="370" height="196"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="pFw-6w-9Bl" secondAttribute="height" multiplier="185:98" id="AQd-cn-6Sg"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
                     <constraint firstItem="aGL-rk-i3f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4e5-Kf-aXW"/>
-                    <constraint firstAttribute="trailing" secondItem="pFw-6w-9Bl" secondAttribute="trailing" id="5UM-8k-G1u"/>
-                    <constraint firstItem="pFw-6w-9Bl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="InY-eC-g6b"/>
-                    <constraint firstAttribute="bottom" secondItem="pFw-6w-9Bl" secondAttribute="bottom" id="Sfc-Fv-kqx"/>
-                    <constraint firstItem="pFw-6w-9Bl" firstAttribute="top" secondItem="aGL-rk-i3f" secondAttribute="bottom" constant="5" id="TBE-qr-k8a"/>
+                    <constraint firstItem="pFw-6w-9Bl" firstAttribute="top" secondItem="aGL-rk-i3f" secondAttribute="bottom" constant="5" id="Cv7-91-Cia"/>
+                    <constraint firstAttribute="bottom" secondItem="pFw-6w-9Bl" secondAttribute="bottom" id="FLu-X0-08X"/>
                     <constraint firstItem="aGL-rk-i3f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="UIP-hn-Y96"/>
+                    <constraint firstAttribute="trailing" secondItem="pFw-6w-9Bl" secondAttribute="trailing" id="bna-OB-NQ6"/>
+                    <constraint firstItem="pFw-6w-9Bl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mJz-gW-b9B"/>
                     <constraint firstAttribute="trailing" secondItem="aGL-rk-i3f" secondAttribute="trailing" constant="5" id="v4B-KO-Ljg"/>
                 </constraints>
             </tableViewCellContentView>

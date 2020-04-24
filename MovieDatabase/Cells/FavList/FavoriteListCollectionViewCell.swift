@@ -3,7 +3,7 @@
 //  MovieDatabase
 //
 //  Created by ilkay sever on 1.03.2020.
-//  Copyright © 2020 Alihan Aktay. All rights reserved.
+//  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 
 import UIKit
@@ -24,6 +24,7 @@ class FavoriteListCollectionViewCell: UICollectionViewCell, ReusableView, NibLoa
     }
     
     //MARK: - Fill Favorite List
+    
     func fillFavoriteList(favoriteListResponse: ListElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(favoriteListResponse.backdropPath ?? "")")
         favoriteMovieImage.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))

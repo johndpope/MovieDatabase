@@ -3,7 +3,7 @@
 //  MovieDatabase
 //
 //  Created by ilkay sever on 14.02.2020.
-//  Copyright © 2020 Alihan Aktay. All rights reserved.
+//  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 
 import UIKit
@@ -20,6 +20,7 @@ class SimilarCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadable
     }
     
     //MARK: - Fill Cell
+    
     func fillSimilarMovie(similarResponse: Similarelements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(similarResponse.posterPath ?? "")")
         similarImgView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))

@@ -3,15 +3,16 @@
 //  MovieDatabase
 //
 //  Created by ilkay sever on 14.02.2020.
-//  Copyright © 2020 Alihan Aktay. All rights reserved.
+//  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 
 import UIKit
 
 
 //MARK: - Delegate
+
 protocol SimilarTableViewCellDelegate {
-    func didSimilarSelected(id: Int)
+    func didSimilarSelected(id: Int, similarName: String)
 }
 
 class SimilarTableViewCell: UITableViewCell, ReusableView, NibLoadableView{
@@ -54,7 +55,7 @@ extension SimilarTableViewCell: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.didSimilarSelected(id: (similarData?.results[indexPath.row].id)!)
+        self.delegate?.didSimilarSelected(id: (similarData?.results[indexPath.row].id)!, similarName: (similarData?.results[indexPath.row].title)!)
     }
     
 }

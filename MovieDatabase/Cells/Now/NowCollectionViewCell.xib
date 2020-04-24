@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,14 +16,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="275"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-f7-xqw">
+                    <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-f7-xqw">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="275"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="GGA-f7-kEn">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10752-2" translatesAutoresizingMaskIntoConstraints="NO" id="GGA-f7-kEn">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <constraints>
+                            <constraint firstAttribute="width" secondItem="GGA-f7-kEn" secondAttribute="height" multiplier="3:4" id="FeJ-Od-mDA"/>
                             <constraint firstAttribute="width" constant="150" id="XSP-5P-YkU"/>
                             <constraint firstAttribute="height" constant="200" id="bii-rl-FoO"/>
                         </constraints>
@@ -96,10 +97,14 @@
                 <constraint firstItem="or3-jv-RU2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2eN-7X-zIK"/>
                 <constraint firstAttribute="trailing" secondItem="flr-ih-Myb" secondAttribute="trailing" constant="5" id="ErI-uz-yyk"/>
                 <constraint firstItem="or3-jv-RU2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="F9d-gc-Rfl"/>
+                <constraint firstItem="GGA-f7-kEn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IsU-b0-bcg"/>
                 <constraint firstItem="flr-ih-Myb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="QL3-kp-uqK"/>
                 <constraint firstAttribute="trailing" secondItem="GGA-f7-kEn" secondAttribute="trailing" id="QWa-2w-hLy"/>
                 <constraint firstItem="zc4-p6-2oH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Quz-5f-1z8"/>
+                <constraint firstItem="GGA-f7-kEn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ShS-zP-vIL"/>
                 <constraint firstItem="flr-ih-Myb" firstAttribute="top" secondItem="GGA-f7-kEn" secondAttribute="bottom" constant="5" id="YOE-Yq-vlM"/>
+                <constraint firstAttribute="trailing" secondItem="GGA-f7-kEn" secondAttribute="trailing" id="i20-29-84s"/>
+                <constraint firstItem="flr-ih-Myb" firstAttribute="top" secondItem="GGA-f7-kEn" secondAttribute="bottom" constant="5" id="nSm-QD-VP1"/>
                 <constraint firstItem="GGA-f7-kEn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pQ0-o8-3XP"/>
                 <constraint firstItem="GGA-f7-kEn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="phy-SG-Glu"/>
             </constraints>
@@ -118,8 +123,8 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="10752-2" width="316" height="500"/>
         <image name="add_empty" width="13" height="23"/>
-        <image name="default" width="620" height="350"/>
         <image name="like_empty" width="13" height="23"/>
         <image name="star_selected" width="512" height="512"/>
     </resources>

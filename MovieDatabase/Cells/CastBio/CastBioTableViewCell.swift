@@ -21,6 +21,7 @@ class CastBioTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         actProfileImgView.layer.cornerRadius = 5
+        actBioTextView.layer.cornerRadius = 5
     }
     
     func fillActBio(actBioResponse: ActElements) {
@@ -29,9 +30,7 @@ class CastBioTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
         actNameLabel.text = actBioResponse.name
         actBirthday.text = actBioResponse.birthday
         actBirthLocationLabel.text = actBioResponse.placeOfBirth
-        
-        
-        //actBioTextView.text = actBioResponse.biography
+        actBioTextView.text = actBioResponse.biography
         switch actBioResponse.gender! {
         case .male:
             actGenderImageView.image = UIImage(named: "male")

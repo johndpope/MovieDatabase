@@ -3,7 +3,7 @@
 //  MovieDatabase
 //
 //  Created by ilkay sever on 5.03.2020.
-//  Copyright © 2020 Alihan Aktay. All rights reserved.
+//  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 
 import UIKit

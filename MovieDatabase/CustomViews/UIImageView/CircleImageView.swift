@@ -3,7 +3,7 @@
 //  MovieDatabase
 //
 //  Created by ilkay sever on 10.03.2020.
-//  Copyright © 2020 Alihan Aktay. All rights reserved.
+//  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 
 import UIKit
@@ -12,6 +12,7 @@ import UIKit
 class CircleImageView: UIImageView {
     
     //MARK: - Properties
+    
     @IBInspectable var borderWidth: CGFloat = 0.2 {
         didSet {
             self.layer.borderWidth = borderWidth
@@ -25,6 +26,7 @@ class CircleImageView: UIImageView {
     }
     
     //MARK: - Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

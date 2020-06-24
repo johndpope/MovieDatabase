@@ -28,6 +28,7 @@ class NowCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView
     }
     
     //MARK: - Fill Now Movie Cell
+    
     func fillNowMovie(movieResponse: MovieElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(movieResponse.posterPath ?? "")")
         nowPosterImage.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
@@ -37,7 +38,8 @@ class NowCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView
         movie = movieResponse
     }
     
-    //MARK - Add Items to Favorite List.
+    //MARK: - Add Items to Favorite List
+    
     func addFavoriteList() {
         AddFavoriteRequest.init(id: Account.current.user.id, sessionId: Account.current.session.sessionId, mediaId: movie.id, favorite: true).request(success: { (object) in
             print("***********************\(object.status_message ?? "")********************")
@@ -46,7 +48,8 @@ class NowCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableView
         }
     }
     
-    //MARK - Add Items to Watch List.
+    //MARK: - Add Items to Watch List
+    
     func addWatchList() {
         AddWatchListRequest.init(id: Account.current.user.id, sessionId: Account.current.session.sessionId, mediaId: movie.id, watchlist: true).request(success: { (object) in
             print("***********************\(object.status_message ?? "")********************")

@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  MovieDatabase
 //
-//  Created by Alihan Aktay on 10.02.2020.
+//  Created by İlkay Sever on 10.02.2020.
 //  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 

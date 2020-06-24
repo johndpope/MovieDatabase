@@ -60,6 +60,7 @@ class CastDetailViewController: UIViewController {
 extension CastDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Sections
+    
     enum Sections: Int, CaseIterable {
         case actBio
         case actFilmography

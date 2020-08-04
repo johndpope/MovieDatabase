@@ -24,7 +24,6 @@ class DetailViewController: UIViewController {
     var trailerData: String?
     var castData: CastModel?
     var similarData: SimilarModel?
-    //var urlString: String?
     var group = DispatchGroup()
     
     override func viewDidLoad() {
@@ -62,7 +61,6 @@ class DetailViewController: UIViewController {
             if let first = object.results.first, let key = first.key, let _ = first.site {
                 switch first.site {
                 case .youtube:
-                    //self.urlString = key
                     self.trailerData = key
                 default:
                     break

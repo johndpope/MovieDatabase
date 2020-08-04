@@ -126,9 +126,7 @@ extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
         case .tvSeries:
             cell.fillSeriesList(seriesResponse: seriesData!.results![indexPath.row])
         }
-        
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -159,7 +157,7 @@ extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
         case .genres:
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
-            //nextViewController.identifier = DetailViewController
+            //nextViewController.identifier = ide
             //nextViewController.movieName = name
             self.show(nextViewController, sender: nil)
         case .nowMovies:

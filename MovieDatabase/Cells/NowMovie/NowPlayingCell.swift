@@ -26,16 +26,16 @@ class NowPlayingCell: UITableViewCell, ReusableView, NibLoadableView {
     
     //MARK: - Fill Discover List
     func fillDiscoverList(discoverResponse: MovieElements) {
-        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(discoverResponse.posterPath ?? "")")
-        imgView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
+        let imgUrl = RequestManager.imageBaseUrl500 + discoverResponse.posterPath
+        imgView.setImageUrl(imageUrl: imgUrl)
         nowTittleLabel.text = discoverResponse.title
         nowDescLabel.text = discoverResponse.description
         releaseLabel.text = discoverResponse.releaseDate
     }
     
     func fillSeriesList(seriesResponse: SeriesElements) {
-        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(seriesResponse.posterPath ?? "")")
-        imgView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
+        let imgUrl = RequestManager.imageBaseUrl500 + (seriesResponse.posterPath ?? "")
+        imgView.setImageUrl(imageUrl: imgUrl)
         nowTittleLabel.text = seriesResponse.title
         nowDescLabel.text = seriesResponse.description
         releaseLabel.text = seriesResponse.releaseDate

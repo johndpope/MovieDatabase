@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TrendingPeopleCollectionViewCell" customModule="MovieDatabase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="140" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQK-sj-g0L">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="240"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10402-3" translatesAutoresizingMaskIntoConstraints="NO" id="U7y-Sk-ioI">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="719-jj-yn1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vin Diesel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUI-tk-LQW">
+                                <rect key="frame" x="5" y="188" width="133" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="hfZ-so-hbk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-sU-ECe">
+                                <rect key="frame" x="112" y="212" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="BGB-oi-nUe"/>
+                                    <constraint firstAttribute="width" constant="20" id="OfD-5u-CZB"/>
+                                </constraints>
+                                <state key="normal" image="next"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Zss-8y-jNl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mYa-sU-ECe" secondAttribute="trailing" constant="8" id="2Li-ic-9DW"/>
+                            <constraint firstItem="CUI-tk-LQW" firstAttribute="top" secondItem="U7y-Sk-ioI" secondAttribute="bottom" constant="8" id="3Yh-12-WLD"/>
+                            <constraint firstItem="mYa-sU-ECe" firstAttribute="top" secondItem="CUI-tk-LQW" secondAttribute="bottom" id="Jav-gC-j8V"/>
+                            <constraint firstItem="CUI-tk-LQW" firstAttribute="leading" secondItem="kQK-sj-g0L" secondAttribute="leading" constant="5" id="Jfr-CX-8Ob"/>
+                            <constraint firstItem="U7y-Sk-ioI" firstAttribute="leading" secondItem="kQK-sj-g0L" secondAttribute="leading" id="W1s-Ri-waq"/>
+                            <constraint firstAttribute="trailing" secondItem="U7y-Sk-ioI" secondAttribute="trailing" id="fKN-Ow-9m0"/>
+                            <constraint firstAttribute="trailing" secondItem="CUI-tk-LQW" secondAttribute="trailing" constant="2" id="giU-0H-clI"/>
+                            <constraint firstItem="U7y-Sk-ioI" firstAttribute="top" secondItem="kQK-sj-g0L" secondAttribute="top" id="pTh-fp-l4l"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="kQK-sj-g0L" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MpB-TK-IoR"/>
+                <constraint firstItem="kQK-sj-g0L" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hDh-ae-w9i"/>
+                <constraint firstAttribute="bottom" secondItem="kQK-sj-g0L" secondAttribute="bottom" id="mz0-x3-v9A"/>
+                <constraint firstAttribute="trailing" secondItem="kQK-sj-g0L" secondAttribute="trailing" id="xdI-lp-dyZ"/>
+            </constraints>
+            <size key="customSize" width="140" height="240"/>
+            <connections>
+                <outlet property="nextButton" destination="mYa-sU-ECe" id="Cu2-JC-tDe"/>
+                <outlet property="peopleContainerView" destination="kQK-sj-g0L" id="bUi-54-pDZ"/>
+                <outlet property="peopleImageView" destination="U7y-Sk-ioI" id="bQB-kL-mIp"/>
+                <outlet property="peopleNameLabel" destination="CUI-tk-LQW" id="XiN-ZQ-TuZ"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="147.32142857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="10402-3" width="1012" height="1500"/>
+        <image name="next" width="14" height="24"/>
+    </resources>
+</document>

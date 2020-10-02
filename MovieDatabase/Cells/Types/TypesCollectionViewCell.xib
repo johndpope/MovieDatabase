@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -34,7 +36,7 @@
                                         <blurEffect style="dark"/>
                                     </visualEffectView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="TVZ-XB-wH1" secondAttribute="trailing" id="0h8-lb-2hN"/>
                                     <constraint firstAttribute="width" constant="70" id="AEq-fh-N2S"/>
@@ -63,7 +65,7 @@
                                         <blurEffect style="dark"/>
                                     </visualEffectView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="swH-Cj-zk1" firstAttribute="leading" secondItem="99z-Af-syR" secondAttribute="leading" id="Ead-5h-nGr"/>
                                     <constraint firstAttribute="height" constant="110" id="HXJ-Tg-sQq"/>
@@ -84,7 +86,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="110"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="qTE-tG-qVq" secondAttribute="trailing" id="5Ee-XN-riF"/>
                                     <constraint firstItem="qTE-tG-qVq" firstAttribute="top" secondItem="W9B-yS-9wn" secondAttribute="top" id="6gq-Mw-Cjb"/>
@@ -122,13 +124,13 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Zlz-mM-iq3" secondAttribute="bottom" id="29R-fw-YuG"/>
                 <constraint firstItem="Zlz-mM-iq3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BAx-es-2Kg"/>
                 <constraint firstItem="Zlz-mM-iq3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LsC-51-zQv"/>
                 <constraint firstAttribute="trailing" secondItem="Zlz-mM-iq3" secondAttribute="trailing" id="cqW-GU-fTl"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="177" height="114"/>
             <connections>
                 <outlet property="firstImgView" destination="qTE-tG-qVq" id="M6m-eQ-pQC"/>
@@ -147,5 +149,8 @@
         <image name="default" width="620" height="350"/>
         <image name="launch" width="1000" height="781"/>
         <image name="salon" width="948" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

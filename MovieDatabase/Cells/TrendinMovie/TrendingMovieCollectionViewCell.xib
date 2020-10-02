@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TrendingMovieCollectionViewCell" customModule="MovieDatabase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-1P-ldO">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="simpsons" translatesAutoresizingMaskIntoConstraints="NO" id="54q-tM-saY">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradiant" translatesAutoresizingMaskIntoConstraints="NO" id="215-Y4-tw7">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="190"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simpsons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxS-gl-HkD">
+                                <rect key="frame" x="5" y="131" width="242" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmu-QT-heX">
+                                <rect key="frame" x="252" y="132" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="AbM-BH-yrL"/>
+                                    <constraint firstAttribute="width" constant="20" id="B04-bi-382"/>
+                                </constraints>
+                                <state key="normal" image="next"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="oST-eN-Db6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZxS-gl-HkD" firstAttribute="centerY" secondItem="Tmu-QT-heX" secondAttribute="centerY" id="5bp-CI-XND"/>
+                            <constraint firstItem="215-Y4-tw7" firstAttribute="top" secondItem="1Fd-1P-ldO" secondAttribute="top" id="RF2-Xp-Z4V"/>
+                            <constraint firstItem="ZxS-gl-HkD" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" constant="5" id="RhI-IH-XQd"/>
+                            <constraint firstAttribute="trailing" secondItem="215-Y4-tw7" secondAttribute="trailing" id="TEk-qX-hGG"/>
+                            <constraint firstAttribute="trailing" secondItem="54q-tM-saY" secondAttribute="trailing" id="VRP-WU-sN8"/>
+                            <constraint firstItem="ZxS-gl-HkD" firstAttribute="height" secondItem="Tmu-QT-heX" secondAttribute="height" multiplier="1.1" id="WoF-Kx-kQ0"/>
+                            <constraint firstItem="Tmu-QT-heX" firstAttribute="leading" secondItem="ZxS-gl-HkD" secondAttribute="trailing" constant="5" id="XlE-2E-kuP"/>
+                            <constraint firstItem="215-Y4-tw7" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" id="dKg-f0-VUc"/>
+                            <constraint firstAttribute="bottom" secondItem="215-Y4-tw7" secondAttribute="bottom" constant="-30" id="gwD-Vd-7LD"/>
+                            <constraint firstAttribute="trailing" secondItem="Tmu-QT-heX" secondAttribute="trailing" constant="8" id="hAM-hi-TWT"/>
+                            <constraint firstItem="54q-tM-saY" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" id="kI1-hf-QPW"/>
+                            <constraint firstItem="54q-tM-saY" firstAttribute="top" secondItem="1Fd-1P-ldO" secondAttribute="top" id="s8M-6A-7Om"/>
+                            <constraint firstAttribute="bottom" secondItem="54q-tM-saY" secondAttribute="bottom" id="x6O-Sc-Xap"/>
+                            <constraint firstAttribute="bottom" secondItem="Tmu-QT-heX" secondAttribute="bottom" constant="8" id="y60-zM-bM9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="1Fd-1P-ldO" secondAttribute="bottom" id="Thj-Bg-BoY"/>
+                <constraint firstItem="1Fd-1P-ldO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dYk-9t-nJw"/>
+                <constraint firstItem="1Fd-1P-ldO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vB9-II-YEd"/>
+                <constraint firstAttribute="trailing" secondItem="1Fd-1P-ldO" secondAttribute="trailing" id="yn9-gx-dvY"/>
+            </constraints>
+            <size key="customSize" width="280" height="160"/>
+            <connections>
+                <outlet property="nextButton" destination="Tmu-QT-heX" id="mhO-kj-N84"/>
+                <outlet property="tvSeriesContainerView" destination="1Fd-1P-ldO" id="MaQ-TD-5Hf"/>
+                <outlet property="tvSeriesImageView" destination="54q-tM-saY" id="oHG-sQ-2OI"/>
+                <outlet property="tvSeriesNameLabel" destination="ZxS-gl-HkD" id="XMG-WX-es8"/>
+            </connections>
+            <point key="canvasLocation" x="304.34782608695656" y="121.20535714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="gradiant" width="375" height="300"/>
+        <image name="next" width="14" height="24"/>
+        <image name="simpsons" width="1200" height="627"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

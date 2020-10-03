@@ -25,7 +25,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7KU-UF-l3P">
-                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="137" width="414" height="759"/>
                                 <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                         </subviews>
@@ -33,7 +33,7 @@
                         <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ho8-W8-HxP" firstAttribute="trailing" secondItem="7KU-UF-l3P" secondAttribute="trailing" id="8qE-NW-xcw"/>
-                            <constraint firstItem="7KU-UF-l3P" firstAttribute="top" secondItem="58V-Tu-mQD" secondAttribute="bottom" id="CXx-o4-x7b"/>
+                            <constraint firstItem="7KU-UF-l3P" firstAttribute="top" secondItem="58V-Tu-mQD" secondAttribute="bottom" constant="5" id="CXx-o4-x7b"/>
                             <constraint firstItem="58V-Tu-mQD" firstAttribute="leading" secondItem="Ho8-W8-HxP" secondAttribute="leading" id="P5e-da-PeN"/>
                             <constraint firstAttribute="bottom" secondItem="7KU-UF-l3P" secondAttribute="bottom" id="fHk-Tm-4iH"/>
                             <constraint firstItem="58V-Tu-mQD" firstAttribute="trailing" secondItem="Ho8-W8-HxP" secondAttribute="trailing" id="mgD-LF-xic"/>

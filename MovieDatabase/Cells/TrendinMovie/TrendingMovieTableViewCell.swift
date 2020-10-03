@@ -43,7 +43,7 @@ extension TrendingMovieTableViewCell: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height
         let width = collectionView.frame.width
-        return CGSize(width: width / 1.2 , height: height / 1.1)
+        return CGSize(width: width, height: height / 1.1)
     }
     
 }

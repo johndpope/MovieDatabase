@@ -2,7 +2,7 @@
 //  MovieDatabaseUITests.swift
 //  MovieDatabaseUITests
 //
-//  Created by Alihan Aktay on 10.02.2020.
+//  Created by ilkay sever on 10.02.2020.
 //  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 

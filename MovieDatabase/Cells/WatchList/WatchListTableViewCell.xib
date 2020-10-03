@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,40 +18,57 @@
                 <rect key="frame" x="0.0" y="0.0" width="350" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vy-mZ-gDn">
+                        <rect key="frame" x="8" y="5" width="4" height="25"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="qmS-jf-6wl"/>
+                            <constraint firstAttribute="width" constant="4" id="sQ1-Bx-0fz"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İzleme Listeniz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIB-yM-r83">
-                        <rect key="frame" x="10" y="10" width="340" height="27.5"/>
+                        <rect key="frame" x="20" y="3.5" width="322" height="28"/>
                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" systemColor="systemYellowColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YDT-Vb-deo">
-                        <rect key="frame" x="0.0" y="37.5" width="350" height="152.5"/>
+                        <rect key="frame" x="0.0" y="35" width="350" height="155"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ahs-24-M1x">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="ahs-24-M1x">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                            <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="YIB-yM-r83" secondAttribute="trailing" id="9Xb-58-eh1"/>
-                    <constraint firstAttribute="bottom" secondItem="YDT-Vb-deo" secondAttribute="bottom" id="RX2-x3-LP0"/>
-                    <constraint firstItem="YIB-yM-r83" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Yew-7m-loP"/>
-                    <constraint firstItem="YIB-yM-r83" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aSQ-td-2MC"/>
-                    <constraint firstItem="YDT-Vb-deo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="c6j-Hl-6lB"/>
-                    <constraint firstAttribute="trailing" secondItem="YDT-Vb-deo" secondAttribute="trailing" id="t4o-eR-ulN"/>
-                    <constraint firstItem="YDT-Vb-deo" firstAttribute="top" secondItem="YIB-yM-r83" secondAttribute="bottom" id="uUG-U4-7aC"/>
+                    <constraint firstItem="YIB-yM-r83" firstAttribute="leading" secondItem="6Vy-mZ-gDn" secondAttribute="trailing" constant="8" id="0S6-Cx-FZc"/>
+                    <constraint firstItem="YDT-Vb-deo" firstAttribute="top" secondItem="6Vy-mZ-gDn" secondAttribute="bottom" constant="5" id="8eW-Io-1Cf"/>
+                    <constraint firstAttribute="bottom" secondItem="YDT-Vb-deo" secondAttribute="bottom" id="GyB-iN-y1B"/>
+                    <constraint firstItem="YDT-Vb-deo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HRG-t8-KIZ"/>
+                    <constraint firstItem="6Vy-mZ-gDn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="itF-wS-BHH"/>
+                    <constraint firstItem="6Vy-mZ-gDn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="nYU-Ex-ELd"/>
+                    <constraint firstAttribute="trailing" secondItem="YIB-yM-r83" secondAttribute="trailing" constant="8" id="rjT-vF-Qz4"/>
+                    <constraint firstItem="YIB-yM-r83" firstAttribute="centerY" secondItem="6Vy-mZ-gDn" secondAttribute="centerY" id="uno-Kw-hf0"/>
+                    <constraint firstItem="YIB-yM-r83" firstAttribute="height" secondItem="6Vy-mZ-gDn" secondAttribute="height" multiplier="1.12" id="zGb-7S-yv7"/>
+                    <constraint firstAttribute="trailing" secondItem="YDT-Vb-deo" secondAttribute="trailing" id="zts-yt-Q3B"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
+                <outlet property="lineView" destination="6Vy-mZ-gDn" id="CVp-r4-jVo"/>
                 <outlet property="watchListCollectionView" destination="YDT-Vb-deo" id="k8s-pf-ChK"/>
             </connections>
             <point key="canvasLocation" x="136.23188405797103" y="83.705357142857139"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileNameLabel: UILabel!
+    @IBOutlet weak var settingsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,11 @@ class ProfileViewController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
         profileNameLabel.text = Account.current.user.username
+    }
+    
+    
+    @IBAction func settingsButtonTapped(_ sender: Any) {
+        
     }
     
     @objc func setLiked(_ notification: Notification) {
@@ -138,9 +144,9 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch Sections(rawValue: indexPath.section) {
         case .favList:
-            return 250
+            return 360
         case .watchList:
-            return 250
+            return 360
         case .none:
             return 0
         }

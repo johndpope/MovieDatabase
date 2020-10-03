@@ -20,7 +20,7 @@
                     <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-f7-xqw">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="275"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.19216060639999999" green="0.19215118889999999" blue="0.19215515259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10752-2" translatesAutoresizingMaskIntoConstraints="NO" id="GGA-f7-kEn">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>

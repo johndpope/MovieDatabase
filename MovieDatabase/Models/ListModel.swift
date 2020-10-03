@@ -28,6 +28,8 @@ struct ListElements: Codable {
     var video: Bool
     var posterPath: String!
     var backdropPath: String!
+    var releaseDate: String!
+    var voteAverage: Double!
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -35,6 +37,8 @@ struct ListElements: Codable {
         case video
         case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
+        case releaseDate = "release_date"
+        case voteAverage = "vote_average"
     }
 }
 

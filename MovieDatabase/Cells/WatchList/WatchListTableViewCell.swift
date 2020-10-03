@@ -13,10 +13,13 @@ class WatchListTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     var watchList: [ListElements] = []
 
     @IBOutlet weak var watchListCollectionView: UICollectionView!
+    @IBOutlet weak var lineView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setDelegates()
+        lineView.layer.cornerRadius = 3
     }
     
     func setDelegates() {
@@ -47,7 +50,7 @@ extension WatchListTableViewCell: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.frame.height
         let width = collectionView.frame.width
-        return CGSize(width: width / 1.2, height: height)
+        return CGSize(width: width / 2.6, height: height)
     }
     
 }

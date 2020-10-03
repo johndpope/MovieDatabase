@@ -2,8 +2,8 @@
 //  SingletonUser.swift
 //  MovieDatabase
 //
-//  Created by Erhan Acisu on 26.02.2020.
-//  Copyright © 2020 Alihan Aktay. All rights reserved.
+//  Created by ilkay sever on 26.02.2020.
+//  Copyright © 2020 İlkay Sever. All rights reserved.
 //
 
 import Foundation

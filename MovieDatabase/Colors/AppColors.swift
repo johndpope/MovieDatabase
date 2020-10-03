@@ -10,10 +10,10 @@ import UIKit
 
 class AppColors {
     
-    static var navigationBarColor = UIColor.init(red: 46.0/255.0, green: 46.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+    static var navigationBarColor = UIColor.init(red: 41.0/255.0, green: 40.0/255.0, blue: 40.0/255.0, alpha: 1.0)
     static var navigationButtonColor = UIColor.orange
     
-    static var tabBarColor = UIColor.init(red: 46.0/255.0, green: 46.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+    static var tabBarColor = UIColor.init(red: 41.0/255.0, green: 40.0/255.0, blue: 40.0/255.0, alpha: 1.0)
     static var tabBarItemColor = UIColor.systemGray5
     static var tabBarItemHoverColor = UIColor.orange
     

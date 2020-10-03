@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 //MARK: - Delegate
 
 protocol SimilarTableViewCellDelegate {

@@ -25,10 +25,10 @@ class TypesCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableVi
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setLayers()
+        setViews()
     }
     
-    func setLayers() {
+    private func setViews() {
         typesContainerView.layer.cornerRadius = 5
         firstView.layer.cornerRadius = 5
         firstView.layer.borderWidth = 0.5
@@ -46,10 +46,21 @@ class TypesCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableVi
     //MARK: - Fill Genre Cell
     
     func fillGenre(genreResponse: GenreElement) {
-        genreNameLabel.text = genreResponse.name.uppercased()
+        genreNameLabel.text = genreResponse.name.capitalizingFirstLetter()
         firstImgView.image = UIImage(named: "\(genreResponse.id)" + "-1")
         secondImgView.image = UIImage(named: "\(genreResponse.id)" + "-2")
         thirdImgView.image = UIImage(named: "\(genreResponse.id)" + "-3")
     }
 
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+    
 }

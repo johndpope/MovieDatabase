@@ -22,6 +22,10 @@ class TrendingViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with withEvent: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     private func setDelegates() {
         trendTableView.delegate = self
         trendTableView.dataSource = self

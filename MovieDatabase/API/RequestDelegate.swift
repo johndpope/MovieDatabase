@@ -2,8 +2,8 @@
 //  RequestDelegate.swift
 //  airGsm-ios
 //
-//  Created by Alihan Aktay on 27.06.2019.
-//  Copyright © 2019 Alihan Aktay. All rights reserved.
+//  Created by ilkay sever on 27.06.2019.
+//  Copyright © 2019 İlkay Sever. All rights reserved.
 //
 
 import Alamofire

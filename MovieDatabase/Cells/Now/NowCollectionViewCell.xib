@@ -17,15 +17,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="275"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-f7-xqw">
+                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-f7-xqw">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="275"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.19216060639999999" green="0.19215118889999999" blue="0.19215515259999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10752-2" translatesAutoresizingMaskIntoConstraints="NO" id="GGA-f7-kEn">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10752-2" translatesAutoresizingMaskIntoConstraints="NO" id="GGA-f7-kEn">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="GGA-f7-kEn" secondAttribute="height" multiplier="3:4" id="FeJ-Od-mDA"/>
+                            <constraint firstAttribute="width" secondItem="GGA-f7-kEn" secondAttribute="height" multiplier="3:4" priority="750" id="FeJ-Od-mDA"/>
                             <constraint firstAttribute="width" constant="150" id="XSP-5P-YkU"/>
                             <constraint firstAttribute="height" constant="200" id="bii-rl-FoO"/>
                         </constraints>
@@ -95,8 +94,11 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="WYl-f7-xqw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="05N-yE-X86"/>
                 <constraint firstAttribute="trailing" secondItem="zc4-p6-2oH" secondAttribute="trailing" id="1Jm-FX-74I"/>
+                <constraint firstAttribute="trailing" secondItem="WYl-f7-xqw" secondAttribute="trailing" id="2HJ-nr-blP"/>
                 <constraint firstItem="or3-jv-RU2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2eN-7X-zIK"/>
+                <constraint firstAttribute="bottom" secondItem="WYl-f7-xqw" secondAttribute="bottom" id="80D-ok-DN5"/>
                 <constraint firstAttribute="trailing" secondItem="flr-ih-Myb" secondAttribute="trailing" constant="5" id="ErI-uz-yyk"/>
                 <constraint firstItem="or3-jv-RU2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="F9d-gc-Rfl"/>
                 <constraint firstItem="GGA-f7-kEn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IsU-b0-bcg"/>
@@ -109,6 +111,7 @@
                 <constraint firstItem="flr-ih-Myb" firstAttribute="top" secondItem="GGA-f7-kEn" secondAttribute="bottom" constant="5" id="nSm-QD-VP1"/>
                 <constraint firstItem="GGA-f7-kEn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pQ0-o8-3XP"/>
                 <constraint firstItem="GGA-f7-kEn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="phy-SG-Glu"/>
+                <constraint firstItem="WYl-f7-xqw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xbC-qA-Uwl"/>
             </constraints>
             <size key="customSize" width="149" height="277"/>
             <connections>

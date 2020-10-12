@@ -157,20 +157,20 @@ extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
         case .genres:
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
-            //nextViewController.identifier = ide
-            //nextViewController.movieName = name
+            nextViewController.identifier = genresData.results[indexPath.row].id
+            nextViewController.movieName = genresData.results[indexPath.row].title
             self.show(nextViewController, sender: nil)
         case .nowMovies:
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
-            //nextViewController.identifier =
-            //nextViewController.movieName = name
+            nextViewController.identifier = genresData.results[indexPath.row].id
+            nextViewController.movieName = genresData.results[indexPath.row].title
             self.show(nextViewController, sender: nil)
         case .tvSeries:
-            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
-            let nextViewController = storyBoard.instantiateViewController(identifier: "DetailViewController") as DetailViewController
-            //nextViewController.identifier =
-            //nextViewController.movieName = name
+            let storyBoard = UIStoryboard(name: "SeriesDetail", bundle: nil)
+            let nextViewController = storyBoard.instantiateViewController(identifier: "SeriesDetailViewController") as SeriesDetailViewController
+            nextViewController.identifier = seriesData.results[indexPath.row].id
+            nextViewController.seriesName = seriesData.results[indexPath.row].title
             self.show(nextViewController, sender: nil)
         }
         

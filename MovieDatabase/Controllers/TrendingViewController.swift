@@ -8,13 +8,15 @@
 
 import UIKit
 
-class TrendingViewController: UIViewController {
+class TrendingViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var trendTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
+        setSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,9 +31,30 @@ class TrendingViewController: UIViewController {
     private func setDelegates() {
         trendTableView.delegate = self
         trendTableView.dataSource = self
+        searchBar.delegate = self
         trendTableView.register(TrendingPeopleTableViewCell.self)
         trendTableView.register(TrendingMovieTableViewCell.self)
     }
+    
+    private func setSearchBar() {
+        searchBar.barStyle = .black
+        searchBar.backgroundColor = AppColors.backgroundColor
+        searchBar.searchTextField.backgroundColor = UIColor.white
+    }
+    
+    
+//    func addSearchBar() {
+//        searchBar.delegate = self
+//        searchBar.showsCancelButton = false
+//        searchBar.showsScopeBar = false
+//
+//        searchBar.barStyle = .black
+//        searchBar.searchTextField.backgroundColor = .searchbarBackgroundPrimary
+//        searchBar.tintColor = .textPrimary
+//        searchBar.searchTextField.leftView?.tintColor = .textSecondary
+//        searchBar.searchTextField.textColor = .textPrimary
+//        searchBar.searchTextField.font = .font(.regular, size:
+//    }
     
 }
 

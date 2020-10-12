@@ -17,9 +17,9 @@ class BaseNavigationController: UINavigationController {
     }
     
     func setNavigationBar() {
-        navigationBar.tintColor = AppColors.navigationButtonColor
+        navigationBar.tintColor = AppColors.yellow
         navigationBar.barTintColor =  AppColors.navigationBarColor
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppColors.yellow]
     }
     
     func leftBackButton() {

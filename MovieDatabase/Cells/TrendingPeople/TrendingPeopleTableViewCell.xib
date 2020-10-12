@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,11 +37,11 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gündemki İsimler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOH-4W-qlr">
                         <rect key="frame" x="40" y="7.5" width="284" height="20.5"/>
                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                        <color key="textColor" systemColor="systemOrangeColor"/>
+                        <color key="textColor" red="0.98431372549019602" green="0.81568627450980391" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <color key="backgroundColor" red="0.15686592460000001" green="0.15685784820000001" blue="0.1568613052" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
                     <constraint firstItem="yOH-4W-qlr" firstAttribute="leading" secondItem="Db3-qU-LtN" secondAttribute="trailing" constant="10" id="5uQ-wc-Fci"/>
                     <constraint firstItem="yOH-4W-qlr" firstAttribute="centerY" secondItem="Db3-qU-LtN" secondAttribute="centerY" id="8uG-5k-zRz"/>
@@ -64,9 +63,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="people" width="24" height="20"/>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="people" width="36" height="32"/>
     </resources>
 </document>

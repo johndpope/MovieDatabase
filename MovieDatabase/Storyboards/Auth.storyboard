@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gjD-pR-Kme">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gjD-pR-Kme">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,9 +32,9 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egC-xJ-CgW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egC-xJ-CgW">
                                 <rect key="frame" x="20" y="662" width="374" height="50"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="x5S-ll-iwK"/>
                                 </constraints>
@@ -47,13 +49,13 @@
                                 <rect key="frame" x="20" y="342" width="374" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henüz Üye Olmadınız Mı?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87n-f6-hbb">
-                                        <rect key="frame" x="0.0" y="0.0" width="195.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="194.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChB-ce-j22">
-                                        <rect key="frame" x="120.5" y="0.0" width="253.5" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChB-ce-j22">
+                                        <rect key="frame" x="119.5" y="0.0" width="254.5" height="30"/>
                                         <state key="normal" title="Üye Ol."/>
                                         <connections>
                                             <action selector="registerButtonTapped:" destination="gjD-pR-Kme" eventType="touchUpInside" id="0cj-U7-WeG"/>
@@ -62,7 +64,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YRF-hl-ixe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YRF-hl-ixe" firstAttribute="trailing" secondItem="VVo-9f-VQq" secondAttribute="trailing" constant="20" id="0dz-w1-TYS"/>
                             <constraint firstItem="YRF-hl-ixe" firstAttribute="trailing" secondItem="egC-xJ-CgW" secondAttribute="trailing" constant="20" id="4tu-h4-jkQ"/>
@@ -74,7 +77,6 @@
                             <constraint firstItem="YRF-hl-ixe" firstAttribute="bottom" secondItem="egC-xJ-CgW" secondAttribute="bottom" constant="150" id="qdw-8w-151"/>
                             <constraint firstItem="egC-xJ-CgW" firstAttribute="leading" secondItem="YRF-hl-ixe" secondAttribute="leading" constant="20" id="rbz-lK-qVf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="YRF-hl-ixe"/>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="egC-xJ-CgW" id="0NO-UE-LXC"/>
@@ -88,4 +90,12 @@
             <point key="canvasLocation" x="922" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

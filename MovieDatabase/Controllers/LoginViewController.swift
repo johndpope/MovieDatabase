@@ -17,23 +17,19 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setButton()
+        setDelegates()
+        loginButton.isUserInteractionEnabled = false
+        loginButton.layer.opacity = 0.6
+        loginButton.layer.cornerRadius = 5
     }
     
-    @IBAction func registerButtonTapped(_ sender: Any) {
-        if let url = URL(string: "https://www.themoviedb.org/account/signup") {
-            UIApplication.shared.open(url)
-        }
+    override func touchesBegan(_ touches: Set<UITouch>, with withEvent: UIEvent?) {
+        self.view.endEditing(true)
     }
     
-    @IBAction func loginButtonTapped(_ sender: Any) {
-        createToken()
-        //        if userNameTextLabel!.text!.isEmpty || passwordTextLabel!.text!.isEmpty {
-        //            showAlert(titleInput: "Hata", messageInput: "Kullanıcı Adı veya Şifre Alanı Boş Bırakılamaz.")
-        //        }else{
-        //            createToken()
-        //            AppDelegate.shared.setNewMovies()
-        //        }
+    func setDelegates() {
+        userNameTextLabel.delegate = self
+        passwordTextLabel.delegate = self
     }
     
     //MARK: - Authentication Functions
@@ -50,7 +46,7 @@ class LoginViewController: UIViewController {
     
     // Send Token & Parameters to server side and get Tokens again.
     func sendToken(token: String) {
-        LoginRequest.init(userName: "ilkay" , password: "htlr1889$" , token: token).request(success: { (object) in
+        LoginRequest.init(userName: userNameTextLabel.text!, password: passwordTextLabel.text! , token: token).request(success: { (object) in
             self.createSessionId(token: object.requestToken)
         }) { (error) in
             
@@ -80,14 +76,41 @@ class LoginViewController: UIViewController {
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
+    private func enableLoginButton() {
+        loginButton.isUserInteractionEnabled = true
+        loginButton.layer.opacity = 1.0
+    }
     
-    func setButton(){
+    private func disableLoginButton() {
+        loginButton.isUserInteractionEnabled = false
+        loginButton.layer.opacity = 0.6
+    }
+    
+    //    func setButton(){
+    //        if userNameTextLabel!.text!.isEmpty || passwordTextLabel!.text!.isEmpty {
+    //            loginButton.isEnabled = false
+    //            loginButton.layer.opacity = 0.5
+    //        }else{
+    //            loginButton.isEnabled = true
+    //            loginButton.layer.opacity = 1.0
+    //        }
+    //        loginButton.layer.cornerRadius = 5
+    //    }
+    
+    @IBAction func registerButtonTapped(_ sender: Any) {
+        if let url = URL(string: "https://www.themoviedb.org/account/signup") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        createToken()
         //        if userNameTextLabel!.text!.isEmpty || passwordTextLabel!.text!.isEmpty {
-        //            loginButton.isEnabled = false
+        //            showAlert(titleInput: "Hata", messageInput: "Kullanıcı Adı veya Şifre Alanı Boş Bırakılamaz.")
         //        }else{
-        //            loginButton.isEnabled = true
+        //            createToken()
+        //            AppDelegate.shared.setNewMovies()
         //        }
-        loginButton.layer.cornerRadius = 5
     }
     
     func showAlert(titleInput: String, messageInput:String) {
@@ -95,6 +118,19 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
+    }
+    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField != userNameTextLabel && textField != passwordTextLabel {
+            disableLoginButton()
+        } else {
+            enableLoginButton()
+        }
+        return true
     }
     
 }

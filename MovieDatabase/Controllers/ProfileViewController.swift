@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
     
     var favData: ListModel?
     var watchData: ListModel?
+    var profileImage: Gravatar?
     
     @IBOutlet weak var profileTableView: UITableView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -34,14 +35,17 @@ class ProfileViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    func setDelegates() {
+    private func setDelegates() {
         profileTableView.delegate = self
         profileTableView.dataSource = self
         profileTableView.register(FavoriteListTableViewCell.self)
         profileTableView.register(WatchListTableViewCell.self)
     }
     
-    func setProfile() {
+    private func setProfile() {
+//        profileImageView.image = UIImage(named: "\(profileImage?.hash ?? "person.circle.fill")")
+//        let imgUrl = URL(string: "\(profileImage?.hash ?? "")")
+//        profileImageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "person.circle.fill"))
         profileImageView.layer.borderWidth = 1
         profileImageView.layer.masksToBounds = false
         profileImageView.layer.borderColor = UIColor.black.cgColor
@@ -60,7 +64,7 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func setAdded(_ notification: Notification) {
-        getFavoriteRequest()
+        getWatchListRequest()
     }
     
     func FavoriteNotification() {
@@ -101,18 +105,15 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return Sections.allCases.count
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         switch Sections(rawValue: section)! {
         case .favList:
             if favData != nil {
                 return 1
-            }else {
+            } else {
                 return 0
             }
         case .watchList:
@@ -126,7 +127,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         switch Sections(rawValue: indexPath.section)! {
         case .favList:
             let cell: FavoriteListTableViewCell = tableView.dequeueReusableCell(for: indexPath)
@@ -141,14 +141,11 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        switch Sections(rawValue: indexPath.section) {
+        switch Sections(rawValue: indexPath.section)! {
         case .favList:
             return 360
         case .watchList:
             return 360
-        case .none:
-            return 0
         }
     }
     

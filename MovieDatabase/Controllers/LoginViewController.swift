@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IHKeyboardAvoiding
 
 class LoginViewController: UIViewController {
     
@@ -18,9 +19,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        loginButton.isUserInteractionEnabled = false
-        loginButton.layer.opacity = 0.6
+//        loginButton.isUserInteractionEnabled = false
+//        loginButton.layer.opacity = 0.6
         loginButton.layer.cornerRadius = 5
+        KeyboardAvoiding.avoidingView = self.loginButton
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with withEvent: UIEvent?) {
@@ -46,7 +48,7 @@ class LoginViewController: UIViewController {
     
     // Send Token & Parameters to server side and get Tokens again.
     func sendToken(token: String) {
-        LoginRequest.init(userName: userNameTextLabel.text!, password: passwordTextLabel.text! , token: token).request(success: { (object) in
+        LoginRequest.init(userName: "ilkay", password: "htlr1889$" , token: token).request(success: { (object) in
             self.createSessionId(token: object.requestToken)
         }) { (error) in
             
@@ -105,12 +107,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         createToken()
-        //        if userNameTextLabel!.text!.isEmpty || passwordTextLabel!.text!.isEmpty {
-        //            showAlert(titleInput: "Hata", messageInput: "Kullanıcı Adı veya Şifre Alanı Boş Bırakılamaz.")
-        //        }else{
-        //            createToken()
-        //            AppDelegate.shared.setNewMovies()
-        //        }
+//        if userNameTextLabel!.text!.isEmpty || passwordTextLabel!.text!.isEmpty {
+//            showAlert(titleInput: "Hata", messageInput: "Kullanıcı Adı veya Şifre Alanı Boş Bırakılamaz.")
+//        }else{
+//            createToken()
+//            AppDelegate.shared.setNewMovies()
+//        }
     }
     
     func showAlert(titleInput: String, messageInput:String) {
@@ -123,14 +125,5 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField != userNameTextLabel && textField != passwordTextLabel {
-            disableLoginButton()
-        } else {
-            enableLoginButton()
-        }
-        return true
-    }
     
 }

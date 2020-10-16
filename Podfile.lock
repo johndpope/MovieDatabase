@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
-  - IQKeyboardManager (6.5.6)
+  - IHKeyboardAvoiding (4.7)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
@@ -9,7 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
-  - IQKeyboardManager
+  - IHKeyboardAvoiding
   - Kingfisher (= 5.12.0)
   - MSAUserDefaults
   - YouTubePlayer
@@ -17,18 +17,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - IQKeyboardManager
+    - IHKeyboardAvoiding
     - Kingfisher
     - MSAUserDefaults
     - YouTubePlayer
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  IHKeyboardAvoiding: 4cae0880c3975feffa278495df894c5166e71ad0
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   MSAUserDefaults: b109fc76e840ac2b66b56c506bcc46ef2b8992cc
   YouTubePlayer: d27e302eecbbd6b17c73d9788cb6d817a3815720
 
-PODFILE CHECKSUM: 2bb7df32401b24da338377b306f326fdabfbe39d
+PODFILE CHECKSUM: edbf153231aef231616cd52de32982dfc91f7790
 
 COCOAPODS: 1.9.3

@@ -9,6 +9,6 @@ target 'MovieDatabase' do
   pod 'Kingfisher', '5.12.0'
   pod "MSAUserDefaults"
   pod 'YouTubePlayer'
-  pod 'IQKeyboardManager'
+  pod 'IHKeyboardAvoiding'
 
 end

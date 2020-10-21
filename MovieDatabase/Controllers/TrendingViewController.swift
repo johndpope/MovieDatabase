@@ -13,10 +13,14 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var trendTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var page: Int = 1
+    var trendPersonData: TrendPersonModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
         setSearchBar()
+        trendPersonRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +30,15 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with withEvent: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func trendPersonRequest() {
+        TrendPersonRequest.init(page: page).request(success: { (object) in
+            self.trendPersonData = object
+            self.trendTableView.reloadData()
+        }) { (error) in
+            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+        }
     }
     
     private func setDelegates() {
@@ -42,19 +55,18 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
         searchBar.searchTextField.backgroundColor = UIColor.white
     }
     
-    
-//    func addSearchBar() {
-//        searchBar.delegate = self
-//        searchBar.showsCancelButton = false
-//        searchBar.showsScopeBar = false
-//
-//        searchBar.barStyle = .black
-//        searchBar.searchTextField.backgroundColor = .searchbarBackgroundPrimary
-//        searchBar.tintColor = .textPrimary
-//        searchBar.searchTextField.leftView?.tintColor = .textSecondary
-//        searchBar.searchTextField.textColor = .textPrimary
-//        searchBar.searchTextField.font = .font(.regular, size:
-//    }
+    //    func addSearchBar() {
+    //        searchBar.delegate = self
+    //        searchBar.showsCancelButton = false
+    //        searchBar.showsScopeBar = false
+    //
+    //        searchBar.barStyle = .black
+    //        searchBar.searchTextField.backgroundColor = .searchbarBackgroundPrimary
+    //        searchBar.tintColor = .textPrimary
+    //        searchBar.searchTextField.leftView?.tintColor = .textSecondary
+    //        searchBar.searchTextField.textColor = .textPrimary
+    //        searchBar.searchTextField.font = .font(.regular, size:
+    //    }
     
 }
 
@@ -73,11 +85,14 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch Sections(rawValue: section)! {
         case .people:
-            return 1
+            if trendPersonData != nil {
+                return 1
+            }
+            return 0
         case .movie:
             return 1
-//        case .tvSeries:
-//            return 1
+        //case .tvSeries:
+        //return 1
         }
     }
     
@@ -85,12 +100,13 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
         switch Sections(rawValue: indexPath.section)! {
         case .people:
             let cell: TrendingPeopleTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.trendPersonData = self.trendPersonData
             return cell
         case .movie:
             let cell: TrendingMovieTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             return cell
-//        case .tvSeries:
-//            //code here
+        //case .tvSeries:
+        // //code here
         }
     }
     
@@ -100,10 +116,10 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
             return 300
         case .movie:
             return 250
-//        case .tvSeries:
-//            return 250
-//        case .topRated:
-//            return 250
+        //case .tvSeries:
+        //return 250
+        //case .topRated:
+        //return 250
         }
         
     }

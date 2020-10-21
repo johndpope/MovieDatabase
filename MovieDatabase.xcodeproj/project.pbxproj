@@ -151,6 +151,8 @@
 		6BA1C38D2421098E00BCC321 /* SeriesCastRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA1C38C2421098E00BCC321 /* SeriesCastRequest.swift */; };
 		6BE22338241E8E8700352E5D /* MovieDatabaseTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = FB07123723F177C100804F7C /* MovieDatabaseTests.xctest */; };
 		6BE22339241E8E8F00352E5D /* MovieDatabaseUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = FB07124223F177C100804F7C /* MovieDatabaseUITests.xctest */; };
+		C02357D72540B1FA00E61AE1 /* TrendPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02357D62540B1FA00E61AE1 /* TrendPersonModel.swift */; };
+		C02357DF2540BAB600E61AE1 /* TrendPersonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02357DE2540BAB600E61AE1 /* TrendPersonRequest.swift */; };
 		FB07123C23F177C100804F7C /* MovieDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07123B23F177C100804F7C /* MovieDatabaseTests.swift */; };
 		FB07124723F177C100804F7C /* MovieDatabaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07124623F177C100804F7C /* MovieDatabaseUITests.swift */; };
 /* End PBXBuildFile section */
@@ -309,6 +311,8 @@
 		6BE84B8723FE9CEF001306C2 /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
 		6BEACC7B23F1A9DC00AF6E9B /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		B30EC91FDCFD27482B168A23 /* Pods-MovieDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDatabase.debug.xcconfig"; path = "Target Support Files/Pods-MovieDatabase/Pods-MovieDatabase.debug.xcconfig"; sourceTree = "<group>"; };
+		C02357D62540B1FA00E61AE1 /* TrendPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendPersonModel.swift; sourceTree = "<group>"; };
+		C02357DE2540BAB600E61AE1 /* TrendPersonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendPersonRequest.swift; path = MovieDatabase/Models/TrendPersonRequest.swift; sourceTree = SOURCE_ROOT; };
 		FB07122123F177C000804F7C /* MovieDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB07122423F177C000804F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB07122823F177C000804F7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -564,6 +568,7 @@
 				6BDB1CEC2417CEAF00B109A9 /* SeriesDetailModel.swift */,
 				6B438B7E240E56140036C3B4 /* FilmographyModel.swift */,
 				6B729E7923F55C5F009958B0 /* MoviesDetailModel.swift */,
+				C02357D62540B1FA00E61AE1 /* TrendPersonModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -650,6 +655,7 @@
 				6B05453B241F6C69008ABE1A /* FavoriteMovieRequest.swift */,
 				6B05454A241F6C6A008ABE1A /* AddWatchListRequest.swift */,
 				6B054541241F6C6A008ABE1A /* CreateSessionRequest.swift */,
+				C02357DE2540BAB600E61AE1 /* TrendPersonRequest.swift */,
 			);
 			name = Datas;
 			path = API/Datas;
@@ -1064,6 +1070,7 @@
 				6B05449C241F6875008ABE1A /* UpComingCollectionViewCell.swift in Sources */,
 				6B05449E241F6875008ABE1A /* NowPlayingCell.swift in Sources */,
 				6B0544A0241F6875008ABE1A /* LatestMovieCell.swift in Sources */,
+				C02357D72540B1FA00E61AE1 /* TrendPersonModel.swift in Sources */,
 				6B0544A2241F6875008ABE1A /* FilmographyTableViewCell.swift in Sources */,
 				6B0544A4241F6875008ABE1A /* FilmographyCollectionViewCell.swift in Sources */,
 				6B0544A6241F6875008ABE1A /* SeriesDetailTableViewCell.swift in Sources */,
@@ -1081,6 +1088,7 @@
 				6B0544B1241F6875008ABE1A /* SeriesDetailViewController.swift in Sources */,
 				6B0544B2241F6875008ABE1A /* ResponseError.swift in Sources */,
 				6B0544B3241F6875008ABE1A /* RequestDelegate.swift in Sources */,
+				C02357DF2540BAB600E61AE1 /* TrendPersonRequest.swift in Sources */,
 				6B054554241F6C6A008ABE1A /* AddFavoriteRequest.swift in Sources */,
 				6B0544B4241F6875008ABE1A /* RequestManager.swift in Sources */,
 				6B05455F241F6C6A008ABE1A /* AddWatchListRequest.swift in Sources */,

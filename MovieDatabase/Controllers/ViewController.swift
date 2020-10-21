@@ -76,11 +76,10 @@ class ViewController: UIViewController {
     func topRatedRequest() {
         TopRatedRequest.init().request(success: {(object) in
             self.topRatedData = object
-            //TODO: - array silme bak.
-            
+            //TODO: - array silme bak...
             self.movieTableView.reloadData()
         }) {(error) in
-             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
         }
     }
     
@@ -94,7 +93,7 @@ class ViewController: UIViewController {
         movieTableView.register(TvSeriesTableViewCell.self)
         movieTableView.register(TopRatedTableViewCell.self)
     }
-        
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -191,7 +190,7 @@ extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegat
                 switch first.site {
                 case .youtube:
                     nextViewController.urlString = key
-                     self.show(nextViewController, sender: nil)
+                    self.show(nextViewController, sender: nil)
                 default:
                     break
                 }

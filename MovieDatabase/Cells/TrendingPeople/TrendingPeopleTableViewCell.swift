@@ -12,6 +12,12 @@ class TrendingPeopleTableViewCell: UITableViewCell, ReusableView, NibLoadableVie
     
     @IBOutlet weak var peopleCollectionView: UICollectionView!
     
+    var trendPersonData: TrendPersonModel!{
+        didSet{
+            peopleCollectionView.reloadData()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setDelegates()
@@ -19,7 +25,6 @@ class TrendingPeopleTableViewCell: UITableViewCell, ReusableView, NibLoadableVie
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
     }
     
     private func setDelegates() {
@@ -31,12 +36,14 @@ class TrendingPeopleTableViewCell: UITableViewCell, ReusableView, NibLoadableVie
 }
 
 extension TrendingPeopleTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return trendPersonData?.results.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: TrendingPeopleCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.fillTrendPerson(trendPersonResponse: trendPersonData.results[indexPath.row])
         return cell
     }
     

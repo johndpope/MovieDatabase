@@ -8,12 +8,10 @@
 
 import Foundation
 
-// MARK: - Genre
 struct GenreModel: Codable {
     let genres: [GenreElement]
 }
 
-// MARK: - GenreElement
 struct GenreElement: Codable {
     let id: Int
     let name: String

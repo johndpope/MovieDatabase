@@ -31,5 +31,5 @@ struct SeriesDetailModel: Codable {
         case numberOfSeasons = "number_of_seasons"
         case numberOfEpisodes = "number_of_episodes"
     }
-
+    
 }

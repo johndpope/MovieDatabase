@@ -19,17 +19,22 @@ class TrendingPeopleCollectionViewCell: UICollectionViewCell, ReusableView, NibL
     override func awakeFromNib() {
         super.awakeFromNib()
         setViews()
-        
+    }
+    
+    //MARK: - Fill Trending Person Cell
+    
+    func fillTrendPerson(trendPersonResponse: TrendPersonElements) {
+        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(trendPersonResponse.profilePath ?? "")")
+        peopleImageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
+        peopleNameLabel.text = trendPersonResponse.name
     }
     
     private func setViews() {
         peopleContainerView.layer.cornerRadius = 8
-        
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         
     }
     
-
 }

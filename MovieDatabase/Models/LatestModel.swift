@@ -16,8 +16,7 @@ struct LatestModel: Codable {
     var title: String!
     var releaseDate: String!
     
-    private enum CodingKeys: String, CodingKey{
-        
+    private enum CodingKeys: String, CodingKey {
         case id
         case title
         case releaseDate = "release_date"
@@ -25,5 +24,5 @@ struct LatestModel: Codable {
         case backdropPath = "backdrop_path"
         
     }
-
+    
 }

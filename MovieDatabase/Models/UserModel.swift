@@ -12,15 +12,12 @@ struct UserModel: Codable {
     var avatar: Avatar
     var id: Int
     var username: String
-
 }
 
-// MARK: - Avatar
 struct Avatar: Codable {
     var gravatar: Gravatar
 }
 
-// MARK: - Gravatar
 struct Gravatar: Codable {
     var hash: String
 }

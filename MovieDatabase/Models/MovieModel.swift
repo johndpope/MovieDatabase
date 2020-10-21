@@ -13,7 +13,6 @@ struct MovieModel: Codable {
     var total_results: Int!
     var total_pages: Int?
     var results: [MovieElements]!
-    
 }
 
 struct MovieElements: Codable {

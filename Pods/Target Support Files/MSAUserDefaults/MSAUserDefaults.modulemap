@@ -1,0 +1,6 @@
+framework module MSAUserDefaults {
+  umbrella header "MSAUserDefaults-umbrella.h"
+
+  export *
+  module * { export * }
+}

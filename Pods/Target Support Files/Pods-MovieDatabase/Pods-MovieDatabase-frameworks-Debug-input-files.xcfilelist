@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-MovieDatabase/Pods-MovieDatabase-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/IHKeyboardAvoiding/IHKeyboardAvoiding.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/MSAUserDefaults/MSAUserDefaults.framework
+${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework

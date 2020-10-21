@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     var tvSeriesData: SeriesModel?
     var topRatedData: TopRatedModel?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()

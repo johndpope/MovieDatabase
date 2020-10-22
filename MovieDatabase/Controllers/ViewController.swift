@@ -182,7 +182,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: NowTableViewCellDelegate, UpComingTableViewCellDelegate, TvSeriesTableViewCellDelegate {
     
     func didUpComingSelected(id: Int) {
-        
         let storyBoard = UIStoryboard(name: "Video", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(identifier: "VideoViewController") as VideoViewController
         VideoRequest(movieId: id).request(success: { (object) in

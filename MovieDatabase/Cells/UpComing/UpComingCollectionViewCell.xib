@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +25,7 @@
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradiant" translatesAutoresizingMaskIntoConstraints="NO" id="T2t-Y0-ysM">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="203"/>
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="273"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="bnV-Ad-Bc3">
@@ -69,7 +70,7 @@
                             <constraint firstAttribute="bottom" secondItem="bnV-Ad-Bc3" secondAttribute="bottom" constant="8" id="bWY-iy-KUK"/>
                             <constraint firstItem="MWK-h5-djn" firstAttribute="leading" secondItem="qR2-qc-frX" secondAttribute="leading" id="eAS-Nk-OJb"/>
                             <constraint firstAttribute="trailing" secondItem="ki0-QZ-PXs" secondAttribute="trailing" constant="8" id="giF-RT-t1t"/>
-                            <constraint firstItem="T2t-Y0-ysM" firstAttribute="bottom" secondItem="MWK-h5-djn" secondAttribute="bottom" id="nMR-Sn-1HX"/>
+                            <constraint firstItem="T2t-Y0-ysM" firstAttribute="bottom" secondItem="MWK-h5-djn" secondAttribute="bottom" constant="70" id="nMR-Sn-1HX"/>
                             <constraint firstAttribute="trailing" secondItem="MWK-h5-djn" secondAttribute="trailing" id="qQN-Lj-VCa"/>
                             <constraint firstItem="ki0-QZ-PXs" firstAttribute="leading" secondItem="bnV-Ad-Bc3" secondAttribute="trailing" constant="8" id="rEE-sD-Y5o"/>
                             <constraint firstItem="cpo-OG-dQC" firstAttribute="centerY" secondItem="qR2-qc-frX" secondAttribute="centerY" id="vdt-G0-WgK"/>
@@ -79,6 +80,7 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="qR2-qc-frX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7VO-la-P4z"/>
@@ -86,7 +88,6 @@
                 <constraint firstAttribute="bottom" secondItem="qR2-qc-frX" secondAttribute="bottom" id="hz5-B0-qPW"/>
                 <constraint firstAttribute="trailing" secondItem="qR2-qc-frX" secondAttribute="trailing" id="nHV-ds-Bdd"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="containerView" destination="qR2-qc-frX" id="hT1-hm-S6j"/>
                 <outlet property="imageView" destination="MWK-h5-djn" id="pAM-LY-X1k"/>

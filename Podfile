@@ -10,5 +10,8 @@ target 'MovieDatabase' do
   pod "MSAUserDefaults"
   pod 'YouTubePlayer'
   pod 'IHKeyboardAvoiding'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Google-Mobile-Ads-SDK'
 
 end

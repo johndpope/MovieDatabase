@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradiant" translatesAutoresizingMaskIntoConstraints="NO" id="215-Y4-tw7">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="190"/>
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="240"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simpsons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxS-gl-HkD">
                                 <rect key="frame" x="5" y="131" width="242" height="22"/>
@@ -55,7 +55,7 @@
                             <constraint firstItem="ZxS-gl-HkD" firstAttribute="height" secondItem="Tmu-QT-heX" secondAttribute="height" multiplier="1.1" id="WoF-Kx-kQ0"/>
                             <constraint firstItem="Tmu-QT-heX" firstAttribute="leading" secondItem="ZxS-gl-HkD" secondAttribute="trailing" constant="5" id="XlE-2E-kuP"/>
                             <constraint firstItem="215-Y4-tw7" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" id="dKg-f0-VUc"/>
-                            <constraint firstAttribute="bottom" secondItem="215-Y4-tw7" secondAttribute="bottom" constant="-30" id="gwD-Vd-7LD"/>
+                            <constraint firstAttribute="bottom" secondItem="215-Y4-tw7" secondAttribute="bottom" constant="-80" id="gwD-Vd-7LD"/>
                             <constraint firstAttribute="trailing" secondItem="Tmu-QT-heX" secondAttribute="trailing" constant="8" id="hAM-hi-TWT"/>
                             <constraint firstItem="54q-tM-saY" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" id="kI1-hf-QPW"/>
                             <constraint firstItem="54q-tM-saY" firstAttribute="top" secondItem="1Fd-1P-ldO" secondAttribute="top" id="s8M-6A-7Om"/>
@@ -74,10 +74,10 @@
             </constraints>
             <size key="customSize" width="280" height="160"/>
             <connections>
+                <outlet property="movieImageView" destination="54q-tM-saY" id="oHG-sQ-2OI"/>
+                <outlet property="movieNameLabel" destination="ZxS-gl-HkD" id="XMG-WX-es8"/>
                 <outlet property="nextButton" destination="Tmu-QT-heX" id="mhO-kj-N84"/>
                 <outlet property="tvSeriesContainerView" destination="1Fd-1P-ldO" id="MaQ-TD-5Hf"/>
-                <outlet property="tvSeriesImageView" destination="54q-tM-saY" id="oHG-sQ-2OI"/>
-                <outlet property="tvSeriesNameLabel" destination="ZxS-gl-HkD" id="XMG-WX-es8"/>
             </connections>
             <point key="canvasLocation" x="304.34782608695656" y="121.20535714285714"/>
         </collectionViewCell>

@@ -15,12 +15,14 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
     
     var page: Int = 1
     var trendPersonData: TrendPersonModel?
+    var trendMovieData: TrendMovieModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
         setSearchBar()
         trendPersonRequest()
+        trendMovieRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +37,15 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
     func trendPersonRequest() {
         TrendPersonRequest.init(page: page).request(success: { (object) in
             self.trendPersonData = object
+            self.trendTableView.reloadData()
+        }) { (error) in
+            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+        }
+    }
+    
+    func trendMovieRequest() {
+        TrendMoviesRequest.init(page: page).request(success: { (object) in
+            self.trendMovieData = object
             self.trendTableView.reloadData()
         }) { (error) in
             print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
@@ -90,7 +101,10 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
             }
             return 0
         case .movie:
-            return 1
+            if trendMovieData != nil {
+                return 1
+            }
+            return 0
         //case .tvSeries:
         //return 1
         }
@@ -104,6 +118,7 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         case .movie:
             let cell: TrendingMovieTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.trendMovieData = self.trendMovieData
             return cell
         //case .tvSeries:
         // //code here

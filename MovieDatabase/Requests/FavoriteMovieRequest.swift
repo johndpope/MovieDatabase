@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct FavoriteMovieRequest : RequestResultObjectDelegate {
+struct FavoriteMovieRequest: RequestResultObjectDelegate {
     
     enum ListType: String {
         case favorite = "favorite"

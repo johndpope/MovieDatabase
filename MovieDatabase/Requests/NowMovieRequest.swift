@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct NowMovieRequest : RequestResultObjectDelegate {
+struct NowMovieRequest: RequestResultObjectDelegate {
     typealias ResultObject = MovieModel
 
     var path: String

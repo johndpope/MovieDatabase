@@ -21,7 +21,7 @@ class TrendingPeopleCollectionViewCell: UICollectionViewCell, ReusableView, NibL
         setViews()
     }
     
-    //MARK: - Fill Trending Person Cell
+    //MARK: - Fill Trend Person Cell
     
     func fillTrendPerson(trendPersonResponse: TrendPersonElements) {
         let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(trendPersonResponse.profilePath ?? "")")

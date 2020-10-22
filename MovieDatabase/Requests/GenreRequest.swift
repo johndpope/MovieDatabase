@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct GenreRequest : RequestResultObjectDelegate {
+struct GenreRequest: RequestResultObjectDelegate {
     typealias ResultObject = GenreModel
 
     var path: String

@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct TvSeriesRequest : RequestResultObjectDelegate {
+struct TvSeriesRequest: RequestResultObjectDelegate {
     typealias ResultObject = SeriesModel
 
     var path: String

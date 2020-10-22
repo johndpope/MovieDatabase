@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct ActRequest : RequestResultObjectDelegate {
+struct ActRequest: RequestResultObjectDelegate {
     
     typealias ResultObject = ActElements
     

@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct FilmographyRequest : RequestResultObjectDelegate {
+struct FilmographyRequest: RequestResultObjectDelegate {
     
     typealias ResultObject = FilmographyModel
     

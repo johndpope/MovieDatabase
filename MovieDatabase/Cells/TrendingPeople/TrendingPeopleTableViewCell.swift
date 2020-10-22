@@ -12,7 +12,7 @@ class TrendingPeopleTableViewCell: UITableViewCell, ReusableView, NibLoadableVie
     
     @IBOutlet weak var peopleCollectionView: UICollectionView!
     
-    var trendPersonData: TrendPersonModel!{
+    var trendPersonData: TrendPersonModel! {
         didSet{
             peopleCollectionView.reloadData()
         }

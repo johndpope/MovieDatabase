@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct VideoRequest : RequestResultObjectDelegate {
+struct VideoRequest: RequestResultObjectDelegate {
     typealias ResultObject = VideoModel
 
     var path: String

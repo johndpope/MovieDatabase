@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct TopRatedRequest : RequestResultObjectDelegate {
+struct TopRatedRequest: RequestResultObjectDelegate {
     
     typealias ResultObject = TopRatedModel
     

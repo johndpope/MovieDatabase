@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct CastRequest : RequestResultObjectDelegate {
+struct CastRequest: RequestResultObjectDelegate {
     
     typealias ResultObject = CastModel
     

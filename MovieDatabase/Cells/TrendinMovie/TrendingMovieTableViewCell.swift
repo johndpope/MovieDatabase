@@ -12,6 +12,12 @@ class TrendingMovieTableViewCell: UITableViewCell, ReusableView, NibLoadableView
     
     @IBOutlet weak var trendMoviesCollectionView: UICollectionView!
     
+    var trendMovieData: TrendMovieModel! {
+        didSet{
+            trendMoviesCollectionView.reloadData()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setDelegates()
@@ -32,11 +38,12 @@ class TrendingMovieTableViewCell: UITableViewCell, ReusableView, NibLoadableView
 
 extension TrendingMovieTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return trendMovieData?.results.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: TrendingMovieCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.fillTrendMovie(trendPersonResponse: trendMovieData.results[indexPath.row])
         return cell
     }
     

@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct SeriesDetailRequest : RequestResultObjectDelegate {
+struct SeriesDetailRequest: RequestResultObjectDelegate {
     
     typealias ResultObject = SeriesDetailModel
 

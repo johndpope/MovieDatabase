@@ -8,7 +8,7 @@
 
 import Alamofire
 
-struct TrendPersonRequest : RequestResultObjectDelegate {
+struct TrendPersonRequest: RequestResultObjectDelegate {
     typealias ResultObject = TrendPersonModel
     
     var path: String

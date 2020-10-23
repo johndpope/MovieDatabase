@@ -1,5 +1,5 @@
 //
-//  TrendingMovieTableViewCell.swift
+//  TrendingTvTableViewCell.swift
 //  MovieDatabase
 //
 //  Created by ilkay sever on 2.10.2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class TrendingMovieTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
+class TrendingTvTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
-    @IBOutlet weak var trendMoviesCollectionView: UICollectionView!
+    @IBOutlet weak var trendTvCollectionVieew: UICollectionView!
     
-    var trendMovieData: TrendMovieModel! {
+    var trendTvData: TrendTvModel! {
         didSet{
-            trendMoviesCollectionView.reloadData()
+            trendTvCollectionVieew.reloadData()
         }
     }
     
@@ -25,25 +25,25 @@ class TrendingMovieTableViewCell: UITableViewCell, ReusableView, NibLoadableView
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
     }
     
     private func setDelegates() {
-        trendMoviesCollectionView.delegate = self
-        trendMoviesCollectionView.dataSource = self
-        trendMoviesCollectionView.register(TrendingMovieCollectionViewCell.self)
+        trendTvCollectionVieew.delegate = self
+        trendTvCollectionVieew.dataSource = self
+        trendTvCollectionVieew.register(TrendingTvCollectionViewCell.self)
     }
     
 }
 
-extension TrendingMovieTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension TrendingTvTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trendMovieData?.results.count ?? 0
+        return trendTvData.results.count 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: TrendingMovieCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.fillTrendMovie(trendPersonResponse: trendMovieData.results[indexPath.row])
+        let cell: TrendingTvCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.fillTrendTV(trendTvResponse: trendTvData.results[indexPath.row])
         return cell
     }
     
@@ -54,3 +54,5 @@ extension TrendingMovieTableViewCell: UICollectionViewDataSource, UICollectionVi
     }
     
 }
+
+

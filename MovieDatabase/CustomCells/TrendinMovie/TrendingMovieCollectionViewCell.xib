@@ -28,16 +28,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="240"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simpsons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxS-gl-HkD">
-                                <rect key="frame" x="5" y="131" width="242" height="22"/>
+                                <rect key="frame" x="8" y="128" width="68.5" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="TfG-5b-s6r"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmu-QT-heX">
-                                <rect key="frame" x="252" y="132" width="20" height="20"/>
+                                <rect key="frame" x="252" y="130" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="AbM-BH-yrL"/>
-                                    <constraint firstAttribute="width" constant="20" id="B04-bi-382"/>
+                                    <constraint firstAttribute="height" constant="20" id="okq-AE-CIB"/>
+                                    <constraint firstAttribute="width" constant="20" id="tQv-E4-r4o"/>
                                 </constraints>
                                 <state key="normal" image="next"/>
                                 <connections>
@@ -47,20 +50,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZxS-gl-HkD" firstAttribute="centerY" secondItem="Tmu-QT-heX" secondAttribute="centerY" id="5bp-CI-XND"/>
+                            <constraint firstItem="ZxS-gl-HkD" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" constant="8" id="3BX-Re-p3X"/>
                             <constraint firstItem="215-Y4-tw7" firstAttribute="top" secondItem="1Fd-1P-ldO" secondAttribute="top" id="RF2-Xp-Z4V"/>
-                            <constraint firstItem="ZxS-gl-HkD" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" constant="5" id="RhI-IH-XQd"/>
                             <constraint firstAttribute="trailing" secondItem="215-Y4-tw7" secondAttribute="trailing" id="TEk-qX-hGG"/>
                             <constraint firstAttribute="trailing" secondItem="54q-tM-saY" secondAttribute="trailing" id="VRP-WU-sN8"/>
-                            <constraint firstItem="ZxS-gl-HkD" firstAttribute="height" secondItem="Tmu-QT-heX" secondAttribute="height" multiplier="1.1" id="WoF-Kx-kQ0"/>
-                            <constraint firstItem="Tmu-QT-heX" firstAttribute="leading" secondItem="ZxS-gl-HkD" secondAttribute="trailing" constant="5" id="XlE-2E-kuP"/>
                             <constraint firstItem="215-Y4-tw7" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" id="dKg-f0-VUc"/>
                             <constraint firstAttribute="bottom" secondItem="215-Y4-tw7" secondAttribute="bottom" constant="-80" id="gwD-Vd-7LD"/>
-                            <constraint firstAttribute="trailing" secondItem="Tmu-QT-heX" secondAttribute="trailing" constant="8" id="hAM-hi-TWT"/>
                             <constraint firstItem="54q-tM-saY" firstAttribute="leading" secondItem="1Fd-1P-ldO" secondAttribute="leading" id="kI1-hf-QPW"/>
                             <constraint firstItem="54q-tM-saY" firstAttribute="top" secondItem="1Fd-1P-ldO" secondAttribute="top" id="s8M-6A-7Om"/>
+                            <constraint firstItem="Tmu-QT-heX" firstAttribute="centerY" secondItem="ZxS-gl-HkD" secondAttribute="centerY" id="stv-Le-usk"/>
                             <constraint firstAttribute="bottom" secondItem="54q-tM-saY" secondAttribute="bottom" id="x6O-Sc-Xap"/>
-                            <constraint firstAttribute="bottom" secondItem="Tmu-QT-heX" secondAttribute="bottom" constant="8" id="y60-zM-bM9"/>
+                            <constraint firstAttribute="bottom" secondItem="ZxS-gl-HkD" secondAttribute="bottom" constant="8" id="zAN-4k-4mD"/>
+                            <constraint firstAttribute="trailing" secondItem="Tmu-QT-heX" secondAttribute="trailing" constant="8" id="zc8-7n-ecy"/>
                         </constraints>
                     </view>
                 </subviews>

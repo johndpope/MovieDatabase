@@ -14,8 +14,9 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var page: Int = 1
-    var trendPersonData: TrendPersonModel?
-    var trendMovieData: TrendMovieModel?
+    var trendPersonData: TrendPersonModel!
+    var trendMovieData: TrendMovieModel!
+    var trendTvData: TrendTvModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
         setSearchBar()
         trendPersonRequest()
         trendMovieRequest()
+        trendTvRequest()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,12 +54,22 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
+    func trendTvRequest() {
+        TrendTvRequest.init(page: page).request(success: { (object) in
+            self.trendTvData = object
+            self.trendTableView.reloadData()
+        }) { (error) in
+            print(#function,"******************* UPS!!! BEKLENMEDİK BİR HATA OLUŞTU. *******************")
+        }
+    }
+    
     private func setDelegates() {
         trendTableView.delegate = self
         trendTableView.dataSource = self
         searchBar.delegate = self
         trendTableView.register(TrendingPeopleTableViewCell.self)
         trendTableView.register(TrendingMovieTableViewCell.self)
+        trendTableView.register(TrendingTvTableViewCell.self)
     }
     
     private func setSearchBar() {
@@ -86,7 +98,7 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
     enum Sections: Int, CaseIterable {
         case people
         case movie
-        //case tvSeries
+        case tvSeries
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -105,8 +117,11 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
                 return 1
             }
             return 0
-        //case .tvSeries:
-        //return 1
+        case .tvSeries:
+            if trendTvData != nil {
+                return 1
+            }
+            return 0
         }
     }
     
@@ -120,8 +135,10 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
             let cell: TrendingMovieTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.trendMovieData = self.trendMovieData
             return cell
-        //case .tvSeries:
-        // //code here
+        case .tvSeries:
+            let cell: TrendingTvTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.trendTvData = self.trendTvData
+            return cell
         }
     }
     
@@ -131,8 +148,8 @@ extension TrendingViewController: UITableViewDataSource, UITableViewDelegate {
             return 300
         case .movie:
             return 250
-        //case .tvSeries:
-        //return 250
+        case .tvSeries:
+            return 250
         //case .topRated:
         //return 250
         }

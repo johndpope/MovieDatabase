@@ -156,6 +156,8 @@
 		C02358052541994500E61AE1 /* TrendMoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02358042541994500E61AE1 /* TrendMoviesRequest.swift */; };
 		C023581325419F5600E61AE1 /* TrendMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C023581225419F5600E61AE1 /* TrendMovieModel.swift */; };
 		C082228D2541C3830091861B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C082228C2541C3830091861B /* GoogleService-Info.plist */; };
+		C08222EE254361990091861B /* TrendTvRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08222ED254361990091861B /* TrendTvRequest.swift */; };
+		C08222F32543671D0091861B /* TrendTvMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08222F22543671D0091861B /* TrendTvMode.swift */; };
 		FB07123C23F177C100804F7C /* MovieDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07123B23F177C100804F7C /* MovieDatabaseTests.swift */; };
 		FB07124723F177C100804F7C /* MovieDatabaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB07124623F177C100804F7C /* MovieDatabaseUITests.swift */; };
 /* End PBXBuildFile section */
@@ -319,6 +321,8 @@
 		C02358042541994500E61AE1 /* TrendMoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMoviesRequest.swift; sourceTree = "<group>"; };
 		C023581225419F5600E61AE1 /* TrendMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMovieModel.swift; sourceTree = "<group>"; };
 		C082228C2541C3830091861B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C08222ED254361990091861B /* TrendTvRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTvRequest.swift; sourceTree = "<group>"; };
+		C08222F22543671D0091861B /* TrendTvMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTvMode.swift; sourceTree = "<group>"; };
 		FB07122123F177C000804F7C /* MovieDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB07122423F177C000804F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB07122823F177C000804F7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -385,7 +389,7 @@
 			path = TvSeries;
 			sourceTree = "<group>";
 		};
-		6B3E067A23F2B5E400982BA5 /* Cells */ = {
+		6B3E067A23F2B5E400982BA5 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
 				6B8868FF2527821A00A043A1 /* TrendingPeople */,
@@ -408,7 +412,7 @@
 				6BA6DA9D240D2E88003691C2 /* Filmography */,
 				6BCF4E6F2417A6620094DA95 /* MoviesDetail */,
 			);
-			path = Cells;
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		6B438B8A240EAED60036C3B4 /* Types */ = {
@@ -576,6 +580,7 @@
 				6B729E7923F55C5F009958B0 /* MoviesDetailModel.swift */,
 				C02357D62540B1FA00E61AE1 /* TrendPersonModel.swift */,
 				C023581225419F5600E61AE1 /* TrendMovieModel.swift */,
+				C08222F22543671D0091861B /* TrendTvMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -751,6 +756,7 @@
 				6B054541241F6C6A008ABE1A /* CreateSessionRequest.swift */,
 				C02357DE2540BAB600E61AE1 /* TrendPersonRequest.swift */,
 				C02358042541994500E61AE1 /* TrendMoviesRequest.swift */,
+				C08222ED254361990091861B /* TrendTvRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -791,7 +797,7 @@
 			children = (
 				6BBA67AF23F1875D00D2C03B /* Models */,
 				6BBA67B023F1876800D2C03B /* Storyboards */,
-				6B3E067A23F2B5E400982BA5 /* Cells */,
+				6B3E067A23F2B5E400982BA5 /* CustomCells */,
 				6BBA67B123F1877600D2C03B /* Controllers */,
 				FB07125423F1790700804F7C /* API */,
 				C0235802254198CB00E61AE1 /* Requests */,
@@ -1090,7 +1096,9 @@
 				6B054492241F6875008ABE1A /* TopRatedTableViewCell.swift in Sources */,
 				6B054494241F6875008ABE1A /* TopRatedCollectionViewCell.swift in Sources */,
 				6B054496241F6875008ABE1A /* WatchListTableViewCell.swift in Sources */,
+				C08222EE254361990091861B /* TrendTvRequest.swift in Sources */,
 				6B054498241F6875008ABE1A /* WatchListCollectionViewCell.swift in Sources */,
+				C08222F32543671D0091861B /* TrendTvMode.swift in Sources */,
 				6B88692E2527837600A043A1 /* TrendingPeopleCollectionViewCell.swift in Sources */,
 				6B05449A241F6875008ABE1A /* UpComingTableViewCell.swift in Sources */,
 				6B054551241F6C6A008ABE1A /* GenreRequest.swift in Sources */,

@@ -12,6 +12,5 @@ target 'MovieDatabase' do
   pod 'IHKeyboardAvoiding'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
-  pod 'Google-Mobile-Ads-SDK'
 
 end

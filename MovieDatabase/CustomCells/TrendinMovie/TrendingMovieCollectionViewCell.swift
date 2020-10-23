@@ -22,10 +22,10 @@ class TrendingMovieCollectionViewCell: UICollectionViewCell, ReusableView, NibLo
     
     //MARK: - Fill Trend Movie Cell
     
-    func fillTrendMovie(trendPersonResponse: TrendMovieElements) {
-        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(trendPersonResponse.backdropPath ?? "")")
+    func fillTrendMovie(trendMovieResponse: TrendMovieElements) {
+        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(trendMovieResponse.backdropPath ?? "")")
         movieImageView.kf.setImage(with: imgUrl, placeholder: UIImage(named: "default"))
-        movieNameLabel.text = trendPersonResponse.title
+        movieNameLabel.text = trendMovieResponse.title
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {

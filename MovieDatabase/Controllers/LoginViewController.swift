@@ -19,8 +19,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-//        loginButton.isUserInteractionEnabled = false
-//        loginButton.layer.opacity = 0.6
+        //        loginButton.isUserInteractionEnabled = false
+        //        loginButton.layer.opacity = 0.6
         loginButton.layer.cornerRadius = 5
         KeyboardAvoiding.avoidingView = self.loginButton
     }
@@ -107,12 +107,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         createToken()
-//        if userNameTextLabel!.text!.isEmpty || passwordTextLabel!.text!.isEmpty {
-//            showAlert(titleInput: "Hata", messageInput: "Kullanıcı Adı veya Şifre Alanı Boş Bırakılamaz.")
-//        }else{
-//            createToken()
-//            AppDelegate.shared.setNewMovies()
-//        }
+        //        if userNameTextLabel!.text!.isEmpty || passwordTextLabel!.text!.isEmpty {
+        //            showAlert(titleInput: "Hata", messageInput: "Kullanıcı Adı veya Şifre Alanı Boş Bırakılamaz.")
+        //        }else{
+        //            createToken()
+        //            AppDelegate.shared.setNewMovies()
+        //        }
     }
     
     func showAlert(titleInput: String, messageInput:String) {

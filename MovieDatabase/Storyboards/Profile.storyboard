@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A47-Mt-36R">
                                 <rect key="frame" x="0.0" y="146" width="414" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28Z-29-ZCW">
                                 <rect key="frame" x="0.0" y="88" width="414" height="50"/>
@@ -71,7 +71,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1UE-Ai-OZj"/>
-                        <color key="backgroundColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="28Z-29-ZCW" firstAttribute="leading" secondItem="1UE-Ai-OZj" secondAttribute="leading" id="8Cv-IG-dIy"/>
                             <constraint firstItem="28Z-29-ZCW" firstAttribute="trailing" secondItem="1UE-Ai-OZj" secondAttribute="trailing" id="DTX-Lu-1wR"/>
@@ -118,7 +118,7 @@
     <resources>
         <image name="gear" width="26" height="26"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="profile" width="25" height="25"/>
+        <image name="profile" width="20" height="24"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

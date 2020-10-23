@@ -39,6 +39,9 @@ class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
     
     //MARK: - Request Web Functions
     

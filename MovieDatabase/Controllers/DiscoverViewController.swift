@@ -44,6 +44,10 @@ class DiscoverViewController: UIViewController {
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     func discoverRequest() {
         DiscoverRequest.init(genresId: genresId, page: page).request(success: { (object) in
             if self.genresData != nil {

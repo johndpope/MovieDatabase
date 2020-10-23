@@ -26,6 +26,10 @@ class SeriesDetailViewController: UIViewController {
         navigationItem.title = seriesName
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     func tvSeriesRequest() {
         SeriesDetailRequest.init(id: identifier).request(success: { (object) in
             self.seriesData = object

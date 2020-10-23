@@ -36,6 +36,10 @@ class TrendingViewController: UIViewController, UISearchBarDelegate {
         self.view.endEditing(true)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     func trendPersonRequest() {
         TrendPersonRequest.init(page: page).request(success: { (object) in
             self.trendPersonData = object

@@ -35,6 +35,10 @@ class ProfileViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     private func setDelegates() {
         profileTableView.delegate = self
         profileTableView.dataSource = self

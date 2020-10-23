@@ -32,6 +32,10 @@ class TypesViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     func genreRequest() {
         GenreRequest.init().request(success: {(object) in
             self.genreData = object

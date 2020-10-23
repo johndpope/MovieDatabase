@@ -44,6 +44,10 @@ class DetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     //MARK: - Request Functions
     func getDetail() {
         group.enter()

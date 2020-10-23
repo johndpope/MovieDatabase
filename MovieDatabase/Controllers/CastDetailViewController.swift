@@ -25,6 +25,10 @@ class CastDetailViewController: UIViewController {
         navigationItem.title = castName
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
     //MARK: - Request Functions
     
     func getAct() {
